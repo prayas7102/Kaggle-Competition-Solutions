@@ -53,23 +53,18 @@ voting_clf = VotingClassifier(
 from sklearn.model_selection import GridSearchCV
 
 
-model = GradientBoostingClassifier()
+# Initialize the model with warm_start=True
+model = GradientBoostingClassifier(random_state=42, warm_start=True)
 
-# Define the parameter grid
+# Update param_grid for smaller ranges and fewer values
 param_grid = {
-    'n_estimators': [100, 200, 300],
-    'learning_rate': [0.01, 0.05, 0.1],
-    'max_depth': [3, 5, 7],
-    'min_samples_split': [2, 5, 10],
-    'min_samples_leaf': [1, 2, 4],
-    'subsample': [0.8, 0.9, 1.0]
+    'n_estimators': [100, 150],
+    'learning_rate': [0.05, 0.1],
+    'max_depth': [3, 5],
 }
 
-# Initialize the model
-model = GradientBoostingClassifier(random_state=42)
-
 # Initialize GridSearchCV
-model = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring='accuracy', n_jobs=-1, verbose=2)
+grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=3, scoring='accuracy', n_jobs=-1, verbose=2)
 
 # Load data
 excel_file_path = "./train.csv"
@@ -118,7 +113,7 @@ categorical_features = X_train.select_dtypes(include=['object', 'category']).col
 categorical_features_ordinal = ['VIP', 'Age_Cat']
 categorical_features_onehot = list(set(categorical_features)-set(categorical_features_ordinal))
 print(categorical_features_ordinal, categorical_features_onehot)
-['VIP', 'Age_Cat'] ['side', 'Destination', 'CryoSleep', 'deck', 'HomePlanet']
+
 X_train.isnull().sum()
 
 # Get unique elements for each column
@@ -126,11 +121,11 @@ for x in categorical_features:
     print(x, X_train[x].unique(), len(X_train[x].unique()))
 
 
-import pandas as pd
-from pandas_profiling import ProfileReport
-def gen_eda():
-    profile = ProfileReport(pd.concat([X_train, Y_train], axis=1), title='Pandas Profiling Report', explorative=True)
-    profile.to_file("pandas_profiling_report.html") 
+# import pandas as pd
+# from pandas_profiling import ProfileReport
+# def gen_eda():
+#     profile = ProfileReport(pd.concat([X_train, Y_train], axis=1), title='Pandas Profiling Report', explorative=True)
+#     profile.to_file("pandas_profiling_report.html") 
 # gen_eda()
 # Separate transformers for categorical and numerical features
 
