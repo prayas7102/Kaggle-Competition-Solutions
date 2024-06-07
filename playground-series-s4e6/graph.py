@@ -1,10 +1,17 @@
-# Load data
+# Import necessary libraries
+import os
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from scipy import stats
+import seaborn as sns
+import matplotlib.pyplot as plt
+import warnings
 
+warnings.filterwarnings("ignore")
 
+# Load data
 excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
+df = pd.DataFrame(df)
 
 
 def extract_first_last(df):
@@ -14,31 +21,10 @@ def extract_first_last(df):
 df = extract_first_last(df)
 df.columns
 df = df.drop_duplicates()
-df.head()
+df = df.drop(columns=["id", "Target", "Educational special needs", "International"])
+# Assuming df is your DataFrame
 
-
-# Define features and target
-def get_X_Y(df):
-    X = df.drop(columns=["id", "Target"])  # , "num", "side", "family_size"
-    Y = df["Target"]
-    return X, Y
-
-
-X, Y = get_X_Y(df)
-
-# Split data into train and test sets
-X_train, X_test, Y_train, Y_test = train_test_split(
-    X, Y, test_size=0.20, random_state=5
-)
-# Check columns
-# X_train, X_test = X,X
-# Y_train, Y_test = Y,Y
-print(X_train.columns, X_train.shape)
-
-# Get the list of numerical column names
-
-# Get the list of categorical column names
-categorical_features = [
+cat_feat = [
     "Marital status",
     "Application mode",
     "Application order",
@@ -77,5 +63,30 @@ categorical_features = [
     "GDP",
 ]
 
-for x in categorical_features:
-    print(X_train[x].value_counts())
+# Plot
+plt.figure(figsize=(14, 6))
+
+
+def draw_graph(df, save_dir="plots"):
+    # Create directory if it doesn't exist
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+    for col in df.columns:
+        plt.figure(figsize=(14, 4))
+        # First subplot: Histogram with KDE
+        plt.subplot(121)
+        sns.histplot(df[col], kde=True)
+        plt.title(f"{col} - Histogram")
+        # Second subplot: QQ plot
+        plt.subplot(122)
+        stats.probplot(df[col], dist="norm", plot=plt)
+        plt.title(f"{col} - QQ Plot")
+        # Save the figure
+        col = col.replace("/", " ")
+        plt.savefig(os.path.join(save_dir, f"{col}_plot.png"))
+        # Close the figure to free up memory
+        plt.close()
+
+
+# before transformation
+draw_graph(df)
