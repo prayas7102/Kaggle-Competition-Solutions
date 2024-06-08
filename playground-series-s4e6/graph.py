@@ -1,10 +1,15 @@
 # Import necessary libraries
 import os
+import numpy as np
 import pandas as pd
 from scipy import stats
 import seaborn as sns
 import matplotlib.pyplot as plt
 import warnings
+
+from sklearn.cluster import KMeans
+from sklearn.mixture import GaussianMixture
+from sklearn.preprocessing import PowerTransformer
 
 warnings.filterwarnings("ignore")
 
@@ -21,7 +26,7 @@ def extract_first_last(df):
 df = extract_first_last(df)
 df.columns
 df = df.drop_duplicates()
-df = df.drop(columns=["id", "Target", "Educational special needs", "International"])
+df = df.drop(columns=["id", "Target"])
 # Assuming df is your DataFrame
 
 cat_feat = [
@@ -61,10 +66,8 @@ cat_feat = [
     "Unemployment rate",
     "Inflation rate",
     "GDP",
+    "Educational special needs", "International"
 ]
-
-# Plot
-plt.figure(figsize=(14, 6))
 
 
 def draw_graph(df, save_dir="plots"):
