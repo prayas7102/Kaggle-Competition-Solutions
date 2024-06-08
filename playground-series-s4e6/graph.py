@@ -9,6 +9,7 @@ import warnings
 
 from sklearn.cluster import KMeans
 from sklearn.mixture import GaussianMixture
+from sklearn.pipeline import FunctionTransformer
 from sklearn.preprocessing import PowerTransformer
 
 warnings.filterwarnings("ignore")
@@ -26,7 +27,7 @@ def extract_first_last(df):
 df = extract_first_last(df)
 df.columns
 df = df.drop_duplicates()
-df = df.drop(columns=["id", "Target"])
+df = df.drop(columns=["id", "Target", "Educational special needs", "International"])
 # Assuming df is your DataFrame
 
 cat_feat = [
@@ -69,6 +70,7 @@ cat_feat = [
     "Educational special needs", "International"
 ]
 
+df['transformed_gdp'] = FunctionTransformer(np.sin).fit_transform(df[['GDP']])
 
 def draw_graph(df, save_dir="plots"):
     # Create directory if it doesn't exist
