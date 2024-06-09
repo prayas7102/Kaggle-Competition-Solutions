@@ -67,10 +67,10 @@ cat_feat = [
     "Unemployment rate",
     "Inflation rate",
     "GDP",
-    "Educational special needs", "International"
+    "Educational special needs",
+    "International",
 ]
 
-df['transformed_gdp'] = FunctionTransformer(np.sin).fit_transform(df[['GDP']])
 
 def draw_graph(df, save_dir="plots"):
     # Create directory if it doesn't exist
@@ -94,4 +94,9 @@ def draw_graph(df, save_dir="plots"):
 
 
 # before transformation
-draw_graph(df)
+# draw_graph(df)
+
+corr_matrix = df.corr()
+plt.figure(figsize=(12, 8))
+sns.heatmap(corr_matrix, annot=True, cmap="coolwarm")
+plt.show()
