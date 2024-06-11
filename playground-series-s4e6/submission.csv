@@ -137,7 +137,7 @@ id,Target
 76653,Graduate
 76654,Graduate
 76655,Dropout
-76656,Enrolled
+76656,Graduate
 76657,Graduate
 76658,Graduate
 76659,Dropout
@@ -212,7 +212,7 @@ id,Target
 76728,Dropout
 76729,Dropout
 76730,Dropout
-76731,Dropout
+76731,Enrolled
 76732,Dropout
 76733,Graduate
 76734,Graduate
@@ -225,7 +225,7 @@ id,Target
 76741,Graduate
 76742,Graduate
 76743,Graduate
-76744,Enrolled
+76744,Dropout
 76745,Graduate
 76746,Enrolled
 76747,Graduate
@@ -297,7 +297,7 @@ id,Target
 76813,Graduate
 76814,Graduate
 76815,Graduate
-76816,Enrolled
+76816,Dropout
 76817,Graduate
 76818,Graduate
 76819,Dropout
@@ -348,7 +348,7 @@ id,Target
 76864,Graduate
 76865,Graduate
 76866,Graduate
-76867,Graduate
+76867,Enrolled
 76868,Graduate
 76869,Dropout
 76870,Dropout
@@ -388,7 +388,7 @@ id,Target
 76904,Graduate
 76905,Graduate
 76906,Dropout
-76907,Enrolled
+76907,Graduate
 76908,Graduate
 76909,Graduate
 76910,Dropout
@@ -511,16 +511,16 @@ id,Target
 77027,Graduate
 77028,Dropout
 77029,Graduate
-77030,Enrolled
+77030,Graduate
 77031,Dropout
-77032,Graduate
+77032,Enrolled
 77033,Graduate
 77034,Graduate
 77035,Graduate
 77036,Graduate
 77037,Enrolled
 77038,Dropout
-77039,Dropout
+77039,Enrolled
 77040,Dropout
 77041,Graduate
 77042,Dropout
@@ -532,7 +532,7 @@ id,Target
 77048,Dropout
 77049,Dropout
 77050,Graduate
-77051,Graduate
+77051,Enrolled
 77052,Graduate
 77053,Dropout
 77054,Graduate
@@ -561,7 +561,7 @@ id,Target
 77077,Enrolled
 77078,Dropout
 77079,Enrolled
-77080,Enrolled
+77080,Dropout
 77081,Dropout
 77082,Enrolled
 77083,Enrolled
@@ -620,7 +620,7 @@ id,Target
 77136,Graduate
 77137,Graduate
 77138,Graduate
-77139,Enrolled
+77139,Graduate
 77140,Graduate
 77141,Graduate
 77142,Dropout
@@ -696,7 +696,7 @@ id,Target
 77212,Graduate
 77213,Dropout
 77214,Dropout
-77215,Enrolled
+77215,Graduate
 77216,Graduate
 77217,Dropout
 77218,Graduate
@@ -743,7 +743,7 @@ id,Target
 77259,Graduate
 77260,Enrolled
 77261,Dropout
-77262,Enrolled
+77262,Dropout
 77263,Graduate
 77264,Dropout
 77265,Enrolled
@@ -853,12 +853,12 @@ id,Target
 77369,Graduate
 77370,Dropout
 77371,Graduate
-77372,Dropout
+77372,Enrolled
 77373,Graduate
 77374,Dropout
 77375,Graduate
 77376,Dropout
-77377,Enrolled
+77377,Dropout
 77378,Dropout
 77379,Dropout
 77380,Graduate
@@ -879,8 +879,8 @@ id,Target
 77395,Enrolled
 77396,Enrolled
 77397,Enrolled
-77398,Enrolled
-77399,Enrolled
+77398,Dropout
+77399,Graduate
 77400,Graduate
 77401,Graduate
 77402,Graduate
@@ -924,7 +924,7 @@ id,Target
 77440,Dropout
 77441,Enrolled
 77442,Graduate
-77443,Graduate
+77443,Enrolled
 77444,Dropout
 77445,Graduate
 77446,Graduate
@@ -947,7 +947,7 @@ id,Target
 77463,Dropout
 77464,Graduate
 77465,Graduate
-77466,Graduate
+77466,Enrolled
 77467,Dropout
 77468,Dropout
 77469,Enrolled
@@ -955,7 +955,7 @@ id,Target
 77471,Enrolled
 77472,Dropout
 77473,Enrolled
-77474,Graduate
+77474,Enrolled
 77475,Dropout
 77476,Graduate
 77477,Enrolled
@@ -1072,7 +1072,7 @@ id,Target
 77588,Graduate
 77589,Dropout
 77590,Graduate
-77591,Graduate
+77591,Enrolled
 77592,Dropout
 77593,Graduate
 77594,Graduate
@@ -1109,7 +1109,7 @@ id,Target
 77625,Dropout
 77626,Dropout
 77627,Enrolled
-77628,Enrolled
+77628,Dropout
 77629,Graduate
 77630,Graduate
 77631,Enrolled
@@ -1157,7 +1157,7 @@ id,Target
 77673,Graduate
 77674,Graduate
 77675,Dropout
-77676,Enrolled
+77676,Graduate
 77677,Graduate
 77678,Graduate
 77679,Enrolled
@@ -1211,7 +1211,7 @@ id,Target
 77727,Dropout
 77728,Graduate
 77729,Graduate
-77730,Dropout
+77730,Enrolled
 77731,Enrolled
 77732,Dropout
 77733,Graduate
@@ -1238,7 +1238,7 @@ id,Target
 77754,Dropout
 77755,Enrolled
 77756,Dropout
-77757,Dropout
+77757,Enrolled
 77758,Graduate
 77759,Graduate
 77760,Enrolled
@@ -1347,7 +1347,7 @@ id,Target
 77863,Dropout
 77864,Enrolled
 77865,Enrolled
-77866,Graduate
+77866,Enrolled
 77867,Graduate
 77868,Graduate
 77869,Enrolled
@@ -1366,7 +1366,7 @@ id,Target
 77882,Graduate
 77883,Graduate
 77884,Dropout
-77885,Enrolled
+77885,Graduate
 77886,Dropout
 77887,Dropout
 77888,Enrolled
@@ -1453,7 +1453,7 @@ id,Target
 77969,Enrolled
 77970,Graduate
 77971,Graduate
-77972,Dropout
+77972,Enrolled
 77973,Dropout
 77974,Dropout
 77975,Dropout
@@ -1529,7 +1529,7 @@ id,Target
 78045,Enrolled
 78046,Graduate
 78047,Dropout
-78048,Enrolled
+78048,Dropout
 78049,Graduate
 78050,Graduate
 78051,Dropout
@@ -1580,7 +1580,7 @@ id,Target
 78096,Graduate
 78097,Enrolled
 78098,Graduate
-78099,Graduate
+78099,Enrolled
 78100,Graduate
 78101,Enrolled
 78102,Dropout
@@ -1814,7 +1814,7 @@ id,Target
 78330,Enrolled
 78331,Graduate
 78332,Dropout
-78333,Enrolled
+78333,Graduate
 78334,Enrolled
 78335,Enrolled
 78336,Enrolled
@@ -1842,9 +1842,9 @@ id,Target
 78358,Dropout
 78359,Dropout
 78360,Dropout
-78361,Graduate
+78361,Enrolled
 78362,Graduate
-78363,Graduate
+78363,Enrolled
 78364,Graduate
 78365,Dropout
 78366,Graduate
@@ -1878,7 +1878,7 @@ id,Target
 78394,Enrolled
 78395,Graduate
 78396,Enrolled
-78397,Enrolled
+78397,Dropout
 78398,Enrolled
 78399,Dropout
 78400,Dropout
@@ -1949,7 +1949,7 @@ id,Target
 78465,Enrolled
 78466,Graduate
 78467,Graduate
-78468,Enrolled
+78468,Dropout
 78469,Graduate
 78470,Graduate
 78471,Enrolled
@@ -2290,7 +2290,7 @@ id,Target
 78806,Enrolled
 78807,Dropout
 78808,Graduate
-78809,Graduate
+78809,Enrolled
 78810,Enrolled
 78811,Graduate
 78812,Enrolled
@@ -2349,7 +2349,7 @@ id,Target
 78865,Enrolled
 78866,Graduate
 78867,Graduate
-78868,Dropout
+78868,Graduate
 78869,Enrolled
 78870,Dropout
 78871,Dropout
@@ -2363,7 +2363,7 @@ id,Target
 78879,Enrolled
 78880,Graduate
 78881,Enrolled
-78882,Enrolled
+78882,Dropout
 78883,Graduate
 78884,Enrolled
 78885,Graduate
@@ -2469,7 +2469,7 @@ id,Target
 78985,Dropout
 78986,Graduate
 78987,Graduate
-78988,Enrolled
+78988,Dropout
 78989,Graduate
 78990,Graduate
 78991,Dropout
@@ -2552,7 +2552,7 @@ id,Target
 79068,Graduate
 79069,Dropout
 79070,Graduate
-79071,Enrolled
+79071,Graduate
 79072,Dropout
 79073,Graduate
 79074,Graduate
@@ -2650,12 +2650,12 @@ id,Target
 79166,Dropout
 79167,Enrolled
 79168,Dropout
-79169,Enrolled
+79169,Graduate
 79170,Graduate
 79171,Graduate
 79172,Graduate
 79173,Dropout
-79174,Enrolled
+79174,Graduate
 79175,Graduate
 79176,Graduate
 79177,Enrolled
@@ -2673,7 +2673,7 @@ id,Target
 79189,Graduate
 79190,Graduate
 79191,Graduate
-79192,Dropout
+79192,Enrolled
 79193,Graduate
 79194,Dropout
 79195,Graduate
@@ -2693,13 +2693,13 @@ id,Target
 79209,Graduate
 79210,Graduate
 79211,Graduate
-79212,Dropout
+79212,Graduate
 79213,Graduate
 79214,Graduate
 79215,Graduate
 79216,Dropout
 79217,Graduate
-79218,Enrolled
+79218,Dropout
 79219,Dropout
 79220,Graduate
 79221,Graduate
@@ -2794,9 +2794,9 @@ id,Target
 79310,Graduate
 79311,Graduate
 79312,Graduate
-79313,Dropout
+79313,Graduate
 79314,Graduate
-79315,Enrolled
+79315,Dropout
 79316,Dropout
 79317,Graduate
 79318,Graduate
@@ -2843,7 +2843,7 @@ id,Target
 79359,Graduate
 79360,Graduate
 79361,Graduate
-79362,Graduate
+79362,Enrolled
 79363,Dropout
 79364,Dropout
 79365,Dropout
@@ -2874,7 +2874,7 @@ id,Target
 79390,Graduate
 79391,Graduate
 79392,Graduate
-79393,Dropout
+79393,Enrolled
 79394,Enrolled
 79395,Enrolled
 79396,Dropout
@@ -2900,7 +2900,7 @@ id,Target
 79416,Graduate
 79417,Enrolled
 79418,Enrolled
-79419,Enrolled
+79419,Dropout
 79420,Graduate
 79421,Graduate
 79422,Graduate
@@ -2955,7 +2955,7 @@ id,Target
 79471,Graduate
 79472,Graduate
 79473,Enrolled
-79474,Enrolled
+79474,Dropout
 79475,Dropout
 79476,Dropout
 79477,Graduate
@@ -3013,7 +3013,7 @@ id,Target
 79529,Graduate
 79530,Graduate
 79531,Graduate
-79532,Dropout
+79532,Enrolled
 79533,Graduate
 79534,Dropout
 79535,Dropout
@@ -3051,7 +3051,7 @@ id,Target
 79567,Dropout
 79568,Graduate
 79569,Dropout
-79570,Enrolled
+79570,Graduate
 79571,Graduate
 79572,Dropout
 79573,Enrolled
@@ -3080,7 +3080,7 @@ id,Target
 79596,Enrolled
 79597,Graduate
 79598,Graduate
-79599,Enrolled
+79599,Graduate
 79600,Graduate
 79601,Enrolled
 79602,Graduate
@@ -3115,7 +3115,7 @@ id,Target
 79631,Graduate
 79632,Graduate
 79633,Enrolled
-79634,Graduate
+79634,Enrolled
 79635,Dropout
 79636,Dropout
 79637,Graduate
@@ -3155,7 +3155,7 @@ id,Target
 79671,Enrolled
 79672,Dropout
 79673,Dropout
-79674,Graduate
+79674,Enrolled
 79675,Graduate
 79676,Graduate
 79677,Dropout
@@ -3170,7 +3170,7 @@ id,Target
 79686,Graduate
 79687,Graduate
 79688,Dropout
-79689,Dropout
+79689,Enrolled
 79690,Graduate
 79691,Graduate
 79692,Graduate
@@ -3198,7 +3198,7 @@ id,Target
 79714,Dropout
 79715,Enrolled
 79716,Dropout
-79717,Enrolled
+79717,Graduate
 79718,Dropout
 79719,Graduate
 79720,Graduate
@@ -3242,7 +3242,7 @@ id,Target
 79758,Graduate
 79759,Graduate
 79760,Enrolled
-79761,Graduate
+79761,Enrolled
 79762,Graduate
 79763,Graduate
 79764,Graduate
@@ -3286,7 +3286,7 @@ id,Target
 79802,Graduate
 79803,Dropout
 79804,Graduate
-79805,Enrolled
+79805,Graduate
 79806,Enrolled
 79807,Graduate
 79808,Graduate
@@ -3385,7 +3385,7 @@ id,Target
 79901,Graduate
 79902,Graduate
 79903,Dropout
-79904,Graduate
+79904,Enrolled
 79905,Enrolled
 79906,Enrolled
 79907,Graduate
@@ -3448,7 +3448,7 @@ id,Target
 79964,Dropout
 79965,Enrolled
 79966,Enrolled
-79967,Graduate
+79967,Enrolled
 79968,Dropout
 79969,Graduate
 79970,Graduate
@@ -3478,7 +3478,7 @@ id,Target
 79994,Dropout
 79995,Dropout
 79996,Graduate
-79997,Enrolled
+79997,Graduate
 79998,Graduate
 79999,Dropout
 80000,Graduate
@@ -3529,14 +3529,14 @@ id,Target
 80045,Dropout
 80046,Enrolled
 80047,Graduate
-80048,Graduate
+80048,Enrolled
 80049,Graduate
 80050,Graduate
 80051,Dropout
 80052,Dropout
 80053,Enrolled
 80054,Dropout
-80055,Enrolled
+80055,Graduate
 80056,Graduate
 80057,Graduate
 80058,Graduate
@@ -3580,7 +3580,7 @@ id,Target
 80096,Graduate
 80097,Graduate
 80098,Dropout
-80099,Enrolled
+80099,Graduate
 80100,Dropout
 80101,Enrolled
 80102,Enrolled
@@ -3711,7 +3711,7 @@ id,Target
 80227,Dropout
 80228,Dropout
 80229,Dropout
-80230,Enrolled
+80230,Graduate
 80231,Graduate
 80232,Enrolled
 80233,Graduate
@@ -3723,7 +3723,7 @@ id,Target
 80239,Dropout
 80240,Enrolled
 80241,Graduate
-80242,Graduate
+80242,Enrolled
 80243,Enrolled
 80244,Dropout
 80245,Graduate
@@ -3753,7 +3753,7 @@ id,Target
 80269,Graduate
 80270,Graduate
 80271,Enrolled
-80272,Enrolled
+80272,Graduate
 80273,Graduate
 80274,Dropout
 80275,Dropout
@@ -4027,7 +4027,7 @@ id,Target
 80543,Dropout
 80544,Graduate
 80545,Graduate
-80546,Dropout
+80546,Enrolled
 80547,Enrolled
 80548,Dropout
 80549,Dropout
@@ -4086,7 +4086,7 @@ id,Target
 80602,Enrolled
 80603,Enrolled
 80604,Enrolled
-80605,Enrolled
+80605,Graduate
 80606,Enrolled
 80607,Graduate
 80608,Graduate
@@ -4264,7 +4264,7 @@ id,Target
 80780,Graduate
 80781,Enrolled
 80782,Graduate
-80783,Enrolled
+80783,Graduate
 80784,Graduate
 80785,Dropout
 80786,Graduate
@@ -4395,7 +4395,7 @@ id,Target
 80911,Graduate
 80912,Enrolled
 80913,Graduate
-80914,Dropout
+80914,Graduate
 80915,Enrolled
 80916,Graduate
 80917,Graduate
@@ -4406,7 +4406,7 @@ id,Target
 80922,Graduate
 80923,Enrolled
 80924,Dropout
-80925,Enrolled
+80925,Graduate
 80926,Graduate
 80927,Dropout
 80928,Graduate
@@ -4443,7 +4443,7 @@ id,Target
 80959,Graduate
 80960,Graduate
 80961,Enrolled
-80962,Enrolled
+80962,Graduate
 80963,Graduate
 80964,Graduate
 80965,Dropout
@@ -4457,7 +4457,7 @@ id,Target
 80973,Enrolled
 80974,Dropout
 80975,Dropout
-80976,Enrolled
+80976,Dropout
 80977,Enrolled
 80978,Graduate
 80979,Graduate
@@ -4486,7 +4486,7 @@ id,Target
 81002,Enrolled
 81003,Graduate
 81004,Graduate
-81005,Dropout
+81005,Enrolled
 81006,Graduate
 81007,Enrolled
 81008,Graduate
@@ -4513,7 +4513,7 @@ id,Target
 81029,Dropout
 81030,Dropout
 81031,Graduate
-81032,Dropout
+81032,Enrolled
 81033,Enrolled
 81034,Graduate
 81035,Enrolled
@@ -4603,8 +4603,8 @@ id,Target
 81119,Graduate
 81120,Dropout
 81121,Graduate
-81122,Enrolled
-81123,Dropout
+81122,Dropout
+81123,Enrolled
 81124,Dropout
 81125,Enrolled
 81126,Dropout
@@ -4726,7 +4726,7 @@ id,Target
 81242,Graduate
 81243,Graduate
 81244,Enrolled
-81245,Dropout
+81245,Enrolled
 81246,Graduate
 81247,Dropout
 81248,Graduate
@@ -4792,7 +4792,7 @@ id,Target
 81308,Dropout
 81309,Enrolled
 81310,Graduate
-81311,Graduate
+81311,Enrolled
 81312,Dropout
 81313,Dropout
 81314,Dropout
@@ -4909,7 +4909,7 @@ id,Target
 81425,Dropout
 81426,Enrolled
 81427,Dropout
-81428,Enrolled
+81428,Dropout
 81429,Graduate
 81430,Dropout
 81431,Graduate
@@ -4919,7 +4919,7 @@ id,Target
 81435,Dropout
 81436,Dropout
 81437,Dropout
-81438,Enrolled
+81438,Graduate
 81439,Graduate
 81440,Graduate
 81441,Graduate
@@ -4944,7 +4944,7 @@ id,Target
 81460,Graduate
 81461,Graduate
 81462,Enrolled
-81463,Graduate
+81463,Enrolled
 81464,Graduate
 81465,Graduate
 81466,Dropout
@@ -4971,7 +4971,7 @@ id,Target
 81487,Dropout
 81488,Dropout
 81489,Graduate
-81490,Graduate
+81490,Enrolled
 81491,Graduate
 81492,Graduate
 81493,Dropout
@@ -5117,7 +5117,7 @@ id,Target
 81633,Graduate
 81634,Graduate
 81635,Dropout
-81636,Graduate
+81636,Enrolled
 81637,Graduate
 81638,Dropout
 81639,Graduate
@@ -5406,8 +5406,8 @@ id,Target
 81922,Graduate
 81923,Graduate
 81924,Graduate
-81925,Dropout
-81926,Dropout
+81925,Enrolled
+81926,Enrolled
 81927,Graduate
 81928,Dropout
 81929,Dropout
@@ -5432,7 +5432,7 @@ id,Target
 81948,Graduate
 81949,Graduate
 81950,Graduate
-81951,Enrolled
+81951,Graduate
 81952,Enrolled
 81953,Dropout
 81954,Dropout
@@ -5485,8 +5485,8 @@ id,Target
 82001,Graduate
 82002,Graduate
 82003,Graduate
-82004,Graduate
-82005,Dropout
+82004,Enrolled
+82005,Enrolled
 82006,Graduate
 82007,Graduate
 82008,Enrolled
@@ -5533,7 +5533,7 @@ id,Target
 82049,Graduate
 82050,Enrolled
 82051,Enrolled
-82052,Enrolled
+82052,Graduate
 82053,Graduate
 82054,Enrolled
 82055,Graduate
@@ -5589,7 +5589,7 @@ id,Target
 82105,Graduate
 82106,Dropout
 82107,Graduate
-82108,Graduate
+82108,Enrolled
 82109,Enrolled
 82110,Dropout
 82111,Graduate
@@ -5690,7 +5690,7 @@ id,Target
 82206,Graduate
 82207,Enrolled
 82208,Dropout
-82209,Enrolled
+82209,Dropout
 82210,Enrolled
 82211,Enrolled
 82212,Graduate
@@ -5718,7 +5718,7 @@ id,Target
 82234,Dropout
 82235,Graduate
 82236,Enrolled
-82237,Enrolled
+82237,Graduate
 82238,Enrolled
 82239,Enrolled
 82240,Graduate
@@ -5731,7 +5731,7 @@ id,Target
 82247,Graduate
 82248,Graduate
 82249,Dropout
-82250,Enrolled
+82250,Dropout
 82251,Graduate
 82252,Graduate
 82253,Dropout
@@ -5834,8 +5834,8 @@ id,Target
 82350,Graduate
 82351,Graduate
 82352,Graduate
-82353,Enrolled
-82354,Dropout
+82353,Dropout
+82354,Enrolled
 82355,Graduate
 82356,Graduate
 82357,Graduate
@@ -5892,7 +5892,7 @@ id,Target
 82408,Graduate
 82409,Graduate
 82410,Enrolled
-82411,Dropout
+82411,Enrolled
 82412,Graduate
 82413,Dropout
 82414,Graduate
@@ -5930,7 +5930,7 @@ id,Target
 82446,Graduate
 82447,Dropout
 82448,Dropout
-82449,Graduate
+82449,Enrolled
 82450,Dropout
 82451,Graduate
 82452,Graduate
@@ -5956,7 +5956,7 @@ id,Target
 82472,Graduate
 82473,Graduate
 82474,Graduate
-82475,Graduate
+82475,Enrolled
 82476,Graduate
 82477,Graduate
 82478,Enrolled
@@ -5964,7 +5964,7 @@ id,Target
 82480,Graduate
 82481,Graduate
 82482,Enrolled
-82483,Enrolled
+82483,Dropout
 82484,Graduate
 82485,Graduate
 82486,Dropout
@@ -6112,7 +6112,7 @@ id,Target
 82628,Dropout
 82629,Dropout
 82630,Graduate
-82631,Enrolled
+82631,Graduate
 82632,Graduate
 82633,Graduate
 82634,Graduate
@@ -6152,7 +6152,7 @@ id,Target
 82668,Graduate
 82669,Graduate
 82670,Graduate
-82671,Graduate
+82671,Enrolled
 82672,Dropout
 82673,Enrolled
 82674,Graduate
@@ -6169,7 +6169,7 @@ id,Target
 82685,Graduate
 82686,Enrolled
 82687,Graduate
-82688,Enrolled
+82688,Graduate
 82689,Graduate
 82690,Enrolled
 82691,Enrolled
@@ -6218,7 +6218,7 @@ id,Target
 82734,Graduate
 82735,Graduate
 82736,Graduate
-82737,Dropout
+82737,Enrolled
 82738,Graduate
 82739,Enrolled
 82740,Enrolled
@@ -6288,7 +6288,7 @@ id,Target
 82804,Graduate
 82805,Graduate
 82806,Dropout
-82807,Dropout
+82807,Enrolled
 82808,Enrolled
 82809,Graduate
 82810,Dropout
@@ -6303,7 +6303,7 @@ id,Target
 82819,Enrolled
 82820,Enrolled
 82821,Graduate
-82822,Dropout
+82822,Enrolled
 82823,Dropout
 82824,Graduate
 82825,Dropout
@@ -6443,7 +6443,7 @@ id,Target
 82959,Graduate
 82960,Dropout
 82961,Graduate
-82962,Enrolled
+82962,Graduate
 82963,Enrolled
 82964,Dropout
 82965,Graduate
@@ -6553,7 +6553,7 @@ id,Target
 83069,Graduate
 83070,Dropout
 83071,Enrolled
-83072,Dropout
+83072,Enrolled
 83073,Graduate
 83074,Dropout
 83075,Graduate
@@ -6649,7 +6649,7 @@ id,Target
 83165,Graduate
 83166,Graduate
 83167,Enrolled
-83168,Enrolled
+83168,Dropout
 83169,Graduate
 83170,Graduate
 83171,Dropout
@@ -6669,7 +6669,7 @@ id,Target
 83185,Graduate
 83186,Enrolled
 83187,Enrolled
-83188,Dropout
+83188,Graduate
 83189,Graduate
 83190,Graduate
 83191,Graduate
@@ -6688,7 +6688,7 @@ id,Target
 83204,Graduate
 83205,Enrolled
 83206,Dropout
-83207,Enrolled
+83207,Graduate
 83208,Graduate
 83209,Graduate
 83210,Graduate
@@ -6744,7 +6744,7 @@ id,Target
 83260,Enrolled
 83261,Enrolled
 83262,Graduate
-83263,Enrolled
+83263,Dropout
 83264,Enrolled
 83265,Graduate
 83266,Dropout
@@ -6848,10 +6848,10 @@ id,Target
 83364,Graduate
 83365,Graduate
 83366,Graduate
-83367,Graduate
+83367,Enrolled
 83368,Graduate
 83369,Graduate
-83370,Graduate
+83370,Enrolled
 83371,Enrolled
 83372,Graduate
 83373,Enrolled
@@ -6863,7 +6863,7 @@ id,Target
 83379,Graduate
 83380,Dropout
 83381,Graduate
-83382,Dropout
+83382,Graduate
 83383,Dropout
 83384,Enrolled
 83385,Enrolled
@@ -6901,7 +6901,7 @@ id,Target
 83417,Dropout
 83418,Enrolled
 83419,Enrolled
-83420,Graduate
+83420,Enrolled
 83421,Graduate
 83422,Enrolled
 83423,Dropout
@@ -6989,7 +6989,7 @@ id,Target
 83505,Graduate
 83506,Graduate
 83507,Enrolled
-83508,Enrolled
+83508,Dropout
 83509,Graduate
 83510,Graduate
 83511,Dropout
@@ -7071,7 +7071,7 @@ id,Target
 83587,Graduate
 83588,Enrolled
 83589,Enrolled
-83590,Dropout
+83590,Enrolled
 83591,Enrolled
 83592,Graduate
 83593,Graduate
@@ -7133,10 +7133,10 @@ id,Target
 83649,Enrolled
 83650,Dropout
 83651,Enrolled
-83652,Enrolled
+83652,Dropout
 83653,Graduate
 83654,Graduate
-83655,Graduate
+83655,Enrolled
 83656,Enrolled
 83657,Dropout
 83658,Dropout
@@ -7158,7 +7158,7 @@ id,Target
 83674,Graduate
 83675,Graduate
 83676,Dropout
-83677,Dropout
+83677,Graduate
 83678,Graduate
 83679,Graduate
 83680,Graduate
@@ -7338,7 +7338,7 @@ id,Target
 83854,Graduate
 83855,Graduate
 83856,Enrolled
-83857,Enrolled
+83857,Graduate
 83858,Enrolled
 83859,Enrolled
 83860,Graduate
@@ -7413,7 +7413,7 @@ id,Target
 83929,Enrolled
 83930,Enrolled
 83931,Enrolled
-83932,Dropout
+83932,Enrolled
 83933,Graduate
 83934,Graduate
 83935,Graduate
@@ -7424,7 +7424,7 @@ id,Target
 83940,Graduate
 83941,Graduate
 83942,Enrolled
-83943,Graduate
+83943,Enrolled
 83944,Graduate
 83945,Graduate
 83946,Dropout
@@ -7583,7 +7583,7 @@ id,Target
 84099,Graduate
 84100,Graduate
 84101,Dropout
-84102,Enrolled
+84102,Graduate
 84103,Graduate
 84104,Enrolled
 84105,Enrolled
@@ -7632,7 +7632,7 @@ id,Target
 84148,Graduate
 84149,Enrolled
 84150,Graduate
-84151,Dropout
+84151,Graduate
 84152,Graduate
 84153,Graduate
 84154,Graduate
@@ -7666,7 +7666,7 @@ id,Target
 84182,Enrolled
 84183,Graduate
 84184,Graduate
-84185,Graduate
+84185,Enrolled
 84186,Graduate
 84187,Graduate
 84188,Graduate
@@ -7689,7 +7689,7 @@ id,Target
 84205,Graduate
 84206,Graduate
 84207,Dropout
-84208,Dropout
+84208,Graduate
 84209,Enrolled
 84210,Graduate
 84211,Graduate
@@ -7950,7 +7950,7 @@ id,Target
 84466,Graduate
 84467,Graduate
 84468,Enrolled
-84469,Enrolled
+84469,Dropout
 84470,Graduate
 84471,Graduate
 84472,Dropout
@@ -8192,7 +8192,7 @@ id,Target
 84708,Enrolled
 84709,Graduate
 84710,Graduate
-84711,Graduate
+84711,Dropout
 84712,Dropout
 84713,Enrolled
 84714,Graduate
@@ -8230,7 +8230,7 @@ id,Target
 84746,Graduate
 84747,Dropout
 84748,Graduate
-84749,Dropout
+84749,Enrolled
 84750,Graduate
 84751,Dropout
 84752,Graduate
@@ -8263,8 +8263,8 @@ id,Target
 84779,Graduate
 84780,Graduate
 84781,Enrolled
-84782,Dropout
-84783,Graduate
+84782,Graduate
+84783,Enrolled
 84784,Dropout
 84785,Dropout
 84786,Graduate
@@ -8282,7 +8282,7 @@ id,Target
 84798,Enrolled
 84799,Dropout
 84800,Graduate
-84801,Graduate
+84801,Enrolled
 84802,Dropout
 84803,Graduate
 84804,Dropout
@@ -8376,7 +8376,7 @@ id,Target
 84892,Enrolled
 84893,Graduate
 84894,Enrolled
-84895,Graduate
+84895,Enrolled
 84896,Enrolled
 84897,Graduate
 84898,Enrolled
@@ -8410,8 +8410,8 @@ id,Target
 84926,Dropout
 84927,Graduate
 84928,Dropout
-84929,Dropout
-84930,Graduate
+84929,Enrolled
+84930,Enrolled
 84931,Dropout
 84932,Enrolled
 84933,Dropout
@@ -8421,7 +8421,7 @@ id,Target
 84937,Enrolled
 84938,Graduate
 84939,Dropout
-84940,Graduate
+84940,Enrolled
 84941,Dropout
 84942,Graduate
 84943,Enrolled
@@ -8476,7 +8476,7 @@ id,Target
 84992,Enrolled
 84993,Graduate
 84994,Graduate
-84995,Graduate
+84995,Enrolled
 84996,Enrolled
 84997,Graduate
 84998,Graduate
@@ -8503,7 +8503,7 @@ id,Target
 85019,Graduate
 85020,Graduate
 85021,Dropout
-85022,Dropout
+85022,Enrolled
 85023,Graduate
 85024,Dropout
 85025,Graduate
@@ -8511,7 +8511,7 @@ id,Target
 85027,Graduate
 85028,Graduate
 85029,Graduate
-85030,Enrolled
+85030,Dropout
 85031,Dropout
 85032,Enrolled
 85033,Dropout
@@ -8760,8 +8760,8 @@ id,Target
 85276,Dropout
 85277,Dropout
 85278,Enrolled
-85279,Enrolled
-85280,Enrolled
+85279,Graduate
+85280,Graduate
 85281,Dropout
 85282,Graduate
 85283,Graduate
@@ -8783,7 +8783,7 @@ id,Target
 85299,Graduate
 85300,Enrolled
 85301,Enrolled
-85302,Enrolled
+85302,Graduate
 85303,Graduate
 85304,Enrolled
 85305,Dropout
@@ -8866,7 +8866,7 @@ id,Target
 85382,Graduate
 85383,Graduate
 85384,Enrolled
-85385,Enrolled
+85385,Graduate
 85386,Enrolled
 85387,Enrolled
 85388,Graduate
@@ -8970,7 +8970,7 @@ id,Target
 85486,Graduate
 85487,Dropout
 85488,Graduate
-85489,Enrolled
+85489,Graduate
 85490,Enrolled
 85491,Dropout
 85492,Graduate
@@ -8984,7 +8984,7 @@ id,Target
 85500,Graduate
 85501,Dropout
 85502,Graduate
-85503,Graduate
+85503,Enrolled
 85504,Dropout
 85505,Graduate
 85506,Enrolled
@@ -9083,7 +9083,7 @@ id,Target
 85599,Graduate
 85600,Enrolled
 85601,Enrolled
-85602,Dropout
+85602,Graduate
 85603,Graduate
 85604,Graduate
 85605,Graduate
@@ -9117,7 +9117,7 @@ id,Target
 85633,Dropout
 85634,Graduate
 85635,Dropout
-85636,Enrolled
+85636,Dropout
 85637,Graduate
 85638,Enrolled
 85639,Graduate
@@ -9251,7 +9251,7 @@ id,Target
 85767,Dropout
 85768,Graduate
 85769,Dropout
-85770,Dropout
+85770,Enrolled
 85771,Dropout
 85772,Enrolled
 85773,Graduate
@@ -9324,7 +9324,7 @@ id,Target
 85840,Dropout
 85841,Enrolled
 85842,Graduate
-85843,Dropout
+85843,Graduate
 85844,Graduate
 85845,Enrolled
 85846,Enrolled
@@ -9332,7 +9332,7 @@ id,Target
 85848,Graduate
 85849,Graduate
 85850,Graduate
-85851,Dropout
+85851,Enrolled
 85852,Graduate
 85853,Dropout
 85854,Enrolled
@@ -9386,7 +9386,7 @@ id,Target
 85902,Graduate
 85903,Graduate
 85904,Enrolled
-85905,Graduate
+85905,Enrolled
 85906,Graduate
 85907,Enrolled
 85908,Dropout
@@ -9521,13 +9521,13 @@ id,Target
 86037,Graduate
 86038,Graduate
 86039,Graduate
-86040,Enrolled
+86040,Graduate
 86041,Graduate
 86042,Graduate
 86043,Dropout
 86044,Graduate
 86045,Graduate
-86046,Enrolled
+86046,Graduate
 86047,Dropout
 86048,Dropout
 86049,Dropout
@@ -9550,7 +9550,7 @@ id,Target
 86066,Graduate
 86067,Enrolled
 86068,Dropout
-86069,Dropout
+86069,Enrolled
 86070,Dropout
 86071,Graduate
 86072,Dropout
@@ -9561,7 +9561,7 @@ id,Target
 86077,Dropout
 86078,Enrolled
 86079,Enrolled
-86080,Dropout
+86080,Graduate
 86081,Graduate
 86082,Graduate
 86083,Enrolled
@@ -9683,7 +9683,7 @@ id,Target
 86199,Dropout
 86200,Graduate
 86201,Enrolled
-86202,Enrolled
+86202,Graduate
 86203,Dropout
 86204,Graduate
 86205,Dropout
@@ -9931,7 +9931,7 @@ id,Target
 86447,Graduate
 86448,Enrolled
 86449,Graduate
-86450,Dropout
+86450,Enrolled
 86451,Dropout
 86452,Dropout
 86453,Enrolled
@@ -10061,7 +10061,7 @@ id,Target
 86577,Graduate
 86578,Graduate
 86579,Dropout
-86580,Enrolled
+86580,Dropout
 86581,Enrolled
 86582,Graduate
 86583,Dropout
@@ -10099,7 +10099,7 @@ id,Target
 86615,Graduate
 86616,Graduate
 86617,Graduate
-86618,Graduate
+86618,Dropout
 86619,Dropout
 86620,Graduate
 86621,Enrolled
@@ -10232,7 +10232,7 @@ id,Target
 86748,Graduate
 86749,Graduate
 86750,Graduate
-86751,Enrolled
+86751,Dropout
 86752,Graduate
 86753,Dropout
 86754,Graduate
@@ -10267,7 +10267,7 @@ id,Target
 86783,Dropout
 86784,Graduate
 86785,Enrolled
-86786,Enrolled
+86786,Graduate
 86787,Graduate
 86788,Dropout
 86789,Graduate
@@ -10303,7 +10303,7 @@ id,Target
 86819,Graduate
 86820,Dropout
 86821,Graduate
-86822,Enrolled
+86822,Dropout
 86823,Graduate
 86824,Graduate
 86825,Enrolled
@@ -10324,8 +10324,8 @@ id,Target
 86840,Dropout
 86841,Enrolled
 86842,Graduate
-86843,Enrolled
-86844,Enrolled
+86843,Graduate
+86844,Graduate
 86845,Dropout
 86846,Graduate
 86847,Graduate
@@ -10342,7 +10342,7 @@ id,Target
 86858,Graduate
 86859,Enrolled
 86860,Dropout
-86861,Enrolled
+86861,Dropout
 86862,Dropout
 86863,Dropout
 86864,Graduate
@@ -10557,10 +10557,10 @@ id,Target
 87073,Dropout
 87074,Dropout
 87075,Graduate
-87076,Graduate
+87076,Dropout
 87077,Graduate
 87078,Graduate
-87079,Graduate
+87079,Enrolled
 87080,Graduate
 87081,Dropout
 87082,Dropout
@@ -10591,7 +10591,7 @@ id,Target
 87107,Graduate
 87108,Enrolled
 87109,Graduate
-87110,Enrolled
+87110,Dropout
 87111,Dropout
 87112,Graduate
 87113,Enrolled
@@ -10779,14 +10779,14 @@ id,Target
 87295,Graduate
 87296,Enrolled
 87297,Dropout
-87298,Enrolled
+87298,Dropout
 87299,Graduate
 87300,Dropout
 87301,Graduate
 87302,Graduate
 87303,Graduate
 87304,Graduate
-87305,Enrolled
+87305,Dropout
 87306,Graduate
 87307,Graduate
 87308,Graduate
@@ -10843,7 +10843,7 @@ id,Target
 87359,Graduate
 87360,Graduate
 87361,Enrolled
-87362,Enrolled
+87362,Dropout
 87363,Enrolled
 87364,Graduate
 87365,Dropout
@@ -10946,7 +10946,7 @@ id,Target
 87462,Graduate
 87463,Graduate
 87464,Dropout
-87465,Graduate
+87465,Enrolled
 87466,Graduate
 87467,Graduate
 87468,Dropout
@@ -10969,7 +10969,7 @@ id,Target
 87485,Graduate
 87486,Graduate
 87487,Graduate
-87488,Enrolled
+87488,Graduate
 87489,Enrolled
 87490,Enrolled
 87491,Graduate
@@ -11110,7 +11110,7 @@ id,Target
 87626,Graduate
 87627,Dropout
 87628,Dropout
-87629,Graduate
+87629,Enrolled
 87630,Graduate
 87631,Graduate
 87632,Graduate
@@ -11127,7 +11127,7 @@ id,Target
 87643,Dropout
 87644,Graduate
 87645,Graduate
-87646,Dropout
+87646,Graduate
 87647,Dropout
 87648,Graduate
 87649,Graduate
@@ -11282,14 +11282,14 @@ id,Target
 87798,Dropout
 87799,Graduate
 87800,Dropout
-87801,Enrolled
+87801,Graduate
 87802,Graduate
 87803,Graduate
 87804,Enrolled
 87805,Graduate
 87806,Enrolled
 87807,Enrolled
-87808,Enrolled
+87808,Dropout
 87809,Dropout
 87810,Enrolled
 87811,Graduate
@@ -11362,7 +11362,7 @@ id,Target
 87878,Graduate
 87879,Graduate
 87880,Graduate
-87881,Dropout
+87881,Graduate
 87882,Dropout
 87883,Graduate
 87884,Graduate
@@ -11386,7 +11386,7 @@ id,Target
 87902,Enrolled
 87903,Dropout
 87904,Dropout
-87905,Dropout
+87905,Enrolled
 87906,Graduate
 87907,Graduate
 87908,Graduate
@@ -11420,7 +11420,7 @@ id,Target
 87936,Dropout
 87937,Enrolled
 87938,Graduate
-87939,Enrolled
+87939,Graduate
 87940,Dropout
 87941,Graduate
 87942,Graduate
@@ -11440,7 +11440,7 @@ id,Target
 87956,Enrolled
 87957,Dropout
 87958,Dropout
-87959,Enrolled
+87959,Dropout
 87960,Enrolled
 87961,Graduate
 87962,Graduate
@@ -11486,7 +11486,7 @@ id,Target
 88002,Graduate
 88003,Enrolled
 88004,Dropout
-88005,Dropout
+88005,Enrolled
 88006,Graduate
 88007,Enrolled
 88008,Graduate
@@ -11538,7 +11538,7 @@ id,Target
 88054,Graduate
 88055,Graduate
 88056,Enrolled
-88057,Enrolled
+88057,Graduate
 88058,Graduate
 88059,Graduate
 88060,Graduate
@@ -11571,7 +11571,7 @@ id,Target
 88087,Graduate
 88088,Graduate
 88089,Dropout
-88090,Graduate
+88090,Dropout
 88091,Dropout
 88092,Graduate
 88093,Graduate
@@ -11609,13 +11609,13 @@ id,Target
 88125,Graduate
 88126,Graduate
 88127,Graduate
-88128,Enrolled
+88128,Graduate
 88129,Enrolled
 88130,Enrolled
 88131,Graduate
 88132,Dropout
 88133,Dropout
-88134,Dropout
+88134,Enrolled
 88135,Dropout
 88136,Graduate
 88137,Graduate
@@ -11734,7 +11734,7 @@ id,Target
 88250,Dropout
 88251,Enrolled
 88252,Graduate
-88253,Enrolled
+88253,Dropout
 88254,Graduate
 88255,Graduate
 88256,Enrolled
@@ -11899,7 +11899,7 @@ id,Target
 88415,Dropout
 88416,Dropout
 88417,Graduate
-88418,Enrolled
+88418,Graduate
 88419,Graduate
 88420,Graduate
 88421,Dropout
@@ -11914,7 +11914,7 @@ id,Target
 88430,Dropout
 88431,Graduate
 88432,Graduate
-88433,Enrolled
+88433,Dropout
 88434,Graduate
 88435,Graduate
 88436,Enrolled
@@ -11933,7 +11933,7 @@ id,Target
 88449,Dropout
 88450,Dropout
 88451,Graduate
-88452,Enrolled
+88452,Dropout
 88453,Enrolled
 88454,Graduate
 88455,Enrolled
@@ -11947,7 +11947,7 @@ id,Target
 88463,Enrolled
 88464,Graduate
 88465,Graduate
-88466,Enrolled
+88466,Graduate
 88467,Graduate
 88468,Dropout
 88469,Graduate
@@ -11995,7 +11995,7 @@ id,Target
 88511,Dropout
 88512,Graduate
 88513,Dropout
-88514,Enrolled
+88514,Graduate
 88515,Graduate
 88516,Graduate
 88517,Dropout
@@ -12068,7 +12068,7 @@ id,Target
 88584,Graduate
 88585,Enrolled
 88586,Enrolled
-88587,Dropout
+88587,Graduate
 88588,Dropout
 88589,Dropout
 88590,Enrolled
@@ -12099,7 +12099,7 @@ id,Target
 88615,Graduate
 88616,Dropout
 88617,Graduate
-88618,Dropout
+88618,Enrolled
 88619,Enrolled
 88620,Dropout
 88621,Enrolled
@@ -12169,7 +12169,7 @@ id,Target
 88685,Graduate
 88686,Enrolled
 88687,Graduate
-88688,Dropout
+88688,Enrolled
 88689,Graduate
 88690,Enrolled
 88691,Dropout
@@ -12332,7 +12332,7 @@ id,Target
 88848,Dropout
 88849,Graduate
 88850,Dropout
-88851,Enrolled
+88851,Dropout
 88852,Graduate
 88853,Dropout
 88854,Dropout
@@ -12341,7 +12341,7 @@ id,Target
 88857,Graduate
 88858,Graduate
 88859,Graduate
-88860,Enrolled
+88860,Graduate
 88861,Graduate
 88862,Dropout
 88863,Graduate
@@ -12399,7 +12399,7 @@ id,Target
 88915,Graduate
 88916,Dropout
 88917,Graduate
-88918,Dropout
+88918,Enrolled
 88919,Dropout
 88920,Graduate
 88921,Graduate
@@ -12463,10 +12463,10 @@ id,Target
 88979,Dropout
 88980,Enrolled
 88981,Graduate
-88982,Graduate
-88983,Graduate
+88982,Enrolled
+88983,Enrolled
 88984,Dropout
-88985,Enrolled
+88985,Dropout
 88986,Graduate
 88987,Enrolled
 88988,Enrolled
@@ -12688,7 +12688,7 @@ id,Target
 89204,Graduate
 89205,Graduate
 89206,Graduate
-89207,Enrolled
+89207,Dropout
 89208,Graduate
 89209,Graduate
 89210,Graduate
@@ -12881,7 +12881,7 @@ id,Target
 89397,Dropout
 89398,Enrolled
 89399,Enrolled
-89400,Graduate
+89400,Enrolled
 89401,Dropout
 89402,Graduate
 89403,Dropout
@@ -12895,7 +12895,7 @@ id,Target
 89411,Enrolled
 89412,Enrolled
 89413,Graduate
-89414,Enrolled
+89414,Dropout
 89415,Graduate
 89416,Graduate
 89417,Enrolled
@@ -12906,7 +12906,7 @@ id,Target
 89422,Dropout
 89423,Enrolled
 89424,Graduate
-89425,Graduate
+89425,Enrolled
 89426,Dropout
 89427,Graduate
 89428,Graduate
@@ -12993,7 +12993,7 @@ id,Target
 89509,Enrolled
 89510,Dropout
 89511,Graduate
-89512,Dropout
+89512,Enrolled
 89513,Graduate
 89514,Dropout
 89515,Graduate
@@ -13111,7 +13111,7 @@ id,Target
 89627,Graduate
 89628,Graduate
 89629,Dropout
-89630,Enrolled
+89630,Dropout
 89631,Enrolled
 89632,Enrolled
 89633,Graduate
@@ -13201,7 +13201,7 @@ id,Target
 89717,Graduate
 89718,Dropout
 89719,Graduate
-89720,Enrolled
+89720,Dropout
 89721,Enrolled
 89722,Graduate
 89723,Graduate
@@ -13478,7 +13478,7 @@ id,Target
 89994,Enrolled
 89995,Graduate
 89996,Graduate
-89997,Dropout
+89997,Graduate
 89998,Graduate
 89999,Dropout
 90000,Graduate
@@ -13488,7 +13488,7 @@ id,Target
 90004,Graduate
 90005,Dropout
 90006,Graduate
-90007,Graduate
+90007,Enrolled
 90008,Graduate
 90009,Graduate
 90010,Dropout
@@ -13500,7 +13500,7 @@ id,Target
 90016,Graduate
 90017,Dropout
 90018,Dropout
-90019,Graduate
+90019,Enrolled
 90020,Dropout
 90021,Dropout
 90022,Dropout
@@ -13546,7 +13546,7 @@ id,Target
 90062,Dropout
 90063,Dropout
 90064,Graduate
-90065,Graduate
+90065,Dropout
 90066,Graduate
 90067,Graduate
 90068,Dropout
@@ -13598,7 +13598,7 @@ id,Target
 90114,Enrolled
 90115,Dropout
 90116,Graduate
-90117,Dropout
+90117,Graduate
 90118,Enrolled
 90119,Enrolled
 90120,Graduate
@@ -13646,7 +13646,7 @@ id,Target
 90162,Graduate
 90163,Graduate
 90164,Enrolled
-90165,Dropout
+90165,Graduate
 90166,Graduate
 90167,Dropout
 90168,Graduate
@@ -13658,7 +13658,7 @@ id,Target
 90174,Enrolled
 90175,Graduate
 90176,Dropout
-90177,Graduate
+90177,Enrolled
 90178,Graduate
 90179,Graduate
 90180,Enrolled
@@ -13697,7 +13697,7 @@ id,Target
 90213,Graduate
 90214,Graduate
 90215,Dropout
-90216,Graduate
+90216,Enrolled
 90217,Dropout
 90218,Graduate
 90219,Graduate
@@ -13761,7 +13761,7 @@ id,Target
 90277,Graduate
 90278,Graduate
 90279,Graduate
-90280,Graduate
+90280,Enrolled
 90281,Graduate
 90282,Dropout
 90283,Dropout
@@ -13815,7 +13815,7 @@ id,Target
 90331,Dropout
 90332,Graduate
 90333,Graduate
-90334,Enrolled
+90334,Graduate
 90335,Graduate
 90336,Graduate
 90337,Graduate
@@ -13879,7 +13879,7 @@ id,Target
 90395,Graduate
 90396,Dropout
 90397,Dropout
-90398,Dropout
+90398,Graduate
 90399,Enrolled
 90400,Enrolled
 90401,Graduate
@@ -13932,7 +13932,7 @@ id,Target
 90448,Graduate
 90449,Graduate
 90450,Graduate
-90451,Enrolled
+90451,Graduate
 90452,Enrolled
 90453,Graduate
 90454,Dropout
@@ -13947,7 +13947,7 @@ id,Target
 90463,Dropout
 90464,Graduate
 90465,Graduate
-90466,Dropout
+90466,Enrolled
 90467,Graduate
 90468,Dropout
 90469,Dropout
@@ -13994,7 +13994,7 @@ id,Target
 90510,Dropout
 90511,Graduate
 90512,Graduate
-90513,Enrolled
+90513,Graduate
 90514,Enrolled
 90515,Graduate
 90516,Graduate
@@ -14007,7 +14007,7 @@ id,Target
 90523,Dropout
 90524,Graduate
 90525,Graduate
-90526,Enrolled
+90526,Dropout
 90527,Dropout
 90528,Graduate
 90529,Graduate
@@ -14063,7 +14063,7 @@ id,Target
 90579,Enrolled
 90580,Enrolled
 90581,Graduate
-90582,Dropout
+90582,Enrolled
 90583,Graduate
 90584,Enrolled
 90585,Enrolled
@@ -14109,7 +14109,7 @@ id,Target
 90625,Graduate
 90626,Dropout
 90627,Enrolled
-90628,Graduate
+90628,Enrolled
 90629,Dropout
 90630,Graduate
 90631,Dropout
@@ -14137,7 +14137,7 @@ id,Target
 90653,Dropout
 90654,Graduate
 90655,Enrolled
-90656,Graduate
+90656,Dropout
 90657,Graduate
 90658,Dropout
 90659,Enrolled
@@ -14167,7 +14167,7 @@ id,Target
 90683,Dropout
 90684,Graduate
 90685,Graduate
-90686,Dropout
+90686,Enrolled
 90687,Graduate
 90688,Graduate
 90689,Graduate
@@ -14190,7 +14190,7 @@ id,Target
 90706,Graduate
 90707,Graduate
 90708,Enrolled
-90709,Enrolled
+90709,Graduate
 90710,Dropout
 90711,Graduate
 90712,Graduate
@@ -14364,7 +14364,7 @@ id,Target
 90880,Enrolled
 90881,Dropout
 90882,Graduate
-90883,Enrolled
+90883,Dropout
 90884,Enrolled
 90885,Graduate
 90886,Graduate
@@ -14505,7 +14505,7 @@ id,Target
 91021,Graduate
 91022,Enrolled
 91023,Enrolled
-91024,Enrolled
+91024,Graduate
 91025,Dropout
 91026,Graduate
 91027,Graduate
@@ -14632,7 +14632,7 @@ id,Target
 91148,Graduate
 91149,Graduate
 91150,Enrolled
-91151,Enrolled
+91151,Graduate
 91152,Graduate
 91153,Dropout
 91154,Graduate
@@ -14881,10 +14881,10 @@ id,Target
 91397,Enrolled
 91398,Graduate
 91399,Graduate
-91400,Dropout
+91400,Enrolled
 91401,Dropout
 91402,Graduate
-91403,Graduate
+91403,Enrolled
 91404,Enrolled
 91405,Dropout
 91406,Enrolled
@@ -14926,7 +14926,7 @@ id,Target
 91442,Graduate
 91443,Enrolled
 91444,Graduate
-91445,Graduate
+91445,Enrolled
 91446,Dropout
 91447,Dropout
 91448,Dropout
@@ -14984,7 +14984,7 @@ id,Target
 91500,Graduate
 91501,Graduate
 91502,Graduate
-91503,Graduate
+91503,Dropout
 91504,Dropout
 91505,Graduate
 91506,Dropout
@@ -15005,7 +15005,7 @@ id,Target
 91521,Graduate
 91522,Dropout
 91523,Dropout
-91524,Graduate
+91524,Enrolled
 91525,Graduate
 91526,Graduate
 91527,Graduate
@@ -15023,7 +15023,7 @@ id,Target
 91539,Graduate
 91540,Enrolled
 91541,Graduate
-91542,Graduate
+91542,Enrolled
 91543,Enrolled
 91544,Dropout
 91545,Enrolled
@@ -15227,7 +15227,7 @@ id,Target
 91743,Enrolled
 91744,Dropout
 91745,Graduate
-91746,Graduate
+91746,Enrolled
 91747,Graduate
 91748,Graduate
 91749,Graduate
@@ -15253,7 +15253,7 @@ id,Target
 91769,Graduate
 91770,Dropout
 91771,Dropout
-91772,Enrolled
+91772,Graduate
 91773,Graduate
 91774,Dropout
 91775,Dropout
@@ -15322,7 +15322,7 @@ id,Target
 91838,Dropout
 91839,Dropout
 91840,Enrolled
-91841,Enrolled
+91841,Dropout
 91842,Graduate
 91843,Graduate
 91844,Graduate
@@ -15497,7 +15497,7 @@ id,Target
 92013,Graduate
 92014,Dropout
 92015,Enrolled
-92016,Dropout
+92016,Enrolled
 92017,Graduate
 92018,Dropout
 92019,Graduate
@@ -15690,7 +15690,7 @@ id,Target
 92206,Dropout
 92207,Dropout
 92208,Enrolled
-92209,Dropout
+92209,Enrolled
 92210,Graduate
 92211,Graduate
 92212,Graduate
@@ -15815,7 +15815,7 @@ id,Target
 92331,Graduate
 92332,Graduate
 92333,Graduate
-92334,Dropout
+92334,Graduate
 92335,Graduate
 92336,Dropout
 92337,Dropout
@@ -15834,7 +15834,7 @@ id,Target
 92350,Graduate
 92351,Enrolled
 92352,Graduate
-92353,Enrolled
+92353,Graduate
 92354,Dropout
 92355,Dropout
 92356,Dropout
@@ -15870,7 +15870,7 @@ id,Target
 92386,Dropout
 92387,Dropout
 92388,Dropout
-92389,Enrolled
+92389,Dropout
 92390,Graduate
 92391,Enrolled
 92392,Graduate
@@ -15887,7 +15887,7 @@ id,Target
 92403,Enrolled
 92404,Graduate
 92405,Dropout
-92406,Dropout
+92406,Graduate
 92407,Graduate
 92408,Dropout
 92409,Graduate
@@ -15904,13 +15904,13 @@ id,Target
 92420,Enrolled
 92421,Enrolled
 92422,Dropout
-92423,Graduate
+92423,Enrolled
 92424,Enrolled
 92425,Dropout
 92426,Enrolled
 92427,Enrolled
 92428,Graduate
-92429,Graduate
+92429,Enrolled
 92430,Enrolled
 92431,Graduate
 92432,Graduate
@@ -15986,7 +15986,7 @@ id,Target
 92502,Graduate
 92503,Graduate
 92504,Enrolled
-92505,Graduate
+92505,Enrolled
 92506,Dropout
 92507,Dropout
 92508,Graduate
@@ -15999,7 +15999,7 @@ id,Target
 92515,Dropout
 92516,Dropout
 92517,Graduate
-92518,Enrolled
+92518,Dropout
 92519,Dropout
 92520,Enrolled
 92521,Enrolled
@@ -16081,7 +16081,7 @@ id,Target
 92597,Enrolled
 92598,Enrolled
 92599,Graduate
-92600,Enrolled
+92600,Dropout
 92601,Graduate
 92602,Dropout
 92603,Dropout
@@ -16120,7 +16120,7 @@ id,Target
 92636,Graduate
 92637,Enrolled
 92638,Dropout
-92639,Enrolled
+92639,Dropout
 92640,Graduate
 92641,Graduate
 92642,Enrolled
@@ -16179,7 +16179,7 @@ id,Target
 92695,Enrolled
 92696,Enrolled
 92697,Graduate
-92698,Dropout
+92698,Graduate
 92699,Graduate
 92700,Graduate
 92701,Enrolled
@@ -16253,7 +16253,7 @@ id,Target
 92769,Graduate
 92770,Graduate
 92771,Dropout
-92772,Graduate
+92772,Dropout
 92773,Graduate
 92774,Graduate
 92775,Graduate
@@ -16296,7 +16296,7 @@ id,Target
 92812,Graduate
 92813,Graduate
 92814,Enrolled
-92815,Graduate
+92815,Dropout
 92816,Graduate
 92817,Dropout
 92818,Graduate
@@ -16429,10 +16429,10 @@ id,Target
 92945,Graduate
 92946,Dropout
 92947,Graduate
-92948,Enrolled
+92948,Graduate
 92949,Graduate
 92950,Dropout
-92951,Enrolled
+92951,Dropout
 92952,Dropout
 92953,Graduate
 92954,Graduate
@@ -16502,7 +16502,7 @@ id,Target
 93018,Dropout
 93019,Graduate
 93020,Graduate
-93021,Graduate
+93021,Enrolled
 93022,Dropout
 93023,Dropout
 93024,Graduate
@@ -16583,12 +16583,12 @@ id,Target
 93099,Graduate
 93100,Dropout
 93101,Graduate
-93102,Enrolled
+93102,Dropout
 93103,Enrolled
 93104,Dropout
 93105,Graduate
 93106,Graduate
-93107,Enrolled
+93107,Dropout
 93108,Graduate
 93109,Graduate
 93110,Graduate
@@ -16890,7 +16890,7 @@ id,Target
 93406,Graduate
 93407,Graduate
 93408,Graduate
-93409,Enrolled
+93409,Graduate
 93410,Dropout
 93411,Graduate
 93412,Graduate
@@ -17083,14 +17083,14 @@ id,Target
 93599,Graduate
 93600,Graduate
 93601,Dropout
-93602,Graduate
+93602,Enrolled
 93603,Graduate
 93604,Graduate
 93605,Enrolled
 93606,Graduate
 93607,Enrolled
 93608,Graduate
-93609,Enrolled
+93609,Graduate
 93610,Dropout
 93611,Enrolled
 93612,Enrolled
@@ -17179,7 +17179,7 @@ id,Target
 93695,Dropout
 93696,Dropout
 93697,Enrolled
-93698,Enrolled
+93698,Graduate
 93699,Graduate
 93700,Graduate
 93701,Graduate
@@ -17203,7 +17203,7 @@ id,Target
 93719,Enrolled
 93720,Graduate
 93721,Dropout
-93722,Graduate
+93722,Enrolled
 93723,Graduate
 93724,Enrolled
 93725,Graduate
@@ -17225,7 +17225,7 @@ id,Target
 93741,Enrolled
 93742,Dropout
 93743,Dropout
-93744,Graduate
+93744,Dropout
 93745,Graduate
 93746,Graduate
 93747,Enrolled
@@ -17254,7 +17254,7 @@ id,Target
 93770,Dropout
 93771,Dropout
 93772,Graduate
-93773,Enrolled
+93773,Dropout
 93774,Dropout
 93775,Dropout
 93776,Graduate
@@ -17293,7 +17293,7 @@ id,Target
 93809,Graduate
 93810,Graduate
 93811,Graduate
-93812,Dropout
+93812,Enrolled
 93813,Dropout
 93814,Dropout
 93815,Dropout
@@ -17345,7 +17345,7 @@ id,Target
 93861,Graduate
 93862,Enrolled
 93863,Graduate
-93864,Enrolled
+93864,Graduate
 93865,Graduate
 93866,Graduate
 93867,Dropout
@@ -17392,7 +17392,7 @@ id,Target
 93908,Dropout
 93909,Graduate
 93910,Graduate
-93911,Graduate
+93911,Dropout
 93912,Enrolled
 93913,Dropout
 93914,Graduate
@@ -17422,7 +17422,7 @@ id,Target
 93938,Enrolled
 93939,Dropout
 93940,Graduate
-93941,Graduate
+93941,Dropout
 93942,Enrolled
 93943,Graduate
 93944,Enrolled
@@ -17466,7 +17466,7 @@ id,Target
 93982,Graduate
 93983,Graduate
 93984,Dropout
-93985,Enrolled
+93985,Graduate
 93986,Enrolled
 93987,Dropout
 93988,Graduate
@@ -17514,7 +17514,7 @@ id,Target
 94030,Enrolled
 94031,Dropout
 94032,Graduate
-94033,Dropout
+94033,Enrolled
 94034,Graduate
 94035,Dropout
 94036,Graduate
@@ -17573,7 +17573,7 @@ id,Target
 94089,Dropout
 94090,Graduate
 94091,Enrolled
-94092,Enrolled
+94092,Graduate
 94093,Dropout
 94094,Dropout
 94095,Enrolled
@@ -17589,7 +17589,7 @@ id,Target
 94105,Dropout
 94106,Graduate
 94107,Graduate
-94108,Enrolled
+94108,Graduate
 94109,Graduate
 94110,Graduate
 94111,Dropout
@@ -17720,7 +17720,7 @@ id,Target
 94236,Graduate
 94237,Dropout
 94238,Graduate
-94239,Dropout
+94239,Enrolled
 94240,Enrolled
 94241,Graduate
 94242,Graduate
@@ -17951,7 +17951,7 @@ id,Target
 94467,Graduate
 94468,Graduate
 94469,Graduate
-94470,Graduate
+94470,Enrolled
 94471,Graduate
 94472,Graduate
 94473,Graduate
@@ -18028,7 +18028,7 @@ id,Target
 94544,Graduate
 94545,Enrolled
 94546,Graduate
-94547,Graduate
+94547,Enrolled
 94548,Dropout
 94549,Enrolled
 94550,Graduate
@@ -18101,7 +18101,7 @@ id,Target
 94617,Graduate
 94618,Enrolled
 94619,Dropout
-94620,Dropout
+94620,Enrolled
 94621,Enrolled
 94622,Dropout
 94623,Graduate
@@ -18143,7 +18143,7 @@ id,Target
 94659,Dropout
 94660,Graduate
 94661,Dropout
-94662,Enrolled
+94662,Graduate
 94663,Enrolled
 94664,Enrolled
 94665,Graduate
@@ -18199,7 +18199,7 @@ id,Target
 94715,Graduate
 94716,Dropout
 94717,Graduate
-94718,Graduate
+94718,Dropout
 94719,Graduate
 94720,Dropout
 94721,Graduate
@@ -18300,7 +18300,7 @@ id,Target
 94816,Enrolled
 94817,Graduate
 94818,Graduate
-94819,Dropout
+94819,Enrolled
 94820,Dropout
 94821,Enrolled
 94822,Graduate
@@ -18336,7 +18336,7 @@ id,Target
 94852,Dropout
 94853,Graduate
 94854,Dropout
-94855,Enrolled
+94855,Dropout
 94856,Graduate
 94857,Graduate
 94858,Graduate
@@ -18386,7 +18386,7 @@ id,Target
 94902,Graduate
 94903,Graduate
 94904,Dropout
-94905,Graduate
+94905,Enrolled
 94906,Graduate
 94907,Dropout
 94908,Graduate
@@ -18482,7 +18482,7 @@ id,Target
 94998,Graduate
 94999,Dropout
 95000,Dropout
-95001,Enrolled
+95001,Dropout
 95002,Enrolled
 95003,Dropout
 95004,Dropout
@@ -18532,7 +18532,7 @@ id,Target
 95048,Enrolled
 95049,Dropout
 95050,Dropout
-95051,Graduate
+95051,Enrolled
 95052,Graduate
 95053,Graduate
 95054,Graduate
@@ -18546,7 +18546,7 @@ id,Target
 95062,Graduate
 95063,Enrolled
 95064,Dropout
-95065,Graduate
+95065,Enrolled
 95066,Dropout
 95067,Graduate
 95068,Graduate
@@ -18575,7 +18575,7 @@ id,Target
 95091,Enrolled
 95092,Graduate
 95093,Enrolled
-95094,Graduate
+95094,Enrolled
 95095,Graduate
 95096,Enrolled
 95097,Graduate
@@ -18645,7 +18645,7 @@ id,Target
 95161,Graduate
 95162,Graduate
 95163,Dropout
-95164,Graduate
+95164,Enrolled
 95165,Enrolled
 95166,Dropout
 95167,Graduate
@@ -18723,8 +18723,8 @@ id,Target
 95239,Graduate
 95240,Dropout
 95241,Graduate
-95242,Graduate
-95243,Graduate
+95242,Enrolled
+95243,Enrolled
 95244,Graduate
 95245,Graduate
 95246,Enrolled
@@ -18770,7 +18770,7 @@ id,Target
 95286,Enrolled
 95287,Dropout
 95288,Graduate
-95289,Enrolled
+95289,Graduate
 95290,Enrolled
 95291,Dropout
 95292,Enrolled
@@ -18797,7 +18797,7 @@ id,Target
 95313,Enrolled
 95314,Graduate
 95315,Graduate
-95316,Dropout
+95316,Enrolled
 95317,Enrolled
 95318,Dropout
 95319,Enrolled
@@ -18911,7 +18911,7 @@ id,Target
 95427,Dropout
 95428,Dropout
 95429,Dropout
-95430,Enrolled
+95430,Graduate
 95431,Graduate
 95432,Graduate
 95433,Dropout
@@ -18949,7 +18949,7 @@ id,Target
 95465,Graduate
 95466,Dropout
 95467,Enrolled
-95468,Graduate
+95468,Dropout
 95469,Dropout
 95470,Graduate
 95471,Enrolled
@@ -19087,7 +19087,7 @@ id,Target
 95603,Graduate
 95604,Graduate
 95605,Enrolled
-95606,Enrolled
+95606,Graduate
 95607,Enrolled
 95608,Dropout
 95609,Enrolled
@@ -19154,7 +19154,7 @@ id,Target
 95670,Dropout
 95671,Dropout
 95672,Dropout
-95673,Graduate
+95673,Enrolled
 95674,Graduate
 95675,Dropout
 95676,Graduate
@@ -19163,10 +19163,10 @@ id,Target
 95679,Graduate
 95680,Graduate
 95681,Dropout
-95682,Dropout
+95682,Enrolled
 95683,Graduate
 95684,Graduate
-95685,Enrolled
+95685,Graduate
 95686,Enrolled
 95687,Enrolled
 95688,Dropout
@@ -19186,7 +19186,7 @@ id,Target
 95702,Dropout
 95703,Dropout
 95704,Dropout
-95705,Graduate
+95705,Enrolled
 95706,Graduate
 95707,Dropout
 95708,Dropout
@@ -19259,7 +19259,7 @@ id,Target
 95775,Dropout
 95776,Dropout
 95777,Graduate
-95778,Enrolled
+95778,Dropout
 95779,Graduate
 95780,Graduate
 95781,Enrolled
@@ -19267,7 +19267,7 @@ id,Target
 95783,Graduate
 95784,Graduate
 95785,Dropout
-95786,Graduate
+95786,Enrolled
 95787,Dropout
 95788,Graduate
 95789,Graduate
@@ -19347,10 +19347,10 @@ id,Target
 95863,Graduate
 95864,Graduate
 95865,Dropout
-95866,Graduate
+95866,Enrolled
 95867,Enrolled
 95868,Graduate
-95869,Graduate
+95869,Enrolled
 95870,Dropout
 95871,Dropout
 95872,Dropout
@@ -19599,7 +19599,7 @@ id,Target
 96115,Enrolled
 96116,Graduate
 96117,Graduate
-96118,Graduate
+96118,Enrolled
 96119,Dropout
 96120,Graduate
 96121,Graduate
@@ -19758,14 +19758,14 @@ id,Target
 96274,Graduate
 96275,Dropout
 96276,Enrolled
-96277,Graduate
+96277,Enrolled
 96278,Graduate
 96279,Graduate
 96280,Dropout
 96281,Dropout
 96282,Dropout
 96283,Graduate
-96284,Enrolled
+96284,Dropout
 96285,Enrolled
 96286,Graduate
 96287,Graduate
@@ -19778,7 +19778,7 @@ id,Target
 96294,Graduate
 96295,Enrolled
 96296,Graduate
-96297,Dropout
+96297,Enrolled
 96298,Graduate
 96299,Graduate
 96300,Graduate
@@ -19798,13 +19798,13 @@ id,Target
 96314,Graduate
 96315,Graduate
 96316,Graduate
-96317,Enrolled
+96317,Dropout
 96318,Graduate
 96319,Dropout
 96320,Graduate
 96321,Dropout
 96322,Graduate
-96323,Dropout
+96323,Graduate
 96324,Enrolled
 96325,Enrolled
 96326,Enrolled
@@ -19880,7 +19880,7 @@ id,Target
 96396,Graduate
 96397,Graduate
 96398,Graduate
-96399,Dropout
+96399,Enrolled
 96400,Graduate
 96401,Enrolled
 96402,Dropout
@@ -19901,17 +19901,17 @@ id,Target
 96417,Enrolled
 96418,Dropout
 96419,Graduate
-96420,Graduate
+96420,Enrolled
 96421,Enrolled
 96422,Graduate
-96423,Enrolled
+96423,Graduate
 96424,Dropout
 96425,Enrolled
 96426,Graduate
 96427,Graduate
 96428,Enrolled
 96429,Enrolled
-96430,Enrolled
+96430,Graduate
 96431,Enrolled
 96432,Enrolled
 96433,Dropout
@@ -19934,7 +19934,7 @@ id,Target
 96450,Dropout
 96451,Enrolled
 96452,Dropout
-96453,Enrolled
+96453,Graduate
 96454,Enrolled
 96455,Graduate
 96456,Graduate
@@ -19967,7 +19967,7 @@ id,Target
 96483,Graduate
 96484,Graduate
 96485,Graduate
-96486,Enrolled
+96486,Dropout
 96487,Graduate
 96488,Graduate
 96489,Graduate
@@ -20131,7 +20131,7 @@ id,Target
 96647,Dropout
 96648,Enrolled
 96649,Dropout
-96650,Dropout
+96650,Enrolled
 96651,Graduate
 96652,Graduate
 96653,Dropout
@@ -20161,7 +20161,7 @@ id,Target
 96677,Graduate
 96678,Enrolled
 96679,Graduate
-96680,Enrolled
+96680,Graduate
 96681,Graduate
 96682,Dropout
 96683,Enrolled
@@ -20296,7 +20296,7 @@ id,Target
 96812,Graduate
 96813,Dropout
 96814,Dropout
-96815,Graduate
+96815,Enrolled
 96816,Graduate
 96817,Graduate
 96818,Graduate
@@ -20346,7 +20346,7 @@ id,Target
 96862,Graduate
 96863,Graduate
 96864,Graduate
-96865,Graduate
+96865,Enrolled
 96866,Graduate
 96867,Graduate
 96868,Dropout
@@ -20388,7 +20388,7 @@ id,Target
 96904,Graduate
 96905,Dropout
 96906,Enrolled
-96907,Enrolled
+96907,Dropout
 96908,Enrolled
 96909,Graduate
 96910,Dropout
@@ -20440,11 +20440,11 @@ id,Target
 96956,Dropout
 96957,Enrolled
 96958,Dropout
-96959,Graduate
+96959,Enrolled
 96960,Dropout
 96961,Graduate
 96962,Graduate
-96963,Enrolled
+96963,Dropout
 96964,Dropout
 96965,Dropout
 96966,Enrolled
@@ -20504,7 +20504,7 @@ id,Target
 97020,Graduate
 97021,Graduate
 97022,Graduate
-97023,Enrolled
+97023,Graduate
 97024,Graduate
 97025,Graduate
 97026,Graduate
@@ -20525,7 +20525,7 @@ id,Target
 97041,Graduate
 97042,Dropout
 97043,Graduate
-97044,Graduate
+97044,Enrolled
 97045,Graduate
 97046,Graduate
 97047,Graduate
@@ -20535,7 +20535,7 @@ id,Target
 97051,Graduate
 97052,Graduate
 97053,Graduate
-97054,Graduate
+97054,Enrolled
 97055,Enrolled
 97056,Graduate
 97057,Dropout
@@ -20556,12 +20556,12 @@ id,Target
 97072,Dropout
 97073,Graduate
 97074,Dropout
-97075,Enrolled
+97075,Graduate
 97076,Graduate
 97077,Dropout
 97078,Enrolled
 97079,Graduate
-97080,Enrolled
+97080,Dropout
 97081,Enrolled
 97082,Enrolled
 97083,Graduate
@@ -20578,7 +20578,7 @@ id,Target
 97094,Dropout
 97095,Graduate
 97096,Enrolled
-97097,Graduate
+97097,Enrolled
 97098,Graduate
 97099,Dropout
 97100,Graduate
@@ -20672,7 +20672,7 @@ id,Target
 97188,Enrolled
 97189,Graduate
 97190,Enrolled
-97191,Graduate
+97191,Enrolled
 97192,Graduate
 97193,Enrolled
 97194,Graduate
@@ -20715,7 +20715,7 @@ id,Target
 97231,Graduate
 97232,Graduate
 97233,Graduate
-97234,Graduate
+97234,Enrolled
 97235,Dropout
 97236,Dropout
 97237,Graduate
@@ -20801,7 +20801,7 @@ id,Target
 97317,Dropout
 97318,Enrolled
 97319,Enrolled
-97320,Enrolled
+97320,Dropout
 97321,Graduate
 97322,Enrolled
 97323,Enrolled
@@ -20836,7 +20836,7 @@ id,Target
 97352,Dropout
 97353,Graduate
 97354,Graduate
-97355,Dropout
+97355,Enrolled
 97356,Dropout
 97357,Graduate
 97358,Graduate
@@ -20956,7 +20956,7 @@ id,Target
 97472,Dropout
 97473,Graduate
 97474,Graduate
-97475,Dropout
+97475,Graduate
 97476,Graduate
 97477,Graduate
 97478,Dropout
@@ -21044,20 +21044,20 @@ id,Target
 97560,Enrolled
 97561,Graduate
 97562,Graduate
-97563,Graduate
+97563,Enrolled
 97564,Dropout
 97565,Graduate
 97566,Graduate
 97567,Graduate
 97568,Graduate
-97569,Enrolled
+97569,Graduate
 97570,Graduate
 97571,Graduate
 97572,Graduate
 97573,Dropout
 97574,Graduate
 97575,Graduate
-97576,Enrolled
+97576,Dropout
 97577,Enrolled
 97578,Enrolled
 97579,Enrolled
@@ -21167,7 +21167,7 @@ id,Target
 97683,Graduate
 97684,Graduate
 97685,Graduate
-97686,Enrolled
+97686,Dropout
 97687,Dropout
 97688,Graduate
 97689,Graduate
@@ -21192,7 +21192,7 @@ id,Target
 97708,Graduate
 97709,Graduate
 97710,Graduate
-97711,Graduate
+97711,Enrolled
 97712,Dropout
 97713,Enrolled
 97714,Dropout
@@ -21270,7 +21270,7 @@ id,Target
 97786,Graduate
 97787,Dropout
 97788,Graduate
-97789,Graduate
+97789,Enrolled
 97790,Dropout
 97791,Graduate
 97792,Graduate
@@ -21286,7 +21286,7 @@ id,Target
 97802,Enrolled
 97803,Dropout
 97804,Graduate
-97805,Dropout
+97805,Enrolled
 97806,Dropout
 97807,Graduate
 97808,Enrolled
@@ -21379,7 +21379,7 @@ id,Target
 97895,Dropout
 97896,Dropout
 97897,Enrolled
-97898,Dropout
+97898,Enrolled
 97899,Graduate
 97900,Graduate
 97901,Enrolled
@@ -21390,7 +21390,7 @@ id,Target
 97906,Graduate
 97907,Enrolled
 97908,Graduate
-97909,Graduate
+97909,Enrolled
 97910,Enrolled
 97911,Graduate
 97912,Enrolled
@@ -21450,7 +21450,7 @@ id,Target
 97966,Enrolled
 97967,Graduate
 97968,Enrolled
-97969,Graduate
+97969,Dropout
 97970,Graduate
 97971,Dropout
 97972,Enrolled
@@ -21476,7 +21476,7 @@ id,Target
 97992,Graduate
 97993,Dropout
 97994,Dropout
-97995,Enrolled
+97995,Graduate
 97996,Graduate
 97997,Graduate
 97998,Graduate
@@ -21586,7 +21586,7 @@ id,Target
 98102,Enrolled
 98103,Graduate
 98104,Enrolled
-98105,Graduate
+98105,Enrolled
 98106,Dropout
 98107,Dropout
 98108,Graduate
@@ -21771,7 +21771,7 @@ id,Target
 98287,Graduate
 98288,Dropout
 98289,Graduate
-98290,Dropout
+98290,Enrolled
 98291,Enrolled
 98292,Graduate
 98293,Dropout
@@ -21810,7 +21810,7 @@ id,Target
 98326,Graduate
 98327,Dropout
 98328,Enrolled
-98329,Enrolled
+98329,Dropout
 98330,Graduate
 98331,Dropout
 98332,Dropout
@@ -21844,12 +21844,12 @@ id,Target
 98360,Dropout
 98361,Graduate
 98362,Graduate
-98363,Enrolled
+98363,Dropout
 98364,Dropout
 98365,Dropout
 98366,Graduate
 98367,Dropout
-98368,Enrolled
+98368,Graduate
 98369,Dropout
 98370,Enrolled
 98371,Enrolled
@@ -22109,14 +22109,14 @@ id,Target
 98625,Dropout
 98626,Graduate
 98627,Graduate
-98628,Enrolled
+98628,Graduate
 98629,Graduate
 98630,Graduate
 98631,Graduate
 98632,Dropout
 98633,Graduate
 98634,Graduate
-98635,Graduate
+98635,Enrolled
 98636,Graduate
 98637,Dropout
 98638,Dropout
@@ -22171,7 +22171,7 @@ id,Target
 98687,Graduate
 98688,Enrolled
 98689,Dropout
-98690,Graduate
+98690,Enrolled
 98691,Graduate
 98692,Graduate
 98693,Graduate
@@ -22226,7 +22226,7 @@ id,Target
 98742,Enrolled
 98743,Dropout
 98744,Graduate
-98745,Graduate
+98745,Enrolled
 98746,Enrolled
 98747,Dropout
 98748,Enrolled
@@ -22374,10 +22374,10 @@ id,Target
 98890,Graduate
 98891,Dropout
 98892,Graduate
-98893,Graduate
+98893,Dropout
 98894,Enrolled
 98895,Graduate
-98896,Enrolled
+98896,Graduate
 98897,Dropout
 98898,Graduate
 98899,Graduate
@@ -22422,7 +22422,7 @@ id,Target
 98938,Dropout
 98939,Graduate
 98940,Enrolled
-98941,Enrolled
+98941,Dropout
 98942,Enrolled
 98943,Graduate
 98944,Dropout
@@ -22474,7 +22474,7 @@ id,Target
 98990,Graduate
 98991,Dropout
 98992,Graduate
-98993,Dropout
+98993,Graduate
 98994,Graduate
 98995,Dropout
 98996,Graduate
@@ -22495,7 +22495,7 @@ id,Target
 99011,Graduate
 99012,Dropout
 99013,Graduate
-99014,Enrolled
+99014,Graduate
 99015,Graduate
 99016,Graduate
 99017,Graduate
@@ -22514,7 +22514,7 @@ id,Target
 99030,Dropout
 99031,Graduate
 99032,Dropout
-99033,Enrolled
+99033,Dropout
 99034,Dropout
 99035,Graduate
 99036,Graduate
@@ -22557,7 +22557,7 @@ id,Target
 99073,Graduate
 99074,Graduate
 99075,Enrolled
-99076,Graduate
+99076,Dropout
 99077,Dropout
 99078,Graduate
 99079,Graduate
@@ -22590,7 +22590,7 @@ id,Target
 99106,Graduate
 99107,Graduate
 99108,Graduate
-99109,Enrolled
+99109,Graduate
 99110,Graduate
 99111,Graduate
 99112,Dropout
@@ -22602,7 +22602,7 @@ id,Target
 99118,Graduate
 99119,Dropout
 99120,Graduate
-99121,Dropout
+99121,Enrolled
 99122,Graduate
 99123,Dropout
 99124,Dropout
@@ -22633,11 +22633,11 @@ id,Target
 99149,Graduate
 99150,Graduate
 99151,Enrolled
-99152,Graduate
+99152,Enrolled
 99153,Dropout
 99154,Graduate
 99155,Graduate
-99156,Graduate
+99156,Enrolled
 99157,Dropout
 99158,Graduate
 99159,Graduate
@@ -22656,7 +22656,7 @@ id,Target
 99172,Graduate
 99173,Graduate
 99174,Dropout
-99175,Enrolled
+99175,Graduate
 99176,Dropout
 99177,Enrolled
 99178,Dropout
@@ -22668,7 +22668,7 @@ id,Target
 99184,Dropout
 99185,Enrolled
 99186,Dropout
-99187,Enrolled
+99187,Graduate
 99188,Dropout
 99189,Graduate
 99190,Graduate
@@ -22726,8 +22726,8 @@ id,Target
 99242,Dropout
 99243,Dropout
 99244,Graduate
-99245,Enrolled
-99246,Dropout
+99245,Dropout
+99246,Enrolled
 99247,Dropout
 99248,Graduate
 99249,Dropout
@@ -22762,7 +22762,7 @@ id,Target
 99278,Graduate
 99279,Enrolled
 99280,Graduate
-99281,Graduate
+99281,Enrolled
 99282,Graduate
 99283,Graduate
 99284,Graduate
@@ -22848,7 +22848,7 @@ id,Target
 99364,Graduate
 99365,Dropout
 99366,Graduate
-99367,Enrolled
+99367,Graduate
 99368,Dropout
 99369,Dropout
 99370,Enrolled
@@ -22866,7 +22866,7 @@ id,Target
 99382,Dropout
 99383,Enrolled
 99384,Graduate
-99385,Graduate
+99385,Enrolled
 99386,Graduate
 99387,Graduate
 99388,Graduate
@@ -22960,7 +22960,7 @@ id,Target
 99476,Graduate
 99477,Dropout
 99478,Graduate
-99479,Enrolled
+99479,Graduate
 99480,Graduate
 99481,Graduate
 99482,Graduate
@@ -23083,7 +23083,7 @@ id,Target
 99599,Graduate
 99600,Dropout
 99601,Graduate
-99602,Enrolled
+99602,Graduate
 99603,Graduate
 99604,Dropout
 99605,Enrolled
@@ -23127,7 +23127,7 @@ id,Target
 99643,Graduate
 99644,Dropout
 99645,Dropout
-99646,Graduate
+99646,Enrolled
 99647,Graduate
 99648,Enrolled
 99649,Enrolled
@@ -23192,7 +23192,7 @@ id,Target
 99708,Dropout
 99709,Graduate
 99710,Graduate
-99711,Dropout
+99711,Enrolled
 99712,Enrolled
 99713,Graduate
 99714,Graduate
@@ -23250,7 +23250,7 @@ id,Target
 99766,Graduate
 99767,Dropout
 99768,Graduate
-99769,Enrolled
+99769,Graduate
 99770,Graduate
 99771,Enrolled
 99772,Graduate
@@ -23294,9 +23294,9 @@ id,Target
 99810,Graduate
 99811,Graduate
 99812,Graduate
-99813,Enrolled
+99813,Dropout
 99814,Graduate
-99815,Graduate
+99815,Enrolled
 99816,Graduate
 99817,Enrolled
 99818,Dropout
@@ -23422,7 +23422,7 @@ id,Target
 99938,Dropout
 99939,Graduate
 99940,Enrolled
-99941,Graduate
+99941,Enrolled
 99942,Graduate
 99943,Graduate
 99944,Dropout
@@ -23498,14 +23498,14 @@ id,Target
 100014,Enrolled
 100015,Enrolled
 100016,Graduate
-100017,Graduate
+100017,Enrolled
 100018,Graduate
 100019,Graduate
 100020,Enrolled
 100021,Graduate
 100022,Dropout
 100023,Enrolled
-100024,Graduate
+100024,Dropout
 100025,Enrolled
 100026,Dropout
 100027,Dropout
@@ -23531,7 +23531,7 @@ id,Target
 100047,Graduate
 100048,Dropout
 100049,Graduate
-100050,Dropout
+100050,Enrolled
 100051,Dropout
 100052,Enrolled
 100053,Dropout
@@ -23725,12 +23725,12 @@ id,Target
 100241,Graduate
 100242,Dropout
 100243,Graduate
-100244,Graduate
+100244,Enrolled
 100245,Dropout
 100246,Graduate
 100247,Graduate
 100248,Dropout
-100249,Enrolled
+100249,Graduate
 100250,Graduate
 100251,Graduate
 100252,Dropout
@@ -23750,7 +23750,7 @@ id,Target
 100266,Enrolled
 100267,Graduate
 100268,Graduate
-100269,Dropout
+100269,Enrolled
 100270,Enrolled
 100271,Graduate
 100272,Graduate
@@ -23809,7 +23809,7 @@ id,Target
 100325,Graduate
 100326,Dropout
 100327,Graduate
-100328,Graduate
+100328,Enrolled
 100329,Graduate
 100330,Graduate
 100331,Enrolled
@@ -23842,7 +23842,7 @@ id,Target
 100358,Graduate
 100359,Graduate
 100360,Graduate
-100361,Enrolled
+100361,Graduate
 100362,Dropout
 100363,Dropout
 100364,Graduate
@@ -24021,7 +24021,7 @@ id,Target
 100537,Enrolled
 100538,Graduate
 100539,Dropout
-100540,Graduate
+100540,Enrolled
 100541,Enrolled
 100542,Graduate
 100543,Graduate
@@ -24031,7 +24031,7 @@ id,Target
 100547,Enrolled
 100548,Dropout
 100549,Graduate
-100550,Graduate
+100550,Enrolled
 100551,Graduate
 100552,Graduate
 100553,Graduate
@@ -24074,7 +24074,7 @@ id,Target
 100590,Graduate
 100591,Enrolled
 100592,Graduate
-100593,Graduate
+100593,Enrolled
 100594,Graduate
 100595,Dropout
 100596,Graduate
@@ -24089,7 +24089,7 @@ id,Target
 100605,Enrolled
 100606,Graduate
 100607,Graduate
-100608,Dropout
+100608,Enrolled
 100609,Dropout
 100610,Enrolled
 100611,Graduate
@@ -24209,7 +24209,7 @@ id,Target
 100725,Graduate
 100726,Enrolled
 100727,Enrolled
-100728,Enrolled
+100728,Dropout
 100729,Graduate
 100730,Graduate
 100731,Enrolled
@@ -24238,9 +24238,9 @@ id,Target
 100754,Graduate
 100755,Graduate
 100756,Graduate
-100757,Enrolled
+100757,Dropout
 100758,Graduate
-100759,Graduate
+100759,Dropout
 100760,Enrolled
 100761,Enrolled
 100762,Dropout
@@ -24304,7 +24304,7 @@ id,Target
 100820,Graduate
 100821,Graduate
 100822,Graduate
-100823,Enrolled
+100823,Graduate
 100824,Graduate
 100825,Graduate
 100826,Dropout
@@ -24445,7 +24445,7 @@ id,Target
 100961,Dropout
 100962,Enrolled
 100963,Graduate
-100964,Graduate
+100964,Enrolled
 100965,Graduate
 100966,Graduate
 100967,Graduate
@@ -24474,7 +24474,7 @@ id,Target
 100990,Graduate
 100991,Graduate
 100992,Graduate
-100993,Enrolled
+100993,Dropout
 100994,Graduate
 100995,Graduate
 100996,Dropout
@@ -24487,7 +24487,7 @@ id,Target
 101003,Graduate
 101004,Graduate
 101005,Graduate
-101006,Enrolled
+101006,Dropout
 101007,Dropout
 101008,Dropout
 101009,Enrolled
@@ -24532,7 +24532,7 @@ id,Target
 101048,Graduate
 101049,Dropout
 101050,Graduate
-101051,Enrolled
+101051,Dropout
 101052,Enrolled
 101053,Dropout
 101054,Enrolled
@@ -24554,7 +24554,7 @@ id,Target
 101070,Graduate
 101071,Dropout
 101072,Graduate
-101073,Enrolled
+101073,Graduate
 101074,Dropout
 101075,Graduate
 101076,Dropout
@@ -24579,7 +24579,7 @@ id,Target
 101095,Dropout
 101096,Graduate
 101097,Dropout
-101098,Graduate
+101098,Enrolled
 101099,Graduate
 101100,Dropout
 101101,Dropout
@@ -24615,7 +24615,7 @@ id,Target
 101131,Dropout
 101132,Dropout
 101133,Graduate
-101134,Enrolled
+101134,Graduate
 101135,Dropout
 101136,Graduate
 101137,Graduate
@@ -24646,10 +24646,10 @@ id,Target
 101162,Dropout
 101163,Enrolled
 101164,Graduate
-101165,Enrolled
+101165,Dropout
 101166,Enrolled
 101167,Graduate
-101168,Dropout
+101168,Enrolled
 101169,Graduate
 101170,Dropout
 101171,Graduate
@@ -24745,7 +24745,7 @@ id,Target
 101261,Graduate
 101262,Graduate
 101263,Dropout
-101264,Enrolled
+101264,Graduate
 101265,Graduate
 101266,Enrolled
 101267,Graduate
@@ -24793,7 +24793,7 @@ id,Target
 101309,Dropout
 101310,Graduate
 101311,Graduate
-101312,Enrolled
+101312,Graduate
 101313,Dropout
 101314,Graduate
 101315,Graduate
@@ -24835,14 +24835,14 @@ id,Target
 101351,Graduate
 101352,Graduate
 101353,Graduate
-101354,Enrolled
+101354,Graduate
 101355,Graduate
 101356,Graduate
 101357,Graduate
 101358,Graduate
 101359,Dropout
 101360,Enrolled
-101361,Dropout
+101361,Enrolled
 101362,Dropout
 101363,Graduate
 101364,Graduate
@@ -24950,7 +24950,7 @@ id,Target
 101466,Graduate
 101467,Enrolled
 101468,Graduate
-101469,Graduate
+101469,Enrolled
 101470,Graduate
 101471,Graduate
 101472,Dropout
@@ -24971,7 +24971,7 @@ id,Target
 101487,Graduate
 101488,Graduate
 101489,Dropout
-101490,Enrolled
+101490,Graduate
 101491,Enrolled
 101492,Graduate
 101493,Graduate
@@ -24995,7 +24995,7 @@ id,Target
 101511,Graduate
 101512,Enrolled
 101513,Dropout
-101514,Enrolled
+101514,Dropout
 101515,Enrolled
 101516,Graduate
 101517,Dropout
@@ -25018,7 +25018,7 @@ id,Target
 101534,Dropout
 101535,Dropout
 101536,Enrolled
-101537,Enrolled
+101537,Dropout
 101538,Graduate
 101539,Dropout
 101540,Dropout
@@ -25123,7 +25123,7 @@ id,Target
 101639,Graduate
 101640,Dropout
 101641,Enrolled
-101642,Dropout
+101642,Enrolled
 101643,Graduate
 101644,Enrolled
 101645,Enrolled
@@ -25180,13 +25180,13 @@ id,Target
 101696,Dropout
 101697,Enrolled
 101698,Graduate
-101699,Graduate
+101699,Enrolled
 101700,Graduate
 101701,Dropout
 101702,Dropout
 101703,Dropout
 101704,Graduate
-101705,Dropout
+101705,Enrolled
 101706,Graduate
 101707,Dropout
 101708,Graduate
@@ -25195,7 +25195,7 @@ id,Target
 101711,Graduate
 101712,Dropout
 101713,Graduate
-101714,Enrolled
+101714,Dropout
 101715,Graduate
 101716,Graduate
 101717,Graduate
@@ -25233,7 +25233,7 @@ id,Target
 101749,Graduate
 101750,Enrolled
 101751,Dropout
-101752,Graduate
+101752,Enrolled
 101753,Dropout
 101754,Dropout
 101755,Graduate
@@ -25405,7 +25405,7 @@ id,Target
 101921,Dropout
 101922,Graduate
 101923,Graduate
-101924,Graduate
+101924,Enrolled
 101925,Graduate
 101926,Graduate
 101927,Enrolled
@@ -25461,7 +25461,7 @@ id,Target
 101977,Graduate
 101978,Graduate
 101979,Graduate
-101980,Enrolled
+101980,Graduate
 101981,Graduate
 101982,Graduate
 101983,Graduate
@@ -25509,7 +25509,7 @@ id,Target
 102025,Graduate
 102026,Enrolled
 102027,Graduate
-102028,Graduate
+102028,Enrolled
 102029,Enrolled
 102030,Graduate
 102031,Dropout
@@ -25641,7 +25641,7 @@ id,Target
 102157,Graduate
 102158,Graduate
 102159,Graduate
-102160,Graduate
+102160,Enrolled
 102161,Graduate
 102162,Enrolled
 102163,Dropout
@@ -25855,7 +25855,7 @@ id,Target
 102371,Enrolled
 102372,Graduate
 102373,Enrolled
-102374,Enrolled
+102374,Dropout
 102375,Graduate
 102376,Graduate
 102377,Graduate
@@ -25899,7 +25899,7 @@ id,Target
 102415,Enrolled
 102416,Graduate
 102417,Graduate
-102418,Dropout
+102418,Enrolled
 102419,Enrolled
 102420,Graduate
 102421,Graduate
@@ -25936,7 +25936,7 @@ id,Target
 102452,Graduate
 102453,Dropout
 102454,Graduate
-102455,Enrolled
+102455,Graduate
 102456,Graduate
 102457,Graduate
 102458,Graduate
@@ -25957,7 +25957,7 @@ id,Target
 102473,Graduate
 102474,Dropout
 102475,Graduate
-102476,Enrolled
+102476,Dropout
 102477,Graduate
 102478,Dropout
 102479,Dropout
@@ -26005,7 +26005,7 @@ id,Target
 102521,Dropout
 102522,Graduate
 102523,Dropout
-102524,Graduate
+102524,Dropout
 102525,Graduate
 102526,Graduate
 102527,Graduate
@@ -26028,7 +26028,7 @@ id,Target
 102544,Graduate
 102545,Graduate
 102546,Dropout
-102547,Dropout
+102547,Enrolled
 102548,Enrolled
 102549,Graduate
 102550,Graduate
@@ -26081,7 +26081,7 @@ id,Target
 102597,Graduate
 102598,Graduate
 102599,Graduate
-102600,Enrolled
+102600,Dropout
 102601,Graduate
 102602,Dropout
 102603,Graduate
@@ -26117,7 +26117,7 @@ id,Target
 102633,Graduate
 102634,Graduate
 102635,Graduate
-102636,Enrolled
+102636,Dropout
 102637,Enrolled
 102638,Graduate
 102639,Enrolled
@@ -26209,7 +26209,7 @@ id,Target
 102725,Graduate
 102726,Graduate
 102727,Graduate
-102728,Graduate
+102728,Enrolled
 102729,Dropout
 102730,Dropout
 102731,Enrolled
@@ -26278,7 +26278,7 @@ id,Target
 102794,Graduate
 102795,Dropout
 102796,Enrolled
-102797,Enrolled
+102797,Graduate
 102798,Dropout
 102799,Dropout
 102800,Dropout
@@ -26297,7 +26297,7 @@ id,Target
 102813,Graduate
 102814,Graduate
 102815,Enrolled
-102816,Enrolled
+102816,Graduate
 102817,Dropout
 102818,Dropout
 102819,Graduate
@@ -26353,7 +26353,7 @@ id,Target
 102869,Graduate
 102870,Graduate
 102871,Dropout
-102872,Enrolled
+102872,Dropout
 102873,Graduate
 102874,Enrolled
 102875,Enrolled
@@ -26450,7 +26450,7 @@ id,Target
 102966,Dropout
 102967,Dropout
 102968,Graduate
-102969,Enrolled
+102969,Dropout
 102970,Enrolled
 102971,Dropout
 102972,Dropout
@@ -26576,7 +26576,7 @@ id,Target
 103092,Dropout
 103093,Graduate
 103094,Graduate
-103095,Enrolled
+103095,Dropout
 103096,Graduate
 103097,Graduate
 103098,Graduate
@@ -26636,7 +26636,7 @@ id,Target
 103152,Dropout
 103153,Dropout
 103154,Enrolled
-103155,Dropout
+103155,Enrolled
 103156,Graduate
 103157,Graduate
 103158,Graduate
@@ -26745,7 +26745,7 @@ id,Target
 103261,Enrolled
 103262,Graduate
 103263,Enrolled
-103264,Graduate
+103264,Enrolled
 103265,Graduate
 103266,Dropout
 103267,Graduate
@@ -26816,12 +26816,12 @@ id,Target
 103332,Graduate
 103333,Graduate
 103334,Dropout
-103335,Enrolled
+103335,Dropout
 103336,Graduate
 103337,Graduate
 103338,Enrolled
 103339,Dropout
-103340,Enrolled
+103340,Graduate
 103341,Enrolled
 103342,Dropout
 103343,Dropout
@@ -26833,7 +26833,7 @@ id,Target
 103349,Graduate
 103350,Dropout
 103351,Graduate
-103352,Enrolled
+103352,Graduate
 103353,Enrolled
 103354,Enrolled
 103355,Dropout
@@ -26893,7 +26893,7 @@ id,Target
 103409,Enrolled
 103410,Graduate
 103411,Graduate
-103412,Graduate
+103412,Enrolled
 103413,Dropout
 103414,Dropout
 103415,Enrolled
@@ -26938,7 +26938,7 @@ id,Target
 103454,Graduate
 103455,Graduate
 103456,Dropout
-103457,Enrolled
+103457,Dropout
 103458,Graduate
 103459,Graduate
 103460,Graduate
@@ -27012,7 +27012,7 @@ id,Target
 103528,Graduate
 103529,Enrolled
 103530,Graduate
-103531,Graduate
+103531,Dropout
 103532,Dropout
 103533,Enrolled
 103534,Dropout
@@ -27039,8 +27039,8 @@ id,Target
 103555,Enrolled
 103556,Graduate
 103557,Enrolled
-103558,Enrolled
-103559,Graduate
+103558,Graduate
+103559,Enrolled
 103560,Graduate
 103561,Dropout
 103562,Graduate
@@ -27078,7 +27078,7 @@ id,Target
 103594,Graduate
 103595,Dropout
 103596,Graduate
-103597,Dropout
+103597,Enrolled
 103598,Dropout
 103599,Dropout
 103600,Graduate
@@ -27211,14 +27211,14 @@ id,Target
 103727,Dropout
 103728,Graduate
 103729,Dropout
-103730,Graduate
+103730,Enrolled
 103731,Graduate
 103732,Dropout
 103733,Graduate
 103734,Enrolled
 103735,Enrolled
 103736,Dropout
-103737,Dropout
+103737,Enrolled
 103738,Graduate
 103739,Dropout
 103740,Graduate
@@ -27226,10 +27226,10 @@ id,Target
 103742,Enrolled
 103743,Enrolled
 103744,Graduate
-103745,Enrolled
+103745,Dropout
 103746,Enrolled
 103747,Enrolled
-103748,Graduate
+103748,Enrolled
 103749,Enrolled
 103750,Dropout
 103751,Dropout
@@ -27248,8 +27248,8 @@ id,Target
 103764,Enrolled
 103765,Graduate
 103766,Dropout
-103767,Enrolled
-103768,Enrolled
+103767,Dropout
+103768,Dropout
 103769,Graduate
 103770,Dropout
 103771,Graduate
@@ -27336,7 +27336,7 @@ id,Target
 103852,Dropout
 103853,Graduate
 103854,Graduate
-103855,Enrolled
+103855,Dropout
 103856,Graduate
 103857,Dropout
 103858,Dropout
@@ -27376,7 +27376,7 @@ id,Target
 103892,Dropout
 103893,Enrolled
 103894,Dropout
-103895,Enrolled
+103895,Graduate
 103896,Enrolled
 103897,Graduate
 103898,Graduate
@@ -27406,7 +27406,7 @@ id,Target
 103922,Graduate
 103923,Graduate
 103924,Dropout
-103925,Enrolled
+103925,Graduate
 103926,Dropout
 103927,Graduate
 103928,Dropout
@@ -27436,7 +27436,7 @@ id,Target
 103952,Dropout
 103953,Dropout
 103954,Enrolled
-103955,Dropout
+103955,Enrolled
 103956,Dropout
 103957,Graduate
 103958,Graduate
@@ -27455,11 +27455,11 @@ id,Target
 103971,Dropout
 103972,Graduate
 103973,Graduate
-103974,Graduate
+103974,Enrolled
 103975,Graduate
 103976,Dropout
 103977,Dropout
-103978,Enrolled
+103978,Graduate
 103979,Dropout
 103980,Dropout
 103981,Dropout
@@ -27467,7 +27467,7 @@ id,Target
 103983,Graduate
 103984,Graduate
 103985,Graduate
-103986,Graduate
+103986,Dropout
 103987,Dropout
 103988,Graduate
 103989,Enrolled
@@ -27516,7 +27516,7 @@ id,Target
 104032,Graduate
 104033,Graduate
 104034,Graduate
-104035,Enrolled
+104035,Dropout
 104036,Dropout
 104037,Dropout
 104038,Graduate
@@ -27565,7 +27565,7 @@ id,Target
 104081,Dropout
 104082,Graduate
 104083,Enrolled
-104084,Enrolled
+104084,Dropout
 104085,Dropout
 104086,Graduate
 104087,Graduate
@@ -27611,7 +27611,7 @@ id,Target
 104127,Graduate
 104128,Dropout
 104129,Graduate
-104130,Graduate
+104130,Enrolled
 104131,Graduate
 104132,Enrolled
 104133,Graduate
@@ -27635,7 +27635,7 @@ id,Target
 104151,Graduate
 104152,Graduate
 104153,Graduate
-104154,Dropout
+104154,Enrolled
 104155,Graduate
 104156,Graduate
 104157,Enrolled
@@ -27675,7 +27675,7 @@ id,Target
 104191,Graduate
 104192,Dropout
 104193,Graduate
-104194,Graduate
+104194,Enrolled
 104195,Graduate
 104196,Graduate
 104197,Enrolled
@@ -27740,7 +27740,7 @@ id,Target
 104256,Dropout
 104257,Graduate
 104258,Graduate
-104259,Enrolled
+104259,Graduate
 104260,Enrolled
 104261,Dropout
 104262,Graduate
@@ -27795,7 +27795,7 @@ id,Target
 104311,Graduate
 104312,Dropout
 104313,Enrolled
-104314,Enrolled
+104314,Dropout
 104315,Dropout
 104316,Graduate
 104317,Graduate
@@ -27853,7 +27853,7 @@ id,Target
 104369,Dropout
 104370,Graduate
 104371,Graduate
-104372,Dropout
+104372,Enrolled
 104373,Graduate
 104374,Graduate
 104375,Graduate
@@ -28128,7 +28128,7 @@ id,Target
 104644,Dropout
 104645,Graduate
 104646,Graduate
-104647,Dropout
+104647,Enrolled
 104648,Graduate
 104649,Graduate
 104650,Dropout
@@ -28368,7 +28368,7 @@ id,Target
 104884,Enrolled
 104885,Enrolled
 104886,Dropout
-104887,Dropout
+104887,Enrolled
 104888,Graduate
 104889,Dropout
 104890,Enrolled
@@ -28469,7 +28469,7 @@ id,Target
 104985,Graduate
 104986,Enrolled
 104987,Enrolled
-104988,Enrolled
+104988,Graduate
 104989,Dropout
 104990,Graduate
 104991,Graduate
@@ -28507,7 +28507,7 @@ id,Target
 105023,Dropout
 105024,Dropout
 105025,Graduate
-105026,Graduate
+105026,Enrolled
 105027,Dropout
 105028,Graduate
 105029,Enrolled
@@ -28577,7 +28577,7 @@ id,Target
 105093,Graduate
 105094,Graduate
 105095,Graduate
-105096,Enrolled
+105096,Graduate
 105097,Graduate
 105098,Graduate
 105099,Graduate
@@ -28726,7 +28726,7 @@ id,Target
 105242,Enrolled
 105243,Graduate
 105244,Graduate
-105245,Dropout
+105245,Enrolled
 105246,Graduate
 105247,Graduate
 105248,Dropout
@@ -28793,7 +28793,7 @@ id,Target
 105309,Dropout
 105310,Graduate
 105311,Enrolled
-105312,Enrolled
+105312,Dropout
 105313,Graduate
 105314,Graduate
 105315,Dropout
@@ -28905,7 +28905,7 @@ id,Target
 105421,Graduate
 105422,Graduate
 105423,Dropout
-105424,Dropout
+105424,Enrolled
 105425,Enrolled
 105426,Graduate
 105427,Graduate
@@ -28931,7 +28931,7 @@ id,Target
 105447,Graduate
 105448,Graduate
 105449,Graduate
-105450,Graduate
+105450,Enrolled
 105451,Dropout
 105452,Dropout
 105453,Graduate
@@ -29080,7 +29080,7 @@ id,Target
 105596,Dropout
 105597,Graduate
 105598,Graduate
-105599,Dropout
+105599,Enrolled
 105600,Graduate
 105601,Graduate
 105602,Enrolled
@@ -29108,7 +29108,7 @@ id,Target
 105624,Graduate
 105625,Dropout
 105626,Graduate
-105627,Enrolled
+105627,Graduate
 105628,Dropout
 105629,Dropout
 105630,Graduate
@@ -29258,7 +29258,7 @@ id,Target
 105774,Graduate
 105775,Dropout
 105776,Graduate
-105777,Enrolled
+105777,Dropout
 105778,Graduate
 105779,Enrolled
 105780,Graduate
@@ -29473,7 +29473,7 @@ id,Target
 105989,Dropout
 105990,Dropout
 105991,Graduate
-105992,Enrolled
+105992,Dropout
 105993,Dropout
 105994,Enrolled
 105995,Dropout
@@ -29547,7 +29547,7 @@ id,Target
 106063,Dropout
 106064,Graduate
 106065,Graduate
-106066,Enrolled
+106066,Dropout
 106067,Graduate
 106068,Enrolled
 106069,Graduate
@@ -29586,7 +29586,7 @@ id,Target
 106102,Graduate
 106103,Enrolled
 106104,Dropout
-106105,Graduate
+106105,Enrolled
 106106,Graduate
 106107,Graduate
 106108,Graduate
@@ -29618,7 +29618,7 @@ id,Target
 106134,Graduate
 106135,Enrolled
 106136,Graduate
-106137,Graduate
+106137,Enrolled
 106138,Dropout
 106139,Dropout
 106140,Enrolled
@@ -29650,7 +29650,7 @@ id,Target
 106166,Graduate
 106167,Dropout
 106168,Graduate
-106169,Dropout
+106169,Enrolled
 106170,Graduate
 106171,Dropout
 106172,Enrolled
@@ -29693,7 +29693,7 @@ id,Target
 106209,Graduate
 106210,Enrolled
 106211,Graduate
-106212,Enrolled
+106212,Dropout
 106213,Graduate
 106214,Dropout
 106215,Enrolled
@@ -29749,9 +29749,9 @@ id,Target
 106265,Enrolled
 106266,Graduate
 106267,Graduate
-106268,Enrolled
+106268,Dropout
 106269,Enrolled
-106270,Graduate
+106270,Enrolled
 106271,Dropout
 106272,Graduate
 106273,Enrolled
@@ -29949,7 +29949,7 @@ id,Target
 106465,Graduate
 106466,Graduate
 106467,Enrolled
-106468,Enrolled
+106468,Dropout
 106469,Graduate
 106470,Graduate
 106471,Enrolled
@@ -29976,12 +29976,12 @@ id,Target
 106492,Graduate
 106493,Dropout
 106494,Graduate
-106495,Enrolled
+106495,Dropout
 106496,Enrolled
 106497,Graduate
 106498,Graduate
 106499,Graduate
-106500,Dropout
+106500,Enrolled
 106501,Graduate
 106502,Graduate
 106503,Graduate
@@ -30141,7 +30141,7 @@ id,Target
 106657,Enrolled
 106658,Graduate
 106659,Dropout
-106660,Enrolled
+106660,Graduate
 106661,Enrolled
 106662,Graduate
 106663,Graduate
@@ -30354,11 +30354,11 @@ id,Target
 106870,Dropout
 106871,Graduate
 106872,Enrolled
-106873,Enrolled
+106873,Dropout
 106874,Enrolled
 106875,Graduate
 106876,Dropout
-106877,Enrolled
+106877,Dropout
 106878,Graduate
 106879,Graduate
 106880,Graduate
@@ -30484,7 +30484,7 @@ id,Target
 107000,Graduate
 107001,Dropout
 107002,Dropout
-107003,Graduate
+107003,Dropout
 107004,Graduate
 107005,Graduate
 107006,Dropout
@@ -30511,7 +30511,7 @@ id,Target
 107027,Graduate
 107028,Graduate
 107029,Dropout
-107030,Graduate
+107030,Enrolled
 107031,Graduate
 107032,Graduate
 107033,Enrolled
@@ -30538,7 +30538,7 @@ id,Target
 107054,Graduate
 107055,Dropout
 107056,Enrolled
-107057,Graduate
+107057,Enrolled
 107058,Enrolled
 107059,Graduate
 107060,Graduate
@@ -30634,7 +30634,7 @@ id,Target
 107150,Graduate
 107151,Graduate
 107152,Graduate
-107153,Enrolled
+107153,Graduate
 107154,Graduate
 107155,Graduate
 107156,Dropout
@@ -30646,7 +30646,7 @@ id,Target
 107162,Enrolled
 107163,Graduate
 107164,Graduate
-107165,Dropout
+107165,Enrolled
 107166,Dropout
 107167,Graduate
 107168,Graduate
@@ -30664,7 +30664,7 @@ id,Target
 107180,Graduate
 107181,Enrolled
 107182,Graduate
-107183,Enrolled
+107183,Graduate
 107184,Dropout
 107185,Graduate
 107186,Enrolled
@@ -30694,7 +30694,7 @@ id,Target
 107210,Graduate
 107211,Graduate
 107212,Enrolled
-107213,Enrolled
+107213,Dropout
 107214,Enrolled
 107215,Graduate
 107216,Dropout
@@ -30730,7 +30730,7 @@ id,Target
 107246,Graduate
 107247,Dropout
 107248,Dropout
-107249,Enrolled
+107249,Graduate
 107250,Graduate
 107251,Dropout
 107252,Dropout
@@ -30757,7 +30757,7 @@ id,Target
 107273,Enrolled
 107274,Graduate
 107275,Dropout
-107276,Graduate
+107276,Enrolled
 107277,Graduate
 107278,Graduate
 107279,Enrolled
@@ -30775,7 +30775,7 @@ id,Target
 107291,Dropout
 107292,Graduate
 107293,Graduate
-107294,Enrolled
+107294,Dropout
 107295,Graduate
 107296,Dropout
 107297,Graduate
@@ -30838,7 +30838,7 @@ id,Target
 107354,Dropout
 107355,Graduate
 107356,Graduate
-107357,Enrolled
+107357,Graduate
 107358,Enrolled
 107359,Graduate
 107360,Graduate
@@ -30879,7 +30879,7 @@ id,Target
 107395,Graduate
 107396,Graduate
 107397,Graduate
-107398,Dropout
+107398,Graduate
 107399,Graduate
 107400,Graduate
 107401,Enrolled
@@ -30900,10 +30900,10 @@ id,Target
 107416,Graduate
 107417,Enrolled
 107418,Dropout
-107419,Dropout
+107419,Enrolled
 107420,Enrolled
 107421,Dropout
-107422,Enrolled
+107422,Graduate
 107423,Enrolled
 107424,Enrolled
 107425,Graduate
@@ -30915,7 +30915,7 @@ id,Target
 107431,Dropout
 107432,Graduate
 107433,Graduate
-107434,Dropout
+107434,Enrolled
 107435,Dropout
 107436,Dropout
 107437,Dropout
@@ -30947,7 +30947,7 @@ id,Target
 107463,Graduate
 107464,Dropout
 107465,Graduate
-107466,Enrolled
+107466,Graduate
 107467,Graduate
 107468,Graduate
 107469,Graduate
@@ -30963,7 +30963,7 @@ id,Target
 107479,Enrolled
 107480,Dropout
 107481,Graduate
-107482,Graduate
+107482,Enrolled
 107483,Enrolled
 107484,Graduate
 107485,Enrolled
@@ -30985,7 +30985,7 @@ id,Target
 107501,Graduate
 107502,Graduate
 107503,Dropout
-107504,Enrolled
+107504,Dropout
 107505,Graduate
 107506,Dropout
 107507,Graduate
@@ -30999,7 +30999,7 @@ id,Target
 107515,Dropout
 107516,Graduate
 107517,Enrolled
-107518,Graduate
+107518,Enrolled
 107519,Dropout
 107520,Graduate
 107521,Graduate
@@ -31048,7 +31048,7 @@ id,Target
 107564,Dropout
 107565,Graduate
 107566,Graduate
-107567,Enrolled
+107567,Graduate
 107568,Graduate
 107569,Dropout
 107570,Dropout
@@ -31061,9 +31061,9 @@ id,Target
 107577,Dropout
 107578,Graduate
 107579,Graduate
-107580,Enrolled
-107581,Graduate
-107582,Dropout
+107580,Dropout
+107581,Enrolled
+107582,Enrolled
 107583,Graduate
 107584,Graduate
 107585,Graduate
@@ -31284,7 +31284,7 @@ id,Target
 107800,Graduate
 107801,Graduate
 107802,Graduate
-107803,Enrolled
+107803,Graduate
 107804,Dropout
 107805,Graduate
 107806,Dropout
@@ -31426,7 +31426,7 @@ id,Target
 107942,Dropout
 107943,Graduate
 107944,Graduate
-107945,Enrolled
+107945,Graduate
 107946,Dropout
 107947,Graduate
 107948,Enrolled
@@ -31547,14 +31547,14 @@ id,Target
 108063,Graduate
 108064,Graduate
 108065,Graduate
-108066,Dropout
+108066,Enrolled
 108067,Dropout
 108068,Graduate
 108069,Graduate
 108070,Dropout
 108071,Dropout
 108072,Enrolled
-108073,Enrolled
+108073,Graduate
 108074,Dropout
 108075,Enrolled
 108076,Graduate
@@ -31581,7 +31581,7 @@ id,Target
 108097,Enrolled
 108098,Enrolled
 108099,Graduate
-108100,Enrolled
+108100,Dropout
 108101,Graduate
 108102,Dropout
 108103,Graduate
@@ -31768,7 +31768,7 @@ id,Target
 108284,Graduate
 108285,Enrolled
 108286,Graduate
-108287,Graduate
+108287,Enrolled
 108288,Dropout
 108289,Dropout
 108290,Dropout
@@ -31785,7 +31785,7 @@ id,Target
 108301,Graduate
 108302,Graduate
 108303,Dropout
-108304,Dropout
+108304,Enrolled
 108305,Dropout
 108306,Graduate
 108307,Graduate
@@ -31837,7 +31837,7 @@ id,Target
 108353,Graduate
 108354,Graduate
 108355,Graduate
-108356,Enrolled
+108356,Dropout
 108357,Enrolled
 108358,Enrolled
 108359,Graduate
@@ -31901,7 +31901,7 @@ id,Target
 108417,Graduate
 108418,Enrolled
 108419,Graduate
-108420,Dropout
+108420,Enrolled
 108421,Enrolled
 108422,Dropout
 108423,Graduate
@@ -31927,7 +31927,7 @@ id,Target
 108443,Graduate
 108444,Graduate
 108445,Graduate
-108446,Enrolled
+108446,Dropout
 108447,Graduate
 108448,Graduate
 108449,Graduate
@@ -31955,7 +31955,7 @@ id,Target
 108471,Graduate
 108472,Dropout
 108473,Graduate
-108474,Graduate
+108474,Enrolled
 108475,Graduate
 108476,Dropout
 108477,Dropout
@@ -31996,7 +31996,7 @@ id,Target
 108512,Graduate
 108513,Enrolled
 108514,Dropout
-108515,Enrolled
+108515,Graduate
 108516,Graduate
 108517,Graduate
 108518,Enrolled
@@ -32063,7 +32063,7 @@ id,Target
 108579,Enrolled
 108580,Graduate
 108581,Graduate
-108582,Enrolled
+108582,Dropout
 108583,Graduate
 108584,Dropout
 108585,Graduate
@@ -32110,7 +32110,7 @@ id,Target
 108626,Graduate
 108627,Graduate
 108628,Enrolled
-108629,Dropout
+108629,Enrolled
 108630,Enrolled
 108631,Dropout
 108632,Graduate
@@ -32127,7 +32127,7 @@ id,Target
 108643,Graduate
 108644,Dropout
 108645,Dropout
-108646,Dropout
+108646,Enrolled
 108647,Graduate
 108648,Dropout
 108649,Graduate
@@ -32284,7 +32284,7 @@ id,Target
 108800,Graduate
 108801,Enrolled
 108802,Graduate
-108803,Enrolled
+108803,Dropout
 108804,Graduate
 108805,Enrolled
 108806,Dropout
@@ -32347,7 +32347,7 @@ id,Target
 108863,Graduate
 108864,Dropout
 108865,Graduate
-108866,Enrolled
+108866,Dropout
 108867,Graduate
 108868,Dropout
 108869,Graduate
@@ -32356,7 +32356,7 @@ id,Target
 108872,Graduate
 108873,Dropout
 108874,Graduate
-108875,Enrolled
+108875,Dropout
 108876,Enrolled
 108877,Enrolled
 108878,Graduate
@@ -32385,7 +32385,7 @@ id,Target
 108901,Graduate
 108902,Enrolled
 108903,Dropout
-108904,Enrolled
+108904,Graduate
 108905,Dropout
 108906,Graduate
 108907,Dropout
@@ -32432,7 +32432,7 @@ id,Target
 108948,Enrolled
 108949,Dropout
 108950,Dropout
-108951,Graduate
+108951,Enrolled
 108952,Graduate
 108953,Graduate
 108954,Graduate
@@ -32467,14 +32467,14 @@ id,Target
 108983,Dropout
 108984,Graduate
 108985,Graduate
-108986,Graduate
+108986,Enrolled
 108987,Graduate
 108988,Graduate
 108989,Graduate
 108990,Dropout
 108991,Dropout
 108992,Enrolled
-108993,Enrolled
+108993,Graduate
 108994,Graduate
 108995,Enrolled
 108996,Graduate
@@ -32544,7 +32544,7 @@ id,Target
 109060,Graduate
 109061,Dropout
 109062,Graduate
-109063,Dropout
+109063,Enrolled
 109064,Graduate
 109065,Graduate
 109066,Graduate
@@ -32671,7 +32671,7 @@ id,Target
 109187,Dropout
 109188,Enrolled
 109189,Dropout
-109190,Enrolled
+109190,Dropout
 109191,Graduate
 109192,Enrolled
 109193,Dropout
@@ -32695,7 +32695,7 @@ id,Target
 109211,Graduate
 109212,Graduate
 109213,Enrolled
-109214,Enrolled
+109214,Dropout
 109215,Graduate
 109216,Dropout
 109217,Graduate
@@ -32734,7 +32734,7 @@ id,Target
 109250,Graduate
 109251,Dropout
 109252,Enrolled
-109253,Enrolled
+109253,Dropout
 109254,Graduate
 109255,Graduate
 109256,Graduate
@@ -32762,7 +32762,7 @@ id,Target
 109278,Graduate
 109279,Dropout
 109280,Dropout
-109281,Enrolled
+109281,Graduate
 109282,Dropout
 109283,Graduate
 109284,Graduate
@@ -32840,7 +32840,7 @@ id,Target
 109356,Graduate
 109357,Graduate
 109358,Graduate
-109359,Graduate
+109359,Enrolled
 109360,Graduate
 109361,Graduate
 109362,Dropout
@@ -32880,7 +32880,7 @@ id,Target
 109396,Dropout
 109397,Graduate
 109398,Dropout
-109399,Graduate
+109399,Enrolled
 109400,Graduate
 109401,Enrolled
 109402,Graduate
@@ -32925,7 +32925,7 @@ id,Target
 109441,Dropout
 109442,Enrolled
 109443,Graduate
-109444,Graduate
+109444,Enrolled
 109445,Graduate
 109446,Graduate
 109447,Graduate
@@ -32957,7 +32957,7 @@ id,Target
 109473,Dropout
 109474,Graduate
 109475,Graduate
-109476,Graduate
+109476,Enrolled
 109477,Graduate
 109478,Enrolled
 109479,Graduate
@@ -33068,7 +33068,7 @@ id,Target
 109584,Enrolled
 109585,Dropout
 109586,Enrolled
-109587,Graduate
+109587,Enrolled
 109588,Graduate
 109589,Graduate
 109590,Enrolled
@@ -33091,7 +33091,7 @@ id,Target
 109607,Enrolled
 109608,Graduate
 109609,Graduate
-109610,Dropout
+109610,Enrolled
 109611,Dropout
 109612,Enrolled
 109613,Dropout
@@ -33164,7 +33164,7 @@ id,Target
 109680,Dropout
 109681,Dropout
 109682,Graduate
-109683,Dropout
+109683,Enrolled
 109684,Dropout
 109685,Dropout
 109686,Graduate
@@ -33191,7 +33191,7 @@ id,Target
 109707,Enrolled
 109708,Graduate
 109709,Graduate
-109710,Dropout
+109710,Enrolled
 109711,Dropout
 109712,Dropout
 109713,Dropout
@@ -33239,7 +33239,7 @@ id,Target
 109755,Graduate
 109756,Graduate
 109757,Graduate
-109758,Graduate
+109758,Enrolled
 109759,Dropout
 109760,Graduate
 109761,Graduate
@@ -33387,7 +33387,7 @@ id,Target
 109903,Dropout
 109904,Enrolled
 109905,Enrolled
-109906,Graduate
+109906,Enrolled
 109907,Graduate
 109908,Graduate
 109909,Graduate
@@ -33544,7 +33544,7 @@ id,Target
 110060,Enrolled
 110061,Dropout
 110062,Dropout
-110063,Enrolled
+110063,Graduate
 110064,Graduate
 110065,Graduate
 110066,Enrolled
@@ -33653,7 +33653,7 @@ id,Target
 110169,Graduate
 110170,Enrolled
 110171,Graduate
-110172,Graduate
+110172,Enrolled
 110173,Graduate
 110174,Graduate
 110175,Dropout
@@ -33747,7 +33747,7 @@ id,Target
 110263,Graduate
 110264,Dropout
 110265,Graduate
-110266,Dropout
+110266,Enrolled
 110267,Graduate
 110268,Graduate
 110269,Graduate
@@ -33879,7 +33879,7 @@ id,Target
 110395,Graduate
 110396,Graduate
 110397,Dropout
-110398,Enrolled
+110398,Graduate
 110399,Graduate
 110400,Enrolled
 110401,Enrolled
@@ -33923,7 +33923,7 @@ id,Target
 110439,Enrolled
 110440,Graduate
 110441,Graduate
-110442,Enrolled
+110442,Dropout
 110443,Graduate
 110444,Graduate
 110445,Dropout
@@ -34042,7 +34042,7 @@ id,Target
 110558,Dropout
 110559,Graduate
 110560,Graduate
-110561,Graduate
+110561,Enrolled
 110562,Graduate
 110563,Enrolled
 110564,Graduate
@@ -34133,7 +34133,7 @@ id,Target
 110649,Dropout
 110650,Dropout
 110651,Graduate
-110652,Enrolled
+110652,Graduate
 110653,Graduate
 110654,Graduate
 110655,Dropout
@@ -34230,7 +34230,7 @@ id,Target
 110746,Enrolled
 110747,Enrolled
 110748,Graduate
-110749,Enrolled
+110749,Dropout
 110750,Enrolled
 110751,Enrolled
 110752,Enrolled
@@ -34322,7 +34322,7 @@ id,Target
 110838,Graduate
 110839,Dropout
 110840,Graduate
-110841,Graduate
+110841,Enrolled
 110842,Dropout
 110843,Graduate
 110844,Dropout
@@ -34332,7 +34332,7 @@ id,Target
 110848,Dropout
 110849,Dropout
 110850,Graduate
-110851,Enrolled
+110851,Graduate
 110852,Graduate
 110853,Dropout
 110854,Graduate
@@ -34347,7 +34347,7 @@ id,Target
 110863,Graduate
 110864,Graduate
 110865,Graduate
-110866,Graduate
+110866,Enrolled
 110867,Dropout
 110868,Enrolled
 110869,Graduate
@@ -34358,7 +34358,7 @@ id,Target
 110874,Enrolled
 110875,Dropout
 110876,Graduate
-110877,Enrolled
+110877,Graduate
 110878,Graduate
 110879,Enrolled
 110880,Graduate
@@ -34366,7 +34366,7 @@ id,Target
 110882,Enrolled
 110883,Enrolled
 110884,Enrolled
-110885,Graduate
+110885,Enrolled
 110886,Graduate
 110887,Dropout
 110888,Dropout
@@ -34383,7 +34383,7 @@ id,Target
 110899,Graduate
 110900,Graduate
 110901,Enrolled
-110902,Dropout
+110902,Graduate
 110903,Graduate
 110904,Dropout
 110905,Dropout
@@ -34496,7 +34496,7 @@ id,Target
 111012,Dropout
 111013,Graduate
 111014,Dropout
-111015,Enrolled
+111015,Graduate
 111016,Graduate
 111017,Graduate
 111018,Graduate
@@ -34509,7 +34509,7 @@ id,Target
 111025,Dropout
 111026,Graduate
 111027,Enrolled
-111028,Enrolled
+111028,Graduate
 111029,Graduate
 111030,Graduate
 111031,Graduate
@@ -34522,7 +34522,7 @@ id,Target
 111038,Enrolled
 111039,Graduate
 111040,Graduate
-111041,Enrolled
+111041,Graduate
 111042,Graduate
 111043,Dropout
 111044,Graduate
@@ -34702,7 +34702,7 @@ id,Target
 111218,Graduate
 111219,Enrolled
 111220,Dropout
-111221,Graduate
+111221,Enrolled
 111222,Dropout
 111223,Enrolled
 111224,Graduate
@@ -34721,7 +34721,7 @@ id,Target
 111237,Graduate
 111238,Enrolled
 111239,Dropout
-111240,Graduate
+111240,Enrolled
 111241,Graduate
 111242,Dropout
 111243,Graduate
@@ -34855,7 +34855,7 @@ id,Target
 111371,Graduate
 111372,Graduate
 111373,Enrolled
-111374,Graduate
+111374,Dropout
 111375,Dropout
 111376,Graduate
 111377,Enrolled
@@ -34882,12 +34882,12 @@ id,Target
 111398,Enrolled
 111399,Graduate
 111400,Graduate
-111401,Dropout
+111401,Graduate
 111402,Graduate
 111403,Graduate
 111404,Graduate
 111405,Graduate
-111406,Enrolled
+111406,Dropout
 111407,Graduate
 111408,Graduate
 111409,Graduate
@@ -34906,7 +34906,7 @@ id,Target
 111422,Graduate
 111423,Dropout
 111424,Graduate
-111425,Enrolled
+111425,Graduate
 111426,Graduate
 111427,Graduate
 111428,Graduate
@@ -34954,7 +34954,7 @@ id,Target
 111470,Dropout
 111471,Graduate
 111472,Enrolled
-111473,Enrolled
+111473,Graduate
 111474,Dropout
 111475,Dropout
 111476,Graduate
@@ -35028,7 +35028,7 @@ id,Target
 111544,Enrolled
 111545,Dropout
 111546,Dropout
-111547,Graduate
+111547,Dropout
 111548,Graduate
 111549,Graduate
 111550,Graduate
@@ -35050,7 +35050,7 @@ id,Target
 111566,Enrolled
 111567,Graduate
 111568,Graduate
-111569,Enrolled
+111569,Graduate
 111570,Dropout
 111571,Dropout
 111572,Graduate
@@ -35099,7 +35099,7 @@ id,Target
 111615,Dropout
 111616,Dropout
 111617,Enrolled
-111618,Enrolled
+111618,Dropout
 111619,Dropout
 111620,Graduate
 111621,Dropout
@@ -35113,7 +35113,7 @@ id,Target
 111629,Graduate
 111630,Enrolled
 111631,Graduate
-111632,Graduate
+111632,Enrolled
 111633,Graduate
 111634,Enrolled
 111635,Graduate
@@ -35125,7 +35125,7 @@ id,Target
 111641,Enrolled
 111642,Dropout
 111643,Graduate
-111644,Graduate
+111644,Enrolled
 111645,Graduate
 111646,Graduate
 111647,Graduate
@@ -35235,7 +35235,7 @@ id,Target
 111751,Enrolled
 111752,Graduate
 111753,Dropout
-111754,Enrolled
+111754,Graduate
 111755,Enrolled
 111756,Dropout
 111757,Dropout
@@ -35453,7 +35453,7 @@ id,Target
 111969,Enrolled
 111970,Enrolled
 111971,Graduate
-111972,Graduate
+111972,Enrolled
 111973,Enrolled
 111974,Graduate
 111975,Graduate
@@ -35559,7 +35559,7 @@ id,Target
 112075,Graduate
 112076,Graduate
 112077,Graduate
-112078,Graduate
+112078,Enrolled
 112079,Graduate
 112080,Enrolled
 112081,Dropout
@@ -35590,7 +35590,7 @@ id,Target
 112106,Dropout
 112107,Graduate
 112108,Graduate
-112109,Dropout
+112109,Enrolled
 112110,Enrolled
 112111,Graduate
 112112,Graduate
@@ -35600,7 +35600,7 @@ id,Target
 112116,Graduate
 112117,Dropout
 112118,Graduate
-112119,Graduate
+112119,Enrolled
 112120,Graduate
 112121,Graduate
 112122,Graduate
@@ -35719,7 +35719,7 @@ id,Target
 112235,Enrolled
 112236,Graduate
 112237,Dropout
-112238,Enrolled
+112238,Dropout
 112239,Enrolled
 112240,Enrolled
 112241,Graduate
@@ -35852,7 +35852,7 @@ id,Target
 112368,Enrolled
 112369,Dropout
 112370,Enrolled
-112371,Dropout
+112371,Graduate
 112372,Graduate
 112373,Graduate
 112374,Dropout
@@ -35896,8 +35896,8 @@ id,Target
 112412,Dropout
 112413,Graduate
 112414,Graduate
-112415,Graduate
-112416,Graduate
+112415,Enrolled
+112416,Enrolled
 112417,Dropout
 112418,Dropout
 112419,Graduate
@@ -35979,7 +35979,7 @@ id,Target
 112495,Graduate
 112496,Graduate
 112497,Graduate
-112498,Enrolled
+112498,Graduate
 112499,Graduate
 112500,Graduate
 112501,Graduate
@@ -36026,7 +36026,7 @@ id,Target
 112542,Graduate
 112543,Enrolled
 112544,Dropout
-112545,Enrolled
+112545,Graduate
 112546,Enrolled
 112547,Enrolled
 112548,Graduate
@@ -36183,7 +36183,7 @@ id,Target
 112699,Dropout
 112700,Graduate
 112701,Graduate
-112702,Graduate
+112702,Enrolled
 112703,Graduate
 112704,Graduate
 112705,Dropout
@@ -36234,7 +36234,7 @@ id,Target
 112750,Graduate
 112751,Enrolled
 112752,Dropout
-112753,Dropout
+112753,Enrolled
 112754,Graduate
 112755,Enrolled
 112756,Graduate
@@ -36309,7 +36309,7 @@ id,Target
 112825,Graduate
 112826,Dropout
 112827,Graduate
-112828,Enrolled
+112828,Graduate
 112829,Graduate
 112830,Dropout
 112831,Graduate
@@ -36318,7 +36318,7 @@ id,Target
 112834,Dropout
 112835,Enrolled
 112836,Enrolled
-112837,Graduate
+112837,Enrolled
 112838,Graduate
 112839,Enrolled
 112840,Graduate
@@ -36342,7 +36342,7 @@ id,Target
 112858,Dropout
 112859,Graduate
 112860,Dropout
-112861,Dropout
+112861,Enrolled
 112862,Graduate
 112863,Dropout
 112864,Dropout
@@ -36410,7 +36410,7 @@ id,Target
 112926,Graduate
 112927,Enrolled
 112928,Graduate
-112929,Enrolled
+112929,Dropout
 112930,Graduate
 112931,Graduate
 112932,Graduate
@@ -36427,7 +36427,7 @@ id,Target
 112943,Dropout
 112944,Dropout
 112945,Graduate
-112946,Enrolled
+112946,Dropout
 112947,Graduate
 112948,Graduate
 112949,Graduate
@@ -36492,7 +36492,7 @@ id,Target
 113008,Enrolled
 113009,Graduate
 113010,Dropout
-113011,Dropout
+113011,Enrolled
 113012,Enrolled
 113013,Graduate
 113014,Enrolled
@@ -36619,7 +36619,7 @@ id,Target
 113135,Dropout
 113136,Dropout
 113137,Dropout
-113138,Enrolled
+113138,Graduate
 113139,Dropout
 113140,Graduate
 113141,Dropout
@@ -36753,7 +36753,7 @@ id,Target
 113269,Graduate
 113270,Graduate
 113271,Graduate
-113272,Graduate
+113272,Enrolled
 113273,Graduate
 113274,Graduate
 113275,Enrolled
@@ -36777,7 +36777,7 @@ id,Target
 113293,Graduate
 113294,Graduate
 113295,Enrolled
-113296,Dropout
+113296,Enrolled
 113297,Dropout
 113298,Dropout
 113299,Graduate
@@ -36786,7 +36786,7 @@ id,Target
 113302,Enrolled
 113303,Dropout
 113304,Graduate
-113305,Graduate
+113305,Enrolled
 113306,Graduate
 113307,Enrolled
 113308,Graduate
@@ -36906,11 +36906,11 @@ id,Target
 113422,Enrolled
 113423,Graduate
 113424,Graduate
-113425,Dropout
+113425,Enrolled
 113426,Graduate
 113427,Enrolled
 113428,Dropout
-113429,Dropout
+113429,Enrolled
 113430,Dropout
 113431,Dropout
 113432,Enrolled
@@ -37052,7 +37052,7 @@ id,Target
 113568,Dropout
 113569,Enrolled
 113570,Graduate
-113571,Graduate
+113571,Enrolled
 113572,Dropout
 113573,Graduate
 113574,Enrolled
@@ -37066,7 +37066,7 @@ id,Target
 113582,Graduate
 113583,Graduate
 113584,Dropout
-113585,Dropout
+113585,Enrolled
 113586,Graduate
 113587,Graduate
 113588,Graduate
@@ -37164,7 +37164,7 @@ id,Target
 113680,Graduate
 113681,Enrolled
 113682,Graduate
-113683,Enrolled
+113683,Graduate
 113684,Graduate
 113685,Enrolled
 113686,Graduate
@@ -37205,7 +37205,7 @@ id,Target
 113721,Graduate
 113722,Graduate
 113723,Graduate
-113724,Enrolled
+113724,Dropout
 113725,Enrolled
 113726,Dropout
 113727,Dropout
@@ -37228,7 +37228,7 @@ id,Target
 113744,Graduate
 113745,Graduate
 113746,Graduate
-113747,Enrolled
+113747,Graduate
 113748,Graduate
 113749,Graduate
 113750,Dropout
@@ -37280,7 +37280,7 @@ id,Target
 113796,Dropout
 113797,Dropout
 113798,Dropout
-113799,Dropout
+113799,Enrolled
 113800,Dropout
 113801,Graduate
 113802,Graduate
@@ -37302,7 +37302,7 @@ id,Target
 113818,Dropout
 113819,Graduate
 113820,Enrolled
-113821,Graduate
+113821,Enrolled
 113822,Graduate
 113823,Graduate
 113824,Graduate
@@ -37369,7 +37369,7 @@ id,Target
 113885,Graduate
 113886,Graduate
 113887,Graduate
-113888,Graduate
+113888,Enrolled
 113889,Enrolled
 113890,Graduate
 113891,Graduate
@@ -37395,7 +37395,7 @@ id,Target
 113911,Graduate
 113912,Graduate
 113913,Dropout
-113914,Dropout
+113914,Enrolled
 113915,Graduate
 113916,Enrolled
 113917,Graduate
@@ -37409,8 +37409,8 @@ id,Target
 113925,Graduate
 113926,Graduate
 113927,Graduate
-113928,Graduate
-113929,Enrolled
+113928,Enrolled
+113929,Graduate
 113930,Enrolled
 113931,Graduate
 113932,Enrolled
@@ -37490,7 +37490,7 @@ id,Target
 114006,Graduate
 114007,Graduate
 114008,Graduate
-114009,Dropout
+114009,Enrolled
 114010,Dropout
 114011,Graduate
 114012,Graduate
@@ -37608,7 +37608,7 @@ id,Target
 114124,Graduate
 114125,Dropout
 114126,Graduate
-114127,Enrolled
+114127,Dropout
 114128,Graduate
 114129,Dropout
 114130,Enrolled
@@ -37639,7 +37639,7 @@ id,Target
 114155,Graduate
 114156,Dropout
 114157,Enrolled
-114158,Dropout
+114158,Enrolled
 114159,Dropout
 114160,Graduate
 114161,Enrolled
@@ -37846,7 +37846,7 @@ id,Target
 114362,Enrolled
 114363,Graduate
 114364,Graduate
-114365,Dropout
+114365,Enrolled
 114366,Dropout
 114367,Dropout
 114368,Graduate
@@ -37859,7 +37859,7 @@ id,Target
 114375,Graduate
 114376,Graduate
 114377,Dropout
-114378,Graduate
+114378,Enrolled
 114379,Graduate
 114380,Graduate
 114381,Graduate
@@ -37884,11 +37884,11 @@ id,Target
 114400,Enrolled
 114401,Dropout
 114402,Graduate
-114403,Graduate
+114403,Enrolled
 114404,Graduate
 114405,Graduate
 114406,Graduate
-114407,Graduate
+114407,Enrolled
 114408,Graduate
 114409,Dropout
 114410,Enrolled
@@ -37902,8 +37902,8 @@ id,Target
 114418,Graduate
 114419,Graduate
 114420,Graduate
-114421,Dropout
-114422,Enrolled
+114421,Enrolled
+114422,Graduate
 114423,Graduate
 114424,Graduate
 114425,Graduate
@@ -37915,7 +37915,7 @@ id,Target
 114431,Dropout
 114432,Dropout
 114433,Dropout
-114434,Graduate
+114434,Dropout
 114435,Dropout
 114436,Graduate
 114437,Graduate
@@ -38000,7 +38000,7 @@ id,Target
 114516,Graduate
 114517,Dropout
 114518,Dropout
-114519,Enrolled
+114519,Graduate
 114520,Graduate
 114521,Graduate
 114522,Graduate
@@ -38019,11 +38019,11 @@ id,Target
 114535,Enrolled
 114536,Enrolled
 114537,Dropout
-114538,Enrolled
+114538,Graduate
 114539,Graduate
 114540,Graduate
 114541,Enrolled
-114542,Enrolled
+114542,Dropout
 114543,Graduate
 114544,Graduate
 114545,Dropout
@@ -38054,7 +38054,7 @@ id,Target
 114570,Graduate
 114571,Graduate
 114572,Enrolled
-114573,Enrolled
+114573,Dropout
 114574,Graduate
 114575,Dropout
 114576,Graduate
@@ -38109,7 +38109,7 @@ id,Target
 114625,Enrolled
 114626,Enrolled
 114627,Graduate
-114628,Dropout
+114628,Enrolled
 114629,Graduate
 114630,Graduate
 114631,Graduate
@@ -38153,7 +38153,7 @@ id,Target
 114669,Dropout
 114670,Graduate
 114671,Dropout
-114672,Graduate
+114672,Enrolled
 114673,Graduate
 114674,Graduate
 114675,Dropout
@@ -38195,7 +38195,7 @@ id,Target
 114711,Graduate
 114712,Enrolled
 114713,Enrolled
-114714,Graduate
+114714,Enrolled
 114715,Dropout
 114716,Enrolled
 114717,Dropout
@@ -38224,8 +38224,8 @@ id,Target
 114740,Dropout
 114741,Graduate
 114742,Graduate
-114743,Graduate
-114744,Enrolled
+114743,Enrolled
+114744,Dropout
 114745,Graduate
 114746,Graduate
 114747,Graduate
@@ -38252,7 +38252,7 @@ id,Target
 114768,Graduate
 114769,Graduate
 114770,Graduate
-114771,Enrolled
+114771,Dropout
 114772,Graduate
 114773,Graduate
 114774,Dropout
@@ -38298,7 +38298,7 @@ id,Target
 114814,Graduate
 114815,Enrolled
 114816,Dropout
-114817,Enrolled
+114817,Graduate
 114818,Graduate
 114819,Dropout
 114820,Graduate
@@ -38328,7 +38328,7 @@ id,Target
 114844,Graduate
 114845,Graduate
 114846,Graduate
-114847,Graduate
+114847,Enrolled
 114848,Graduate
 114849,Graduate
 114850,Dropout
@@ -38394,7 +38394,7 @@ id,Target
 114910,Dropout
 114911,Graduate
 114912,Graduate
-114913,Enrolled
+114913,Graduate
 114914,Graduate
 114915,Dropout
 114916,Enrolled
@@ -38431,7 +38431,7 @@ id,Target
 114947,Graduate
 114948,Enrolled
 114949,Graduate
-114950,Enrolled
+114950,Graduate
 114951,Graduate
 114952,Dropout
 114953,Graduate
@@ -38499,7 +38499,7 @@ id,Target
 115015,Dropout
 115016,Graduate
 115017,Graduate
-115018,Graduate
+115018,Enrolled
 115019,Enrolled
 115020,Graduate
 115021,Dropout
@@ -38519,7 +38519,7 @@ id,Target
 115035,Graduate
 115036,Graduate
 115037,Graduate
-115038,Graduate
+115038,Dropout
 115039,Graduate
 115040,Graduate
 115041,Graduate
@@ -38560,7 +38560,7 @@ id,Target
 115076,Graduate
 115077,Graduate
 115078,Graduate
-115079,Dropout
+115079,Enrolled
 115080,Graduate
 115081,Graduate
 115082,Dropout
@@ -38646,12 +38646,12 @@ id,Target
 115162,Graduate
 115163,Dropout
 115164,Graduate
-115165,Dropout
+115165,Enrolled
 115166,Dropout
 115167,Enrolled
 115168,Graduate
 115169,Dropout
-115170,Graduate
+115170,Dropout
 115171,Graduate
 115172,Graduate
 115173,Dropout
@@ -38670,7 +38670,7 @@ id,Target
 115186,Dropout
 115187,Enrolled
 115188,Dropout
-115189,Enrolled
+115189,Dropout
 115190,Graduate
 115191,Dropout
 115192,Enrolled
@@ -38693,7 +38693,7 @@ id,Target
 115209,Graduate
 115210,Graduate
 115211,Dropout
-115212,Enrolled
+115212,Graduate
 115213,Dropout
 115214,Graduate
 115215,Graduate
@@ -38801,10 +38801,10 @@ id,Target
 115317,Enrolled
 115318,Enrolled
 115319,Enrolled
-115320,Graduate
+115320,Dropout
 115321,Enrolled
 115322,Dropout
-115323,Graduate
+115323,Enrolled
 115324,Dropout
 115325,Graduate
 115326,Enrolled
@@ -38952,7 +38952,7 @@ id,Target
 115468,Dropout
 115469,Enrolled
 115470,Dropout
-115471,Dropout
+115471,Enrolled
 115472,Graduate
 115473,Enrolled
 115474,Dropout
@@ -39066,7 +39066,7 @@ id,Target
 115582,Graduate
 115583,Dropout
 115584,Graduate
-115585,Graduate
+115585,Enrolled
 115586,Graduate
 115587,Dropout
 115588,Dropout
@@ -39119,7 +39119,7 @@ id,Target
 115635,Dropout
 115636,Graduate
 115637,Dropout
-115638,Graduate
+115638,Enrolled
 115639,Dropout
 115640,Enrolled
 115641,Dropout
@@ -39148,7 +39148,7 @@ id,Target
 115664,Dropout
 115665,Dropout
 115666,Graduate
-115667,Graduate
+115667,Enrolled
 115668,Graduate
 115669,Graduate
 115670,Dropout
@@ -39166,7 +39166,7 @@ id,Target
 115682,Graduate
 115683,Dropout
 115684,Dropout
-115685,Dropout
+115685,Enrolled
 115686,Enrolled
 115687,Dropout
 115688,Dropout
@@ -39179,7 +39179,7 @@ id,Target
 115695,Dropout
 115696,Dropout
 115697,Enrolled
-115698,Dropout
+115698,Graduate
 115699,Graduate
 115700,Dropout
 115701,Graduate
@@ -39238,7 +39238,7 @@ id,Target
 115754,Graduate
 115755,Enrolled
 115756,Enrolled
-115757,Dropout
+115757,Enrolled
 115758,Dropout
 115759,Graduate
 115760,Dropout
@@ -39284,7 +39284,7 @@ id,Target
 115800,Dropout
 115801,Dropout
 115802,Enrolled
-115803,Dropout
+115803,Enrolled
 115804,Graduate
 115805,Dropout
 115806,Graduate
@@ -39311,12 +39311,12 @@ id,Target
 115827,Graduate
 115828,Graduate
 115829,Dropout
-115830,Graduate
+115830,Enrolled
 115831,Graduate
 115832,Dropout
 115833,Graduate
 115834,Dropout
-115835,Dropout
+115835,Enrolled
 115836,Dropout
 115837,Graduate
 115838,Graduate
@@ -39579,7 +39579,7 @@ id,Target
 116095,Dropout
 116096,Dropout
 116097,Graduate
-116098,Dropout
+116098,Enrolled
 116099,Graduate
 116100,Graduate
 116101,Graduate
@@ -39605,7 +39605,7 @@ id,Target
 116121,Graduate
 116122,Dropout
 116123,Graduate
-116124,Enrolled
+116124,Dropout
 116125,Graduate
 116126,Graduate
 116127,Dropout
@@ -39730,7 +39730,7 @@ id,Target
 116246,Dropout
 116247,Graduate
 116248,Enrolled
-116249,Enrolled
+116249,Dropout
 116250,Enrolled
 116251,Graduate
 116252,Enrolled
@@ -39755,7 +39755,7 @@ id,Target
 116271,Graduate
 116272,Enrolled
 116273,Dropout
-116274,Enrolled
+116274,Dropout
 116275,Dropout
 116276,Dropout
 116277,Dropout
@@ -39815,8 +39815,8 @@ id,Target
 116331,Graduate
 116332,Graduate
 116333,Graduate
-116334,Enrolled
-116335,Enrolled
+116334,Graduate
+116335,Graduate
 116336,Graduate
 116337,Graduate
 116338,Graduate
@@ -39910,7 +39910,7 @@ id,Target
 116426,Graduate
 116427,Graduate
 116428,Enrolled
-116429,Enrolled
+116429,Graduate
 116430,Graduate
 116431,Dropout
 116432,Graduate
@@ -39950,7 +39950,7 @@ id,Target
 116466,Dropout
 116467,Graduate
 116468,Graduate
-116469,Graduate
+116469,Enrolled
 116470,Enrolled
 116471,Graduate
 116472,Dropout
@@ -39962,7 +39962,7 @@ id,Target
 116478,Dropout
 116479,Enrolled
 116480,Enrolled
-116481,Dropout
+116481,Graduate
 116482,Graduate
 116483,Dropout
 116484,Graduate
@@ -40041,7 +40041,7 @@ id,Target
 116557,Dropout
 116558,Graduate
 116559,Graduate
-116560,Enrolled
+116560,Graduate
 116561,Dropout
 116562,Dropout
 116563,Dropout
@@ -40219,7 +40219,7 @@ id,Target
 116735,Dropout
 116736,Graduate
 116737,Graduate
-116738,Enrolled
+116738,Dropout
 116739,Graduate
 116740,Graduate
 116741,Dropout
@@ -40397,7 +40397,7 @@ id,Target
 116913,Dropout
 116914,Graduate
 116915,Graduate
-116916,Enrolled
+116916,Graduate
 116917,Dropout
 116918,Dropout
 116919,Enrolled
@@ -40505,7 +40505,7 @@ id,Target
 117021,Enrolled
 117022,Graduate
 117023,Enrolled
-117024,Graduate
+117024,Dropout
 117025,Dropout
 117026,Graduate
 117027,Graduate
@@ -40534,7 +40534,7 @@ id,Target
 117050,Dropout
 117051,Graduate
 117052,Graduate
-117053,Graduate
+117053,Enrolled
 117054,Graduate
 117055,Dropout
 117056,Dropout
@@ -40548,7 +40548,7 @@ id,Target
 117064,Graduate
 117065,Graduate
 117066,Graduate
-117067,Graduate
+117067,Enrolled
 117068,Graduate
 117069,Graduate
 117070,Enrolled
@@ -40562,7 +40562,7 @@ id,Target
 117078,Enrolled
 117079,Dropout
 117080,Graduate
-117081,Graduate
+117081,Enrolled
 117082,Dropout
 117083,Dropout
 117084,Graduate
@@ -40579,7 +40579,7 @@ id,Target
 117095,Graduate
 117096,Graduate
 117097,Enrolled
-117098,Enrolled
+117098,Graduate
 117099,Graduate
 117100,Graduate
 117101,Graduate
@@ -40635,7 +40635,7 @@ id,Target
 117151,Graduate
 117152,Dropout
 117153,Graduate
-117154,Dropout
+117154,Enrolled
 117155,Graduate
 117156,Graduate
 117157,Graduate
@@ -40714,7 +40714,7 @@ id,Target
 117230,Enrolled
 117231,Graduate
 117232,Graduate
-117233,Graduate
+117233,Enrolled
 117234,Graduate
 117235,Enrolled
 117236,Dropout
@@ -40757,7 +40757,7 @@ id,Target
 117273,Dropout
 117274,Graduate
 117275,Enrolled
-117276,Enrolled
+117276,Graduate
 117277,Dropout
 117278,Enrolled
 117279,Enrolled
@@ -40855,7 +40855,7 @@ id,Target
 117371,Dropout
 117372,Enrolled
 117373,Dropout
-117374,Dropout
+117374,Enrolled
 117375,Graduate
 117376,Graduate
 117377,Enrolled
@@ -40876,7 +40876,7 @@ id,Target
 117392,Graduate
 117393,Graduate
 117394,Graduate
-117395,Graduate
+117395,Enrolled
 117396,Dropout
 117397,Dropout
 117398,Graduate
@@ -40914,7 +40914,7 @@ id,Target
 117430,Graduate
 117431,Dropout
 117432,Dropout
-117433,Graduate
+117433,Dropout
 117434,Dropout
 117435,Graduate
 117436,Dropout
@@ -41042,7 +41042,7 @@ id,Target
 117558,Dropout
 117559,Enrolled
 117560,Enrolled
-117561,Enrolled
+117561,Dropout
 117562,Graduate
 117563,Graduate
 117564,Dropout
@@ -41095,7 +41095,7 @@ id,Target
 117611,Enrolled
 117612,Graduate
 117613,Dropout
-117614,Graduate
+117614,Enrolled
 117615,Graduate
 117616,Enrolled
 117617,Graduate
@@ -41168,7 +41168,7 @@ id,Target
 117684,Dropout
 117685,Graduate
 117686,Dropout
-117687,Graduate
+117687,Enrolled
 117688,Graduate
 117689,Enrolled
 117690,Enrolled
@@ -41177,7 +41177,7 @@ id,Target
 117693,Graduate
 117694,Graduate
 117695,Graduate
-117696,Dropout
+117696,Enrolled
 117697,Graduate
 117698,Dropout
 117699,Dropout
@@ -41196,7 +41196,7 @@ id,Target
 117712,Graduate
 117713,Dropout
 117714,Enrolled
-117715,Dropout
+117715,Enrolled
 117716,Graduate
 117717,Graduate
 117718,Graduate
@@ -41244,7 +41244,7 @@ id,Target
 117760,Enrolled
 117761,Enrolled
 117762,Dropout
-117763,Dropout
+117763,Enrolled
 117764,Graduate
 117765,Dropout
 117766,Graduate
@@ -41379,7 +41379,7 @@ id,Target
 117895,Graduate
 117896,Enrolled
 117897,Dropout
-117898,Enrolled
+117898,Graduate
 117899,Dropout
 117900,Graduate
 117901,Graduate
@@ -41402,7 +41402,7 @@ id,Target
 117918,Dropout
 117919,Dropout
 117920,Graduate
-117921,Enrolled
+117921,Dropout
 117922,Graduate
 117923,Graduate
 117924,Graduate
@@ -41411,7 +41411,7 @@ id,Target
 117927,Graduate
 117928,Graduate
 117929,Enrolled
-117930,Enrolled
+117930,Dropout
 117931,Dropout
 117932,Graduate
 117933,Graduate
@@ -41448,7 +41448,7 @@ id,Target
 117964,Dropout
 117965,Graduate
 117966,Dropout
-117967,Graduate
+117967,Enrolled
 117968,Graduate
 117969,Dropout
 117970,Dropout
@@ -41505,7 +41505,7 @@ id,Target
 118021,Enrolled
 118022,Graduate
 118023,Dropout
-118024,Enrolled
+118024,Graduate
 118025,Graduate
 118026,Enrolled
 118027,Enrolled
@@ -41532,7 +41532,7 @@ id,Target
 118048,Graduate
 118049,Graduate
 118050,Enrolled
-118051,Enrolled
+118051,Graduate
 118052,Dropout
 118053,Enrolled
 118054,Dropout
@@ -41594,7 +41594,7 @@ id,Target
 118110,Graduate
 118111,Enrolled
 118112,Enrolled
-118113,Dropout
+118113,Enrolled
 118114,Graduate
 118115,Graduate
 118116,Graduate
@@ -41683,12 +41683,12 @@ id,Target
 118199,Dropout
 118200,Dropout
 118201,Enrolled
-118202,Dropout
+118202,Enrolled
 118203,Dropout
 118204,Dropout
 118205,Graduate
 118206,Dropout
-118207,Dropout
+118207,Enrolled
 118208,Graduate
 118209,Graduate
 118210,Enrolled
@@ -41760,7 +41760,7 @@ id,Target
 118276,Dropout
 118277,Enrolled
 118278,Graduate
-118279,Graduate
+118279,Enrolled
 118280,Graduate
 118281,Dropout
 118282,Dropout
@@ -41991,7 +41991,7 @@ id,Target
 118507,Dropout
 118508,Dropout
 118509,Graduate
-118510,Enrolled
+118510,Graduate
 118511,Graduate
 118512,Graduate
 118513,Enrolled
@@ -42087,7 +42087,7 @@ id,Target
 118603,Dropout
 118604,Dropout
 118605,Graduate
-118606,Enrolled
+118606,Graduate
 118607,Graduate
 118608,Graduate
 118609,Enrolled
@@ -42152,13 +42152,13 @@ id,Target
 118668,Graduate
 118669,Graduate
 118670,Enrolled
-118671,Enrolled
+118671,Graduate
 118672,Dropout
 118673,Dropout
 118674,Graduate
 118675,Enrolled
 118676,Graduate
-118677,Graduate
+118677,Enrolled
 118678,Graduate
 118679,Dropout
 118680,Dropout
@@ -42168,7 +42168,7 @@ id,Target
 118684,Graduate
 118685,Graduate
 118686,Graduate
-118687,Enrolled
+118687,Dropout
 118688,Dropout
 118689,Graduate
 118690,Enrolled
@@ -42311,7 +42311,7 @@ id,Target
 118827,Graduate
 118828,Dropout
 118829,Graduate
-118830,Dropout
+118830,Enrolled
 118831,Graduate
 118832,Graduate
 118833,Graduate
@@ -42429,7 +42429,7 @@ id,Target
 118945,Dropout
 118946,Graduate
 118947,Dropout
-118948,Graduate
+118948,Enrolled
 118949,Graduate
 118950,Graduate
 118951,Graduate
@@ -42516,7 +42516,7 @@ id,Target
 119032,Enrolled
 119033,Dropout
 119034,Dropout
-119035,Enrolled
+119035,Dropout
 119036,Enrolled
 119037,Graduate
 119038,Enrolled
@@ -42596,7 +42596,7 @@ id,Target
 119112,Enrolled
 119113,Enrolled
 119114,Graduate
-119115,Graduate
+119115,Enrolled
 119116,Graduate
 119117,Graduate
 119118,Dropout
@@ -42614,7 +42614,7 @@ id,Target
 119130,Graduate
 119131,Graduate
 119132,Dropout
-119133,Enrolled
+119133,Dropout
 119134,Dropout
 119135,Dropout
 119136,Enrolled
@@ -42653,7 +42653,7 @@ id,Target
 119169,Dropout
 119170,Enrolled
 119171,Enrolled
-119172,Enrolled
+119172,Dropout
 119173,Dropout
 119174,Enrolled
 119175,Dropout
@@ -42669,7 +42669,7 @@ id,Target
 119185,Graduate
 119186,Graduate
 119187,Graduate
-119188,Graduate
+119188,Enrolled
 119189,Enrolled
 119190,Graduate
 119191,Dropout
@@ -42683,7 +42683,7 @@ id,Target
 119199,Graduate
 119200,Graduate
 119201,Dropout
-119202,Graduate
+119202,Enrolled
 119203,Graduate
 119204,Dropout
 119205,Enrolled
@@ -42776,7 +42776,7 @@ id,Target
 119292,Dropout
 119293,Graduate
 119294,Graduate
-119295,Enrolled
+119295,Graduate
 119296,Enrolled
 119297,Graduate
 119298,Graduate
@@ -42812,7 +42812,7 @@ id,Target
 119328,Graduate
 119329,Enrolled
 119330,Enrolled
-119331,Enrolled
+119331,Graduate
 119332,Dropout
 119333,Graduate
 119334,Dropout
@@ -42827,7 +42827,7 @@ id,Target
 119343,Graduate
 119344,Graduate
 119345,Dropout
-119346,Graduate
+119346,Enrolled
 119347,Graduate
 119348,Graduate
 119349,Graduate
@@ -42916,7 +42916,7 @@ id,Target
 119432,Enrolled
 119433,Graduate
 119434,Enrolled
-119435,Graduate
+119435,Enrolled
 119436,Dropout
 119437,Dropout
 119438,Enrolled
@@ -43080,7 +43080,7 @@ id,Target
 119596,Graduate
 119597,Graduate
 119598,Graduate
-119599,Enrolled
+119599,Graduate
 119600,Dropout
 119601,Enrolled
 119602,Enrolled
@@ -43197,7 +43197,7 @@ id,Target
 119713,Graduate
 119714,Dropout
 119715,Graduate
-119716,Graduate
+119716,Dropout
 119717,Dropout
 119718,Graduate
 119719,Dropout
@@ -43266,7 +43266,7 @@ id,Target
 119782,Graduate
 119783,Graduate
 119784,Dropout
-119785,Enrolled
+119785,Dropout
 119786,Dropout
 119787,Enrolled
 119788,Graduate
@@ -43291,7 +43291,7 @@ id,Target
 119807,Enrolled
 119808,Enrolled
 119809,Graduate
-119810,Graduate
+119810,Enrolled
 119811,Graduate
 119812,Dropout
 119813,Dropout
@@ -43330,7 +43330,7 @@ id,Target
 119846,Dropout
 119847,Graduate
 119848,Dropout
-119849,Dropout
+119849,Graduate
 119850,Graduate
 119851,Graduate
 119852,Graduate
@@ -43407,7 +43407,7 @@ id,Target
 119923,Dropout
 119924,Enrolled
 119925,Graduate
-119926,Dropout
+119926,Enrolled
 119927,Dropout
 119928,Enrolled
 119929,Graduate
@@ -43420,7 +43420,7 @@ id,Target
 119936,Graduate
 119937,Graduate
 119938,Graduate
-119939,Graduate
+119939,Enrolled
 119940,Enrolled
 119941,Graduate
 119942,Graduate
@@ -43432,7 +43432,7 @@ id,Target
 119948,Graduate
 119949,Graduate
 119950,Graduate
-119951,Enrolled
+119951,Graduate
 119952,Dropout
 119953,Graduate
 119954,Graduate
@@ -43444,7 +43444,7 @@ id,Target
 119960,Graduate
 119961,Graduate
 119962,Graduate
-119963,Graduate
+119963,Enrolled
 119964,Graduate
 119965,Graduate
 119966,Graduate
@@ -43494,7 +43494,7 @@ id,Target
 120010,Graduate
 120011,Graduate
 120012,Graduate
-120013,Enrolled
+120013,Dropout
 120014,Dropout
 120015,Enrolled
 120016,Graduate
@@ -43526,7 +43526,7 @@ id,Target
 120042,Graduate
 120043,Enrolled
 120044,Graduate
-120045,Graduate
+120045,Enrolled
 120046,Enrolled
 120047,Dropout
 120048,Dropout
@@ -43543,7 +43543,7 @@ id,Target
 120059,Graduate
 120060,Graduate
 120061,Graduate
-120062,Graduate
+120062,Enrolled
 120063,Enrolled
 120064,Dropout
 120065,Dropout
@@ -43627,7 +43627,7 @@ id,Target
 120143,Graduate
 120144,Enrolled
 120145,Graduate
-120146,Enrolled
+120146,Dropout
 120147,Graduate
 120148,Graduate
 120149,Enrolled
@@ -43940,13 +43940,13 @@ id,Target
 120456,Enrolled
 120457,Graduate
 120458,Graduate
-120459,Graduate
+120459,Enrolled
 120460,Graduate
 120461,Enrolled
 120462,Graduate
 120463,Graduate
 120464,Enrolled
-120465,Graduate
+120465,Enrolled
 120466,Graduate
 120467,Graduate
 120468,Dropout
@@ -44036,7 +44036,7 @@ id,Target
 120552,Graduate
 120553,Graduate
 120554,Graduate
-120555,Dropout
+120555,Enrolled
 120556,Dropout
 120557,Graduate
 120558,Dropout
@@ -44118,7 +44118,7 @@ id,Target
 120634,Dropout
 120635,Graduate
 120636,Graduate
-120637,Enrolled
+120637,Graduate
 120638,Graduate
 120639,Graduate
 120640,Graduate
@@ -44132,7 +44132,7 @@ id,Target
 120648,Graduate
 120649,Dropout
 120650,Graduate
-120651,Dropout
+120651,Enrolled
 120652,Graduate
 120653,Enrolled
 120654,Enrolled
@@ -44224,7 +44224,7 @@ id,Target
 120740,Dropout
 120741,Graduate
 120742,Enrolled
-120743,Enrolled
+120743,Graduate
 120744,Enrolled
 120745,Graduate
 120746,Graduate
@@ -44260,7 +44260,7 @@ id,Target
 120776,Graduate
 120777,Graduate
 120778,Graduate
-120779,Dropout
+120779,Enrolled
 120780,Graduate
 120781,Dropout
 120782,Dropout
@@ -44288,7 +44288,7 @@ id,Target
 120804,Graduate
 120805,Enrolled
 120806,Enrolled
-120807,Enrolled
+120807,Graduate
 120808,Graduate
 120809,Graduate
 120810,Graduate
@@ -44327,7 +44327,7 @@ id,Target
 120843,Graduate
 120844,Dropout
 120845,Graduate
-120846,Enrolled
+120846,Graduate
 120847,Graduate
 120848,Graduate
 120849,Dropout
@@ -44335,7 +44335,7 @@ id,Target
 120851,Enrolled
 120852,Graduate
 120853,Dropout
-120854,Dropout
+120854,Graduate
 120855,Graduate
 120856,Enrolled
 120857,Graduate
@@ -44496,9 +44496,9 @@ id,Target
 121012,Graduate
 121013,Graduate
 121014,Graduate
-121015,Graduate
+121015,Enrolled
 121016,Dropout
-121017,Graduate
+121017,Dropout
 121018,Dropout
 121019,Graduate
 121020,Enrolled
@@ -44519,14 +44519,14 @@ id,Target
 121035,Graduate
 121036,Graduate
 121037,Dropout
-121038,Enrolled
+121038,Dropout
 121039,Graduate
 121040,Enrolled
 121041,Graduate
 121042,Enrolled
 121043,Graduate
 121044,Enrolled
-121045,Enrolled
+121045,Graduate
 121046,Graduate
 121047,Graduate
 121048,Dropout
@@ -44544,7 +44544,7 @@ id,Target
 121060,Dropout
 121061,Dropout
 121062,Enrolled
-121063,Enrolled
+121063,Dropout
 121064,Graduate
 121065,Dropout
 121066,Graduate
@@ -44580,7 +44580,7 @@ id,Target
 121096,Dropout
 121097,Enrolled
 121098,Enrolled
-121099,Enrolled
+121099,Graduate
 121100,Graduate
 121101,Dropout
 121102,Dropout
@@ -44716,7 +44716,7 @@ id,Target
 121232,Graduate
 121233,Dropout
 121234,Dropout
-121235,Enrolled
+121235,Graduate
 121236,Graduate
 121237,Graduate
 121238,Graduate
@@ -44724,7 +44724,7 @@ id,Target
 121240,Graduate
 121241,Dropout
 121242,Enrolled
-121243,Dropout
+121243,Enrolled
 121244,Dropout
 121245,Graduate
 121246,Graduate
@@ -44809,7 +44809,7 @@ id,Target
 121325,Graduate
 121326,Graduate
 121327,Dropout
-121328,Dropout
+121328,Graduate
 121329,Enrolled
 121330,Graduate
 121331,Graduate
@@ -44837,7 +44837,7 @@ id,Target
 121353,Dropout
 121354,Dropout
 121355,Graduate
-121356,Enrolled
+121356,Graduate
 121357,Graduate
 121358,Dropout
 121359,Graduate
@@ -44963,7 +44963,7 @@ id,Target
 121479,Enrolled
 121480,Dropout
 121481,Graduate
-121482,Graduate
+121482,Dropout
 121483,Graduate
 121484,Graduate
 121485,Dropout
@@ -45054,7 +45054,7 @@ id,Target
 121570,Graduate
 121571,Graduate
 121572,Graduate
-121573,Dropout
+121573,Graduate
 121574,Graduate
 121575,Graduate
 121576,Graduate
@@ -45104,15 +45104,15 @@ id,Target
 121620,Graduate
 121621,Graduate
 121622,Graduate
-121623,Dropout
+121623,Enrolled
 121624,Graduate
 121625,Graduate
 121626,Dropout
-121627,Graduate
+121627,Enrolled
 121628,Enrolled
 121629,Graduate
 121630,Graduate
-121631,Graduate
+121631,Dropout
 121632,Enrolled
 121633,Enrolled
 121634,Enrolled
@@ -45191,7 +45191,7 @@ id,Target
 121707,Enrolled
 121708,Dropout
 121709,Graduate
-121710,Graduate
+121710,Enrolled
 121711,Enrolled
 121712,Enrolled
 121713,Graduate
@@ -45217,8 +45217,8 @@ id,Target
 121733,Graduate
 121734,Graduate
 121735,Dropout
-121736,Enrolled
-121737,Dropout
+121736,Dropout
+121737,Enrolled
 121738,Graduate
 121739,Graduate
 121740,Graduate
@@ -45251,10 +45251,10 @@ id,Target
 121767,Enrolled
 121768,Dropout
 121769,Graduate
-121770,Enrolled
+121770,Dropout
 121771,Graduate
 121772,Enrolled
-121773,Graduate
+121773,Enrolled
 121774,Enrolled
 121775,Graduate
 121776,Dropout
@@ -45324,7 +45324,7 @@ id,Target
 121840,Enrolled
 121841,Dropout
 121842,Graduate
-121843,Dropout
+121843,Enrolled
 121844,Graduate
 121845,Enrolled
 121846,Graduate
@@ -45353,7 +45353,7 @@ id,Target
 121869,Dropout
 121870,Dropout
 121871,Graduate
-121872,Dropout
+121872,Enrolled
 121873,Enrolled
 121874,Graduate
 121875,Dropout
@@ -45472,7 +45472,7 @@ id,Target
 121988,Enrolled
 121989,Graduate
 121990,Graduate
-121991,Dropout
+121991,Enrolled
 121992,Graduate
 121993,Enrolled
 121994,Graduate
@@ -45499,7 +45499,7 @@ id,Target
 122015,Graduate
 122016,Dropout
 122017,Graduate
-122018,Enrolled
+122018,Dropout
 122019,Graduate
 122020,Dropout
 122021,Graduate
@@ -45518,7 +45518,7 @@ id,Target
 122034,Enrolled
 122035,Graduate
 122036,Enrolled
-122037,Enrolled
+122037,Graduate
 122038,Graduate
 122039,Dropout
 122040,Dropout
@@ -45586,7 +45586,7 @@ id,Target
 122102,Graduate
 122103,Enrolled
 122104,Dropout
-122105,Enrolled
+122105,Graduate
 122106,Graduate
 122107,Enrolled
 122108,Graduate
@@ -45643,7 +45643,7 @@ id,Target
 122159,Dropout
 122160,Dropout
 122161,Graduate
-122162,Enrolled
+122162,Graduate
 122163,Graduate
 122164,Graduate
 122165,Graduate
@@ -45667,7 +45667,7 @@ id,Target
 122183,Graduate
 122184,Graduate
 122185,Enrolled
-122186,Dropout
+122186,Enrolled
 122187,Enrolled
 122188,Dropout
 122189,Graduate
@@ -45718,7 +45718,7 @@ id,Target
 122234,Dropout
 122235,Graduate
 122236,Graduate
-122237,Enrolled
+122237,Dropout
 122238,Dropout
 122239,Graduate
 122240,Graduate
@@ -45885,7 +45885,7 @@ id,Target
 122401,Dropout
 122402,Enrolled
 122403,Enrolled
-122404,Graduate
+122404,Enrolled
 122405,Graduate
 122406,Dropout
 122407,Graduate
@@ -45936,7 +45936,7 @@ id,Target
 122452,Graduate
 122453,Graduate
 122454,Graduate
-122455,Enrolled
+122455,Dropout
 122456,Graduate
 122457,Dropout
 122458,Dropout
@@ -45983,7 +45983,7 @@ id,Target
 122499,Graduate
 122500,Enrolled
 122501,Dropout
-122502,Graduate
+122502,Enrolled
 122503,Dropout
 122504,Dropout
 122505,Graduate
@@ -46037,7 +46037,7 @@ id,Target
 122553,Graduate
 122554,Dropout
 122555,Graduate
-122556,Enrolled
+122556,Graduate
 122557,Enrolled
 122558,Graduate
 122559,Dropout
@@ -46064,7 +46064,7 @@ id,Target
 122580,Dropout
 122581,Dropout
 122582,Enrolled
-122583,Enrolled
+122583,Graduate
 122584,Enrolled
 122585,Graduate
 122586,Graduate
@@ -46089,7 +46089,7 @@ id,Target
 122605,Dropout
 122606,Graduate
 122607,Graduate
-122608,Graduate
+122608,Enrolled
 122609,Graduate
 122610,Dropout
 122611,Enrolled
@@ -46332,7 +46332,7 @@ id,Target
 122848,Graduate
 122849,Graduate
 122850,Graduate
-122851,Enrolled
+122851,Graduate
 122852,Graduate
 122853,Dropout
 122854,Enrolled
@@ -46345,7 +46345,7 @@ id,Target
 122861,Enrolled
 122862,Dropout
 122863,Graduate
-122864,Dropout
+122864,Enrolled
 122865,Dropout
 122866,Graduate
 122867,Dropout
@@ -46432,7 +46432,7 @@ id,Target
 122948,Graduate
 122949,Enrolled
 122950,Graduate
-122951,Enrolled
+122951,Graduate
 122952,Graduate
 122953,Graduate
 122954,Graduate
@@ -46651,7 +46651,7 @@ id,Target
 123167,Graduate
 123168,Graduate
 123169,Enrolled
-123170,Enrolled
+123170,Graduate
 123171,Graduate
 123172,Dropout
 123173,Graduate
@@ -46824,7 +46824,7 @@ id,Target
 123340,Dropout
 123341,Dropout
 123342,Dropout
-123343,Enrolled
+123343,Graduate
 123344,Dropout
 123345,Dropout
 123346,Enrolled
@@ -46870,7 +46870,7 @@ id,Target
 123386,Enrolled
 123387,Enrolled
 123388,Graduate
-123389,Dropout
+123389,Enrolled
 123390,Graduate
 123391,Graduate
 123392,Graduate
@@ -46958,7 +46958,7 @@ id,Target
 123474,Graduate
 123475,Graduate
 123476,Enrolled
-123477,Enrolled
+123477,Dropout
 123478,Graduate
 123479,Enrolled
 123480,Graduate
@@ -46983,7 +46983,7 @@ id,Target
 123499,Dropout
 123500,Enrolled
 123501,Graduate
-123502,Enrolled
+123502,Graduate
 123503,Dropout
 123504,Dropout
 123505,Enrolled
@@ -47048,7 +47048,7 @@ id,Target
 123564,Graduate
 123565,Dropout
 123566,Enrolled
-123567,Enrolled
+123567,Dropout
 123568,Enrolled
 123569,Graduate
 123570,Enrolled
@@ -47078,7 +47078,7 @@ id,Target
 123594,Dropout
 123595,Graduate
 123596,Graduate
-123597,Graduate
+123597,Dropout
 123598,Graduate
 123599,Dropout
 123600,Graduate
@@ -47099,7 +47099,7 @@ id,Target
 123615,Graduate
 123616,Dropout
 123617,Dropout
-123618,Graduate
+123618,Enrolled
 123619,Graduate
 123620,Graduate
 123621,Dropout
@@ -47263,7 +47263,7 @@ id,Target
 123779,Enrolled
 123780,Graduate
 123781,Graduate
-123782,Dropout
+123782,Enrolled
 123783,Graduate
 123784,Enrolled
 123785,Dropout
@@ -47363,7 +47363,7 @@ id,Target
 123879,Graduate
 123880,Dropout
 123881,Graduate
-123882,Graduate
+123882,Enrolled
 123883,Graduate
 123884,Graduate
 123885,Dropout
@@ -47422,7 +47422,7 @@ id,Target
 123938,Enrolled
 123939,Dropout
 123940,Graduate
-123941,Enrolled
+123941,Dropout
 123942,Graduate
 123943,Dropout
 123944,Graduate
@@ -47655,7 +47655,7 @@ id,Target
 124171,Graduate
 124172,Graduate
 124173,Dropout
-124174,Enrolled
+124174,Dropout
 124175,Graduate
 124176,Graduate
 124177,Graduate
@@ -47682,7 +47682,7 @@ id,Target
 124198,Dropout
 124199,Dropout
 124200,Graduate
-124201,Enrolled
+124201,Graduate
 124202,Dropout
 124203,Dropout
 124204,Enrolled
@@ -47768,7 +47768,7 @@ id,Target
 124284,Graduate
 124285,Dropout
 124286,Dropout
-124287,Graduate
+124287,Dropout
 124288,Dropout
 124289,Graduate
 124290,Graduate
@@ -47779,7 +47779,7 @@ id,Target
 124295,Enrolled
 124296,Graduate
 124297,Graduate
-124298,Dropout
+124298,Graduate
 124299,Graduate
 124300,Dropout
 124301,Graduate
@@ -47885,7 +47885,7 @@ id,Target
 124401,Enrolled
 124402,Dropout
 124403,Dropout
-124404,Enrolled
+124404,Graduate
 124405,Graduate
 124406,Dropout
 124407,Graduate
@@ -47960,7 +47960,7 @@ id,Target
 124476,Graduate
 124477,Graduate
 124478,Enrolled
-124479,Graduate
+124479,Dropout
 124480,Enrolled
 124481,Graduate
 124482,Dropout
@@ -47975,7 +47975,7 @@ id,Target
 124491,Dropout
 124492,Graduate
 124493,Graduate
-124494,Enrolled
+124494,Dropout
 124495,Dropout
 124496,Graduate
 124497,Graduate
@@ -48011,7 +48011,7 @@ id,Target
 124527,Graduate
 124528,Graduate
 124529,Graduate
-124530,Enrolled
+124530,Dropout
 124531,Dropout
 124532,Graduate
 124533,Graduate
@@ -48054,7 +48054,7 @@ id,Target
 124570,Enrolled
 124571,Graduate
 124572,Graduate
-124573,Dropout
+124573,Enrolled
 124574,Graduate
 124575,Dropout
 124576,Enrolled
@@ -48173,7 +48173,7 @@ id,Target
 124689,Dropout
 124690,Graduate
 124691,Graduate
-124692,Graduate
+124692,Enrolled
 124693,Graduate
 124694,Dropout
 124695,Dropout
@@ -48254,7 +48254,7 @@ id,Target
 124770,Dropout
 124771,Dropout
 124772,Graduate
-124773,Graduate
+124773,Dropout
 124774,Graduate
 124775,Graduate
 124776,Dropout
@@ -48311,7 +48311,7 @@ id,Target
 124827,Dropout
 124828,Dropout
 124829,Enrolled
-124830,Graduate
+124830,Enrolled
 124831,Graduate
 124832,Graduate
 124833,Enrolled
@@ -48387,7 +48387,7 @@ id,Target
 124903,Graduate
 124904,Graduate
 124905,Enrolled
-124906,Enrolled
+124906,Dropout
 124907,Graduate
 124908,Graduate
 124909,Graduate
@@ -48397,14 +48397,14 @@ id,Target
 124913,Enrolled
 124914,Dropout
 124915,Graduate
-124916,Dropout
+124916,Enrolled
 124917,Enrolled
 124918,Graduate
 124919,Graduate
 124920,Graduate
 124921,Dropout
 124922,Graduate
-124923,Graduate
+124923,Dropout
 124924,Dropout
 124925,Dropout
 124926,Dropout
@@ -48448,7 +48448,7 @@ id,Target
 124964,Dropout
 124965,Graduate
 124966,Enrolled
-124967,Enrolled
+124967,Dropout
 124968,Dropout
 124969,Graduate
 124970,Dropout
@@ -48468,7 +48468,7 @@ id,Target
 124984,Dropout
 124985,Dropout
 124986,Graduate
-124987,Graduate
+124987,Enrolled
 124988,Graduate
 124989,Graduate
 124990,Dropout
@@ -48483,15 +48483,15 @@ id,Target
 124999,Dropout
 125000,Graduate
 125001,Dropout
-125002,Enrolled
+125002,Graduate
 125003,Graduate
-125004,Dropout
+125004,Enrolled
 125005,Enrolled
 125006,Graduate
 125007,Graduate
 125008,Enrolled
 125009,Enrolled
-125010,Enrolled
+125010,Graduate
 125011,Dropout
 125012,Dropout
 125013,Dropout
@@ -48544,7 +48544,7 @@ id,Target
 125060,Dropout
 125061,Graduate
 125062,Graduate
-125063,Dropout
+125063,Enrolled
 125064,Graduate
 125065,Graduate
 125066,Graduate
@@ -48552,7 +48552,7 @@ id,Target
 125068,Graduate
 125069,Dropout
 125070,Graduate
-125071,Dropout
+125071,Enrolled
 125072,Dropout
 125073,Dropout
 125074,Graduate
@@ -48635,16 +48635,16 @@ id,Target
 125151,Graduate
 125152,Graduate
 125153,Dropout
-125154,Dropout
+125154,Graduate
 125155,Enrolled
 125156,Dropout
 125157,Enrolled
-125158,Enrolled
+125158,Graduate
 125159,Graduate
 125160,Graduate
 125161,Enrolled
 125162,Graduate
-125163,Graduate
+125163,Enrolled
 125164,Graduate
 125165,Enrolled
 125166,Graduate
@@ -48693,7 +48693,7 @@ id,Target
 125209,Enrolled
 125210,Graduate
 125211,Enrolled
-125212,Enrolled
+125212,Graduate
 125213,Enrolled
 125214,Graduate
 125215,Graduate
@@ -48954,13 +48954,13 @@ id,Target
 125470,Graduate
 125471,Dropout
 125472,Enrolled
-125473,Enrolled
+125473,Graduate
 125474,Graduate
 125475,Graduate
 125476,Enrolled
 125477,Enrolled
 125478,Graduate
-125479,Graduate
+125479,Enrolled
 125480,Graduate
 125481,Dropout
 125482,Graduate
@@ -49055,7 +49055,7 @@ id,Target
 125571,Graduate
 125572,Graduate
 125573,Graduate
-125574,Enrolled
+125574,Graduate
 125575,Dropout
 125576,Enrolled
 125577,Graduate
@@ -49065,7 +49065,7 @@ id,Target
 125581,Dropout
 125582,Dropout
 125583,Graduate
-125584,Graduate
+125584,Enrolled
 125585,Graduate
 125586,Dropout
 125587,Graduate
@@ -49136,7 +49136,7 @@ id,Target
 125652,Enrolled
 125653,Graduate
 125654,Enrolled
-125655,Enrolled
+125655,Graduate
 125656,Dropout
 125657,Dropout
 125658,Graduate
@@ -49148,7 +49148,7 @@ id,Target
 125664,Dropout
 125665,Dropout
 125666,Enrolled
-125667,Enrolled
+125667,Dropout
 125668,Enrolled
 125669,Dropout
 125670,Dropout
@@ -49216,7 +49216,7 @@ id,Target
 125732,Dropout
 125733,Graduate
 125734,Enrolled
-125735,Graduate
+125735,Enrolled
 125736,Graduate
 125737,Enrolled
 125738,Enrolled
@@ -49256,7 +49256,7 @@ id,Target
 125772,Enrolled
 125773,Graduate
 125774,Graduate
-125775,Graduate
+125775,Enrolled
 125776,Enrolled
 125777,Enrolled
 125778,Graduate
@@ -49345,7 +49345,7 @@ id,Target
 125861,Enrolled
 125862,Graduate
 125863,Graduate
-125864,Dropout
+125864,Enrolled
 125865,Dropout
 125866,Graduate
 125867,Enrolled
@@ -49398,7 +49398,7 @@ id,Target
 125914,Dropout
 125915,Dropout
 125916,Dropout
-125917,Enrolled
+125917,Dropout
 125918,Dropout
 125919,Dropout
 125920,Graduate
@@ -49538,7 +49538,7 @@ id,Target
 126054,Dropout
 126055,Dropout
 126056,Dropout
-126057,Graduate
+126057,Enrolled
 126058,Graduate
 126059,Graduate
 126060,Graduate
@@ -49618,7 +49618,7 @@ id,Target
 126134,Graduate
 126135,Dropout
 126136,Dropout
-126137,Enrolled
+126137,Dropout
 126138,Graduate
 126139,Enrolled
 126140,Dropout
@@ -49731,7 +49731,7 @@ id,Target
 126247,Enrolled
 126248,Graduate
 126249,Enrolled
-126250,Graduate
+126250,Enrolled
 126251,Dropout
 126252,Graduate
 126253,Graduate
@@ -49776,7 +49776,7 @@ id,Target
 126292,Enrolled
 126293,Dropout
 126294,Graduate
-126295,Enrolled
+126295,Dropout
 126296,Graduate
 126297,Dropout
 126298,Enrolled
@@ -49866,7 +49866,7 @@ id,Target
 126382,Dropout
 126383,Graduate
 126384,Enrolled
-126385,Enrolled
+126385,Dropout
 126386,Enrolled
 126387,Graduate
 126388,Enrolled
@@ -49877,7 +49877,7 @@ id,Target
 126393,Graduate
 126394,Graduate
 126395,Dropout
-126396,Enrolled
+126396,Graduate
 126397,Graduate
 126398,Graduate
 126399,Graduate
@@ -50014,7 +50014,7 @@ id,Target
 126530,Dropout
 126531,Dropout
 126532,Graduate
-126533,Enrolled
+126533,Graduate
 126534,Enrolled
 126535,Graduate
 126536,Dropout
@@ -50033,7 +50033,7 @@ id,Target
 126549,Graduate
 126550,Dropout
 126551,Graduate
-126552,Dropout
+126552,Enrolled
 126553,Dropout
 126554,Graduate
 126555,Graduate
@@ -50053,7 +50053,7 @@ id,Target
 126569,Dropout
 126570,Dropout
 126571,Graduate
-126572,Enrolled
+126572,Graduate
 126573,Dropout
 126574,Dropout
 126575,Graduate
@@ -50191,12 +50191,12 @@ id,Target
 126707,Dropout
 126708,Graduate
 126709,Graduate
-126710,Enrolled
+126710,Dropout
 126711,Dropout
 126712,Graduate
 126713,Dropout
 126714,Enrolled
-126715,Enrolled
+126715,Graduate
 126716,Dropout
 126717,Dropout
 126718,Graduate
@@ -50227,7 +50227,7 @@ id,Target
 126743,Graduate
 126744,Enrolled
 126745,Enrolled
-126746,Enrolled
+126746,Dropout
 126747,Dropout
 126748,Graduate
 126749,Graduate
@@ -50244,7 +50244,7 @@ id,Target
 126760,Dropout
 126761,Dropout
 126762,Graduate
-126763,Enrolled
+126763,Dropout
 126764,Graduate
 126765,Graduate
 126766,Graduate
@@ -50346,7 +50346,7 @@ id,Target
 126862,Enrolled
 126863,Graduate
 126864,Graduate
-126865,Graduate
+126865,Enrolled
 126866,Dropout
 126867,Graduate
 126868,Graduate
@@ -50379,7 +50379,7 @@ id,Target
 126895,Graduate
 126896,Graduate
 126897,Graduate
-126898,Enrolled
+126898,Dropout
 126899,Graduate
 126900,Graduate
 126901,Graduate
@@ -50472,7 +50472,7 @@ id,Target
 126988,Graduate
 126989,Graduate
 126990,Enrolled
-126991,Enrolled
+126991,Dropout
 126992,Graduate
 126993,Graduate
 126994,Graduate
@@ -50536,7 +50536,7 @@ id,Target
 127052,Dropout
 127053,Dropout
 127054,Dropout
-127055,Enrolled
+127055,Graduate
 127056,Enrolled
 127057,Enrolled
 127058,Dropout
@@ -50604,7 +50604,7 @@ id,Target
 127120,Graduate
 127121,Graduate
 127122,Dropout
-127123,Dropout
+127123,Enrolled
 127124,Graduate
 127125,Graduate
 127126,Dropout
@@ -50613,7 +50613,7 @@ id,Target
 127129,Graduate
 127130,Enrolled
 127131,Graduate
-127132,Enrolled
+127132,Dropout
 127133,Enrolled
 127134,Enrolled
 127135,Enrolled
@@ -50797,7 +50797,7 @@ id,Target
 127313,Graduate
 127314,Enrolled
 127315,Dropout
-127316,Graduate
+127316,Dropout
 127317,Dropout
 127318,Graduate
 127319,Enrolled
@@ -50871,8 +50871,8 @@ id,Target
 127387,Graduate
 127388,Graduate
 127389,Graduate
-127390,Enrolled
-127391,Dropout
+127390,Dropout
+127391,Enrolled
 127392,Graduate
 127393,Enrolled
 127394,Graduate

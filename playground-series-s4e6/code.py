@@ -59,7 +59,8 @@ voting_clf = VotingClassifier(
     voting="hard",  # 'hard' for majority voting, 'soft' for weighted average probabilities
 )
 # RandomForestClassifier(class_weight='balanced', n_estimators=100)
-model =voting_clf
+# model = LGBMClassifier(verbose=-1)
+model = voting_clf
 
 # %%
 # Load data
@@ -122,11 +123,10 @@ outlier_dict = {
 
 def pre_process(df):
     # Binning 'Age at enrollment'
-    bins = [17, 20, 25, 30, 35, 50]
-    labels = ["18-20", "21-25", "26-30", "31-35", "36-50"]
-    df["Age at enrollment"] = pd.cut(
-        df["Age at enrollment"], bins=bins, labels=labels, right=True
-    )
+    bins = [17, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70]
+    labels = ["17-20", "21-25", "26-30", "31-35", "36-40", "41-45", "46-50", "51-55", "56-60", "61-65", "66-70"]
+    df['Age at enrollment'] = df['Age at enrollment'].clip(lower=bins[0], upper=bins[-1])
+    df['Age at enrollment'] = pd.cut(df['Age at enrollment'], bins=bins, labels=labels, right=True, include_lowest=True)
     return df
 
 
@@ -143,7 +143,7 @@ def get_X_Y(df):
         columns=["id", "Target", "Educational special needs", "International"]
     )  # "Educational special needs", "International"
     Y = df["Target"]
-    # X, Y = SMOTE().fit_resample(X, Y)
+    # X, Y = SMOTE(random_state=42).fit_resample(X, Y)
     return X, Y
 
 
@@ -157,7 +157,6 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 # Check columns
 X_train, X_test = X, X
 Y_train, Y_test = Y, Y
-# X_train, Y_train = SMOTE().fit_resample(X_train, Y_train)
 print(X_train.shape)
 
 # %%
@@ -188,17 +187,17 @@ cat = categorical_feat_ord+categorical_feat_nom
 numerical_features = [item for item in numerical_features if item not in cat]
 
 # %%
-import pandas as pd
-from pandas_profiling import ProfileReport
+# import pandas as pd
+# from pandas_profiling import ProfileReport
 
 
-def gen_eda():
-    profile = ProfileReport(
-        pd.concat([X_train, Y_train], axis=1),
-        title="Pandas Profiling Report",
-        explorative=True,
-    )
-    profile.to_file("pandas_profiling_report.html")
+# def gen_eda():
+#     profile = ProfileReport(
+#         pd.concat([X_train, Y_train], axis=1),
+#         title="Pandas Profiling Report",
+#         explorative=True,
+#     )
+#     profile.to_file("pandas_profiling_report.html")
 
 
 # gen_eda()
