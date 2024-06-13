@@ -42,14 +42,6 @@ import pickle
 warnings.filterwarnings("ignore")
 
 # %%
-# highest accuracy model
-# model = LGBMClassifier(verbose=-1)
-# model = HistGradientBoostingClassifier()
-# model = RandomForestClassifier()
-# model = GradientBoostingClassifier()
-# model = AdaBoostClassifier()
-# model = MLPClassifier()
-
 voting_clf = VotingClassifier(
     estimators=[
         ("ab", RandomForestClassifier()),
@@ -59,8 +51,8 @@ voting_clf = VotingClassifier(
     voting="hard",  # 'hard' for majority voting, 'soft' for weighted average probabilities
 )
 # RandomForestClassifier(class_weight='balanced', n_estimators=100)
-# model = LGBMClassifier(verbose=-1)
-model = voting_clf
+model = LGBMClassifier(verbose=-1)
+# model = voting_clf
 
 # %%
 # Load data
@@ -99,8 +91,11 @@ def remove_outliers(df, outlier_dict):
     return df
 
 # %%
+# how to know no. of bins
+
 from scipy import stats
 from sklearn.mixture import GaussianMixture
+from sklearn.preprocessing import KBinsDiscretizer
 
 
 df = df.drop_duplicates()
@@ -123,15 +118,16 @@ outlier_dict = {
 
 def pre_process(df):
     # Binning 'Age at enrollment'
-    bins = [17, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70]
-    labels = ["17-20", "21-25", "26-30", "31-35", "36-40", "41-45", "46-50", "51-55", "56-60", "61-65", "66-70"]
-    df['Age at enrollment'] = df['Age at enrollment'].clip(lower=bins[0], upper=bins[-1])
-    df['Age at enrollment'] = pd.cut(df['Age at enrollment'], bins=bins, labels=labels, right=True, include_lowest=True)
+    df['Age at enrollment'] = KBinsDiscretizer(n_bins=7, encode='ordinal', strategy='quantile').fit_transform(df[['Age at enrollment']])
+    df['Application mode'] = KBinsDiscretizer(n_bins=7, encode='ordinal', strategy='kmeans').fit_transform(df[['Application mode']])
     return df
 
 
 df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
+
+# %%
+df.to_csv('df.csv', index=False)
 
 # %%
 from imblearn.over_sampling import SMOTE
@@ -141,9 +137,8 @@ from imblearn.over_sampling import SMOTE
 def get_X_Y(df):
     X = df.drop(
         columns=["id", "Target", "Educational special needs", "International"]
-    )  # "Educational special needs", "International"
+    )
     Y = df["Target"]
-    # X, Y = SMOTE(random_state=42).fit_resample(X, Y)
     return X, Y
 
 
@@ -168,39 +163,23 @@ categorical_feat_ord = [
     "Previous qualification",
     "Displaced",
     "Debtor",
+    "Age at enrollment",
     "Tuition fees up to date",
-    "Mother's qualification",
-    "Father's qualification",
-    "Mother's occupation",
-    "Father's occupation"
 ]
 categorical_feat_nom = [
     "Gender",
-    "Age at enrollment",
     "Marital status",
     "Application mode",
     "Application order",
     "Course",
     "Nacionality",
+    "Mother's qualification",
+    "Father's qualification",
+    "Mother's occupation",
+    "Father's occupation"
 ]
 cat = categorical_feat_ord+categorical_feat_nom
 numerical_features = [item for item in numerical_features if item not in cat]
-
-# %%
-# import pandas as pd
-# from pandas_profiling import ProfileReport
-
-
-# def gen_eda():
-#     profile = ProfileReport(
-#         pd.concat([X_train, Y_train], axis=1),
-#         title="Pandas Profiling Report",
-#         explorative=True,
-#     )
-#     profile.to_file("pandas_profiling_report.html")
-
-
-# gen_eda()
 
 # %%
 # Separate transformers for categorical and numerical features
@@ -226,6 +205,9 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 # %%
+from sklearn.model_selection import GridSearchCV
+
+
 preprocessor = ColumnTransformer(
     transformers=[
         ("cat", categorical_transformer_onehot, categorical_feat_nom),
@@ -235,6 +217,18 @@ preprocessor = ColumnTransformer(
 )
 # Define the pipeline
 pipeline = Pipeline([("preprocessor", preprocessor), ("model", model)])
+
+param_grid = {
+    'model__num_leaves': [31, 50, 100],
+    'model__learning_rate': [0.05, 0.1, 0.2],
+    'model__n_estimators': [100, 200, 500]
+}
+
+grid_search = GridSearchCV(estimator=pipeline, param_grid=param_grid, cv=3, scoring='accuracy')
+grid_search.fit(X_train, Y_train)
+best_pipeline = grid_search.best_estimator_
+pipeline = best_pipeline
+
 # Fit the pipeline on the training data
 pipeline.fit(X_train, Y_train)
 
