@@ -20,23 +20,13 @@ for x in df.columns:
     print(df[x].value_counts())
 
 
-
-
-
-
-
-
-
-
-
-
 # Given your dataset, here are some preprocessing steps you can take to improve the accuracy of your model:
 
 # ### 1. Handle Imbalanced Classes
 # The target variable (`Target`) shows an imbalance. Techniques to handle this include:
 
 # - **Resampling:** You can either oversample the minority class or undersample the majority class.
-  
+
 #   ```python
 #   from imblearn.over_sampling import SMOTE
 #   from imblearn.under_sampling import RandomUnderSampler

@@ -60,6 +60,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 # df.columns
 
+
 # %%
 def remove_outliers(df, outlier_dict):
     for distribution, category in outlier_dict.items():
@@ -90,6 +91,7 @@ def remove_outliers(df, outlier_dict):
                 # df = df[(df[cat] < upper_limit) & (df[cat] > lower_limit)]
     return df
 
+
 # %%
 # how to know no. of bins
 
@@ -116,10 +118,15 @@ outlier_dict = {
     ],
 }
 
+
 def pre_process(df):
     # Binning 'Age at enrollment'
-    df['Age at enrollment'] = KBinsDiscretizer(n_bins=7, encode='ordinal', strategy='quantile').fit_transform(df[['Age at enrollment']])
-    df['Application mode'] = KBinsDiscretizer(n_bins=7, encode='ordinal', strategy='kmeans').fit_transform(df[['Application mode']])
+    df["Age at enrollment"] = KBinsDiscretizer(
+        n_bins=7, encode="ordinal", strategy="quantile"
+    ).fit_transform(df[["Age at enrollment"]])
+    df["Application mode"] = KBinsDiscretizer(
+        n_bins=7, encode="ordinal", strategy="kmeans"
+    ).fit_transform(df[["Application mode"]])
     return df
 
 
@@ -127,7 +134,7 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 # %%
-df.to_csv('df.csv', index=False)
+df.to_csv("df.csv", index=False)
 
 # %%
 from imblearn.over_sampling import SMOTE
@@ -135,9 +142,7 @@ from imblearn.over_sampling import SMOTE
 
 # Define features and target
 def get_X_Y(df):
-    X = df.drop(
-        columns=["id", "Target", "Educational special needs", "International"]
-    )
+    X = df.drop(columns=["id", "Target", "Educational special needs", "International"])
     Y = df["Target"]
     return X, Y
 
@@ -176,9 +181,9 @@ categorical_feat_nom = [
     "Mother's qualification",
     "Father's qualification",
     "Mother's occupation",
-    "Father's occupation"
+    "Father's occupation",
 ]
-cat = categorical_feat_ord+categorical_feat_nom
+cat = categorical_feat_ord + categorical_feat_nom
 numerical_features = [item for item in numerical_features if item not in cat]
 
 # %%
@@ -198,10 +203,14 @@ numerical_transformer = Pipeline(
     ]
 )
 categorical_transformer_onehot = Pipeline(
-    steps=[("onehot", OneHotEncoder(handle_unknown="ignore")),]
+    steps=[
+        ("onehot", OneHotEncoder(handle_unknown="ignore")),
+    ]
 )
 categorical_transformer_ordinal = Pipeline(
-    steps=[("ord", OrdinalEncoder(handle_unknown='use_encoded_value',unknown_value=-1)),]
+    steps=[
+        ("ord", OrdinalEncoder(handle_unknown="use_encoded_value", unknown_value=-1)),
+    ]
 )
 
 # %%
@@ -212,19 +221,21 @@ preprocessor = ColumnTransformer(
     transformers=[
         ("cat", categorical_transformer_onehot, categorical_feat_nom),
         ("cat_1", categorical_transformer_ordinal, categorical_feat_ord),
-        ("num", numerical_transformer, numerical_features)
+        ("num", numerical_transformer, numerical_features),
     ]
 )
 # Define the pipeline
 pipeline = Pipeline([("preprocessor", preprocessor), ("model", model)])
 
 param_grid = {
-    'model__num_leaves': [31, 50, 100],
-    'model__learning_rate': [0.05, 0.1, 0.2],
-    'model__n_estimators': [100, 200, 500]
+    "model__num_leaves": [31, 50, 100],
+    "model__learning_rate": [0.05, 0.1, 0.2],
+    "model__n_estimators": [100, 200, 500],
 }
 
-grid_search = GridSearchCV(estimator=pipeline, param_grid=param_grid, cv=3, scoring='accuracy')
+grid_search = GridSearchCV(
+    estimator=pipeline, param_grid=param_grid, cv=3, scoring="accuracy"
+)
 grid_search.fit(X_train, Y_train)
 best_pipeline = grid_search.best_estimator_
 pipeline = best_pipeline
@@ -260,6 +271,7 @@ loaded_model = pickle.load(open("model.pkl", "rb"))
 
 # Define the columns expected by the model
 column_names = X_train.columns
+
 
 def generate_submission(test_file):
     # Read the CSV file into a DataFrame
