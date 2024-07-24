@@ -36,8 +36,9 @@ def draw_graph(df, save_dir="plots-1"):
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
     colu = df.columns
-    colu = ["GDP"]
+    colu = ["Application order"]
     for col in colu:
+        # print(df[col])
         plt.figure(figsize=(14, 4))
         # First subplot: Histogram with KDE
         plt.subplot(121)
@@ -54,8 +55,7 @@ def draw_graph(df, save_dir="plots-1"):
         plt.close()
 
 
-# before transformation
-# draw_graph(df)
+draw_graph(df)
 
 # corr_matrix = df.corr()
 # plt.figure(figsize=(12, 8))
@@ -70,6 +70,6 @@ def draw_graph(df, save_dir="plots-1"):
 # plt.show()
 
 # num-cat
-df = pd.read_csv(excel_file_path, encoding="latin-1")
-sns.barplot(x=df["Target"], y=df["Course"], hue=df["Target"])
-plt.show()
+# df = pd.read_csv(excel_file_path, encoding="latin-1")
+# sns.barplot(x=df["Target"], y=df["Course"], hue=df["Target"])
+# plt.show()

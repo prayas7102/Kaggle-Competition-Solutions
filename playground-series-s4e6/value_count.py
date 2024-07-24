@@ -1,181 +1,703 @@
-# Load data
-import pandas as pd
-from sklearn.model_selection import train_test_split
-
-
-excel_file_path = "./train.csv"
-df = pd.read_csv(excel_file_path, encoding="latin-1")
-
-
-def extract_first_last(df):
-    return df
-
-
-df = extract_first_last(df)
-df.columns
-df = df.drop_duplicates()
-df.head()
-
-for x in df.columns:
-    print(df[x].value_counts())
-
-
-# Given your dataset, here are some preprocessing steps you can take to improve the accuracy of your model:
-
-# ### 1. Handle Imbalanced Classes
-# The target variable (`Target`) shows an imbalance. Techniques to handle this include:
-
-# - **Resampling:** You can either oversample the minority class or undersample the majority class.
-
-#   ```python
-#   from imblearn.over_sampling import SMOTE
-#   from imblearn.under_sampling import RandomUnderSampler
-#   from imblearn.combine import SMOTETomek
-
-#   smote = SMOTE(random_state=42)
-#   X_res, y_res = smote.fit_resample(X, y)
-#   ```
-
-# - **Class Weight Adjustment:** Adjust the class weights in your model to give more importance to minority classes.
-
-#   ```python
-#   model = GradientBoostingClassifier(random_state=42, class_weight='balanced')
-#   ```
-
-# ### 2. Encode Categorical Variables
-# Many of your features are categorical (e.g., `Marital status`, `Application mode`). Convert them into numerical values.
-
-# - **Label Encoding:** For ordinal categories.
-
-#   ```python
-#   from sklearn.preprocessing import LabelEncoder
-
-#   label_encoder = LabelEncoder()
-#   data['Marital status'] = label_encoder.fit_transform(data['Marital status'])
-#   ```
-
-# - **One-Hot Encoding:** For nominal categories.
-
-#   ```python
-#   data = pd.get_dummies(data, columns=['Application mode'])
-#   ```
-
-# ### 3. Handle Missing Values
-# Ensure there are no missing values in your dataset.
-
-# - **Simple Imputer:** Fill missing values with mean, median, or most frequent values.
-
-#   ```python
-#   from sklearn.impute import SimpleImputer
-
-#   imputer = SimpleImputer(strategy='mean')
-#   data['Previous qualification (grade)'] = imputer.fit_transform(data[['Previous qualification (grade)']])
-#   ```
-
-# ### 4. Feature Scaling
-# Scale the features to normalize the data.
-
-# - **Standard Scaling:** Scale features to have zero mean and unit variance.
-
-#   ```python
-#   from sklearn.preprocessing import StandardScaler
-
-#   scaler = StandardScaler()
-#   data[['Admission grade', 'Unemployment rate', 'Inflation rate', 'GDP']] = scaler.fit_transform(data[['Admission grade', 'Unemployment rate', 'Inflation rate', 'GDP']])
-#   ```
-
-# ### 5. Feature Engineering
-# Create new features or transform existing ones to capture more information.
-
-# - **Binning Continuous Variables:** Create bins for continuous variables to capture non-linear relationships.
-
-#   ```python
-#   data['Age at enrollment_bin'] = pd.cut(data['Age at enrollment'], bins=5, labels=False)
-#   ```
-
-# ### 6. Removing Outliers
-# Identify and remove outliers using methods such as Z-Score or IQR.
-
-# - **Z-Score Method:**
-
-#   ```python
-#   from scipy import stats
-#   import numpy as np
-
-#   z_scores = np.abs(stats.zscore(data[['Admission grade', 'Unemployment rate', 'Inflation rate', 'GDP']]))
-#   data = data[(z_scores < 3).all(axis=1)]
-#   ```
-
-# - **IQR Method:**
-
-#   ```python
-#   Q1 = data['Admission grade'].quantile(0.25)
-#   Q3 = data['Admission grade'].quantile(0.75)
-#   IQR = Q3 - Q1
-#   data = data[(data['Admission grade'] >= (Q1 - 1.5 * IQR)) & (data['Admission grade'] <= (Q3 + 1.5 * IQR))]
-#   ```
-
-# ### 7. Correlation Analysis
-# Analyze the correlation between features and remove highly correlated ones to reduce multicollinearity.
-
-# ```python
-# import seaborn as sns
-# import matplotlib.pyplot as plt
-
-# corr_matrix = data.corr()
-# plt.figure(figsize=(12, 8))
-# sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
-# plt.show()
-
-# # Drop highly correlated features if necessary
-# ```
-
-# ### Example Workflow
-
-# Here's an example workflow incorporating some of these steps:
-
-# ```python
-# import pandas as pd
-# from sklearn.preprocessing import StandardScaler, LabelEncoder
-# from sklearn.impute import SimpleImputer
-# from imblearn.over_sampling import SMOTE
-# from scipy import stats
-# import seaborn as sns
-# import matplotlib.pyplot as plt
-
-# # Load your dataset
-# data = pd.read_csv('your_dataset.csv')
-
-# # Encode categorical variables
-# label_encoder = LabelEncoder()
-# data['Marital status'] = label_encoder.fit_transform(data['Marital status'])
-# data = pd.get_dummies(data, columns=['Application mode'])
-
-# # Handle missing values
-# imputer = SimpleImputer(strategy='mean')
-# data['Previous qualification (grade)'] = imputer.fit_transform(data[['Previous qualification (grade)']])
-
-# # Remove outliers using Z-Score method
-# z_scores = np.abs(stats.zscore(data[['Admission grade', 'Unemployment rate', 'Inflation rate', 'GDP']]))
-# data = data[(z_scores < 3).all(axis=1)]
-
-# # Scale features
-# scaler = StandardScaler()
-# data[['Admission grade', 'Unemployment rate', 'Inflation rate', 'GDP']] = scaler.fit_transform(data[['Admission grade', 'Unemployment rate', 'Inflation rate', 'GDP']])
-
-# # Handle imbalanced classes using SMOTE
-# X = data.drop('Target', axis=1)
-# y = data['Target']
-# smote = SMOTE(random_state=42)
-# X_res, y_res = smote.fit_resample(X, y)
-
-# # Correlation analysis
-# corr_matrix = data.corr()
-# plt.figure(figsize=(12, 8))
-# sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
-# plt.show()
-
-# # Model training and evaluation can follow here
-# ```
-
-# Adjust the parameters and methods according to your specific dataset and problem. This workflow is a starting point to improve your data preprocessing and model accuracy.
+Marital status
+1    70189
+2     5296
+4      866
+5      116
+6       35
+3       16
+Name: count, dtype: int64
+Application mode
+1     35227
+17    16523
+39    14519
+44     3012
+43     2671
+7      1498
+18     1256
+42      551
+51      442
+16      265
+53      225
+15      183
+5        87
+10       43
+2         8
+27        2
+12        1
+26        1
+4         1
+35        1
+9         1
+3         1
+Name: count, dtype: int64
+Application order
+1    54381
+2     8875
+3     5364
+4     3822
+5     2125
+6     1947
+0        3
+9        1
+Name: count, dtype: int64
+Course
+9500    12074
+9773     8214
+9238     7935
+9147     7741
+9254     5425
+9085     5373
+9670     4760
+9991     4057
+9003     3733
+9070     3281
+9853     3198
+9119     3004
+171      2859
+8014     2438
+9130     1606
+9556      746
+33         72
+979         1
+39          1
+Name: count, dtype: int64
+Daytime/evening attendance
+1    70038
+0     6480
+Name: count, dtype: int64
+Previous qualification
+1     67183
+19     2947
+39     2928
+3      1401
+12      899
+9       308
+40      259
+42      229
+2        98
+6        98
+10       43
+43       39
+38       38
+4        23
+15       11
+5         3
+14        3
+37        3
+11        2
+17        2
+36        1
+Name: count, dtype: int64
+Previous qualification (grade)
+133.1    10719
+130.0     6261
+140.0     5917
+120.0     4511
+125.0     2749
+         ...
+140.6        1
+162.9        1
+119.3        1
+173.0        1
+138.4        1
+Name: count, Length: 110, dtype: int64
+Nacionality
+1      76013
+41       221
+26        67
+6         56
+22        56
+24        15
+11        15
+2         13
+103       12
+105        9
+101        9
+100        9
+21         6
+25         6
+62         6
+17         2
+109        2
+32         1
+Name: count, dtype: int64
+Mother's qualification
+1     20202
+19    18980
+37    18664
+38     9059
+3      5890
+34     1993
+2       613
+12      358
+4       313
+5        99
+40       49
+39       46
+9        45
+11       32
+41       26
+6        21
+42       19
+43       16
+10       15
+36       15
+29       15
+35       10
+30       10
+22        5
+14        5
+26        4
+18        3
+44        2
+33        2
+31        2
+15        1
+7         1
+8         1
+28        1
+27        1
+Name: count, dtype: int64
+Father's qualification
+37    23290
+19    19015
+1     15604
+38    12253
+3      3011
+34     1790
+2       496
+12      294
+4       224
+39      120
+5       100
+11       75
+36       43
+29       25
+40       25
+9        19
+14       18
+43       14
+30       14
+41       13
+22       11
+10       10
+6         9
+26        9
+42        7
+35        5
+18        4
+13        3
+44        3
+20        3
+27        2
+7         2
+33        1
+31        1
+21        1
+23        1
+15        1
+24        1
+25        1
+Name: count, dtype: int64
+Mother's occupation
+9      32386
+4      16062
+5       9452
+3       4644
+7       4207
+2       4087
+0       2206
+90       978
+6        786
+1        766
+8        243
+191      212
+99       138
+194       79
+141       51
+123       44
+144       25
+192       23
+10        18
+152       13
+193       13
+134       11
+132       11
+175       11
+151       11
+143        9
+153        8
+131        6
+122        6
+173        2
+171        1
+172        1
+11         1
+127        1
+38         1
+163        1
+125        1
+124        1
+103        1
+101        1
+Name: count, dtype: int64
+Father's occupation
+9      22320
+7      12910
+5       9661
+4       6668
+3       5663
+8       5111
+10      4107
+6       2922
+2       2236
+0       2056
+1       1177
+90       986
+99       150
+193       83
+171       66
+144       62
+163       47
+175       37
+103       29
+192       27
+181       19
+152       18
+135       14
+182       11
+151       10
+172       10
+112       10
+102       10
+154        9
+183        8
+123        8
+194        8
+153        7
+122        7
+143        5
+195        5
+131        5
+114        4
+101        4
+141        4
+132        3
+174        3
+134        3
+121        3
+11         1
+19         1
+148        1
+22         1
+124        1
+96         1
+191        1
+125        1
+12         1
+39         1
+161        1
+13         1
+Name: count, dtype: int64
+Admission grade
+120.0    2995
+130.0    2704
+140.0    2623
+100.0    1683
+110.0    1482
+         ...
+149.1       1
+164.7       1
+111.2       1
+178.6       1
+165.9       1
+Name: count, Length: 668, dtype: int64
+Displaced
+1    43559
+0    32959
+Name: count, dtype: int64
+Educational special needs
+0    76232
+1      286
+Name: count, dtype: int64
+Debtor
+0    71056
+1     5462
+Name: count, dtype: int64
+Tuition fees up to date
+1    68380
+0     8138
+Name: count, dtype: int64
+Gender
+0    52352
+1    24166
+Name: count, dtype: int64
+Scholarship holder
+0    57588
+1    18930
+Name: count, dtype: int64
+Age at enrollment
+18    22377
+19    18078
+20    10367
+21     4516
+22     1907
+24     1834
+25     1662
+27     1544
+28     1358
+26     1300
+23     1042
+29      905
+32      897
+31      878
+34      771
+30      653
+33      635
+35      617
+37      551
+39      500
+36      497
+38      390
+41      365
+43      349
+45      291
+47      283
+40      269
+44      266
+48      263
+50      238
+49      187
+46      151
+42      123
+51       99
+58       64
+55       60
+53       47
+17       40
+52       39
+54       34
+70       20
+60       17
+57       13
+61       10
+59        8
+62        3
+Name: count, dtype: int64
+International
+0    76011
+1      507
+Name: count, dtype: int64
+Curricular units 1st sem (credited)
+0     73429
+2       657
+1       509
+3       412
+6       247
+4       237
+7       224
+5       215
+8       161
+9       105
+10       62
+11       61
+12       52
+13       46
+14       45
+15       17
+17       10
+16       10
+18        8
+20        6
+19        5
+Name: count, dtype: int64
+Curricular units 1st sem (enrolled)
+6     39160
+5     19175
+7      8863
+8      4850
+0      2671
+12      365
+11      253
+10      237
+4       185
+9       172
+13       96
+15       93
+14       77
+17       65
+18       60
+3        47
+2        46
+1        41
+16       34
+21       13
+19       10
+26        3
+22        1
+23        1
+Name: count, dtype: int64
+Curricular units 1st sem (evaluations)
+8     15640
+7     12943
+6     12924
+0      7951
+9      6017
+10     5186
+5      4864
+11     3156
+12     3033
+13     1823
+14     1001
+15      589
+16      344
+17      219
+18      165
+4       163
+19      101
+21       84
+20       55
+1        47
+2        43
+22       41
+3        34
+24       24
+23       23
+26        8
+29        6
+25        6
+27        5
+31        5
+32        5
+33        4
+36        4
+45        3
+28        1
+35        1
+Name: count, dtype: int64
+Curricular units 1st sem (approved)
+6     22055
+0     16033
+5     12249
+7      7562
+4      7015
+3      4698
+2      2475
+1      1946
+8      1370
+11      277
+12      223
+9       192
+10      130
+13      117
+14       45
+18       42
+17       34
+15       20
+19       10
+16       10
+21        9
+20        3
+26        3
+Name: count, dtype: int64
+Curricular units 1st sem (grade)
+0.000000     16034
+12.000000     4385
+13.000000     2881
+11.000000     2711
+12.666667     2082
+             ...
+14.927273        1
+5.666667         1
+11.550000        1
+12.933333        1
+14.966667        1
+Name: count, Length: 1206, dtype: int64
+Curricular units 1st sem (without evaluations)
+0     74069
+1      1371
+2       746
+3       123
+4        77
+7        40
+6        31
+8        28
+5        26
+12        3
+10        3
+9         1
+Name: count, dtype: int64
+Curricular units 2nd sem (credited)
+0     73809
+1       659
+2       608
+4       434
+5       318
+3       186
+6       112
+11       82
+7        68
+9        48
+10       45
+12       44
+8        38
+13       29
+14       13
+15       12
+16        5
+19        3
+18        3
+17        2
+Name: count, dtype: int64
+Curricular units 2nd sem (enrolled)
+6     39118
+5     19565
+8     10412
+7      3307
+0      2674
+11      346
+9       244
+10      234
+12      199
+13      129
+4       112
+14       62
+17       39
+2        24
+3        13
+15       11
+18        9
+1         8
+19        6
+16        3
+21        2
+23        1
+Name: count, dtype: int64
+Curricular units 2nd sem (evaluations)
+8     14964
+6     13250
+7     10302
+0      8792
+9      7758
+5      5852
+10     5195
+11     3289
+12     3195
+13     1375
+14      917
+15      627
+16      350
+17      150
+19      129
+18      126
+4        53
+22       38
+21       38
+20       32
+2        19
+3        12
+1        11
+23       11
+24        9
+28        7
+25        6
+27        5
+33        3
+26        2
+31        1
+Name: count, dtype: int64
+Curricular units 2nd sem (approved)
+6     19096
+0     18478
+5     11830
+4      6704
+8      5103
+3      5024
+7      4611
+2      3103
+1      1665
+11      278
+9       178
+10      175
+12      131
+13       81
+17       18
+14       17
+18        9
+16        7
+19        6
+15        2
+20        2
+Name: count, dtype: int64
+Curricular units 2nd sem (grade)
+0.000000     18480
+11.000000     3477
+12.000000     3423
+13.000000     3036
+12.500000     1681
+             ...
+13.291250        1
+12.761250        1
+14.757143        1
+14.744444        1
+14.966667        1
+Name: count, Length: 1234, dtype: int64
+Curricular units 2nd sem (without evaluations)
+0     74372
+1      1028
+2       439
+3       328
+4       119
+5       108
+6        48
+7        38
+8        34
+12        3
+10        1
+Name: count, dtype: int64
+Unemployment rate
+7.6     10436
+9.4     10183
+10.8     9388
+12.4     8470
+12.7     7379
+11.1     6846
+15.5     6754
+16.2     6151
+13.9     5781
+8.9      5128
+14.5        2
+Name: count, dtype: int64
+Inflation rate
+ 1.4    14515
+ 2.6    10436
+-0.8    10183
+ 0.5     8470
+ 3.7     7378
+ 0.6     6846
+ 2.8     6756
+ 0.3     6151
+-0.3     5779
+ 0.7        1
+-0.6        1
+ 0.4        1
+ 2.5        1
+Name: count, dtype: int64
+GDP
+ 0.32    10436
+-3.12    10184
+ 1.74     9390
+ 1.79     8471
+-1.70     7379
+ 2.02     6846
+-4.06     6757
+-0.92     6151
+ 0.79     5780
+ 3.51     5123
+ 0.74        1
+Name: count, dtype: int64
+Target
+Graduate    36282
+Dropout     25296
+Enrolled    14940
+Name: count, dtype: int64
