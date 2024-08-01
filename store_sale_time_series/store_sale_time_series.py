@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[560]:
+# In[31]:
 
 
+'''combining col, including other csv, corr'''
 # Import necessary libraries
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -33,6 +34,8 @@ from sklearn.preprocessing import KBinsDiscretizer
 from sklearn.pipeline import FunctionTransformer
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
+from sklearn.impute import KNNImputer
+from sklearn.preprocessing import PolynomialFeatures
 
 import pandas as pd
 from pandas_profiling import ProfileReport
@@ -42,15 +45,26 @@ warnings.filterwarnings("ignore")
 model = LinearRegression()
 
 
-# In[561]:
+# In[32]:
 
 
 # Load data
 excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
+stores_df = pd.read_csv('stores.csv')
+# oil
+oil_df = pd.read_csv('oil.csv')
+imp_oil = int(oil_df['dcoilwtico'].mean())
+imp_oil = 0
+oil_df['dcoilwtico'] = oil_df['dcoilwtico'].fillna(imp_oil)
+# transactions
+transactions_df = pd.read_csv('transactions.csv')
+imp_transaction = int(transactions_df['transactions'].mean())
+imp_transaction = 0
+transactions_df['transactions'] = transactions_df['transactions'].fillna(imp_transaction)
 
 
-# In[562]:
+# In[33]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -83,7 +97,7 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[563]:
+# In[34]:
 
 
 # how to know no. of bins
@@ -99,15 +113,21 @@ def pre_process(df):
     df['date'] = pd.to_datetime(df['date'])
     df['month'] = df['date'].dt.month
     df['year'] = df['date'].dt.year
-    # df['date_day'] = df['date'].dt.day
     df['date_dow'] = df['date'].dt.dayofweek
     df['date_is_weekend'] = np.where(df['date_dow'].isin([5,6]), 1,0)
     # Convert the specified columns to object type
     columns_to_convert = ['month', 'year', 'date_dow', 'date_is_weekend']
     df[columns_to_convert] = df[columns_to_convert].astype('object')
-    df=df.drop(columns=["date"])
-    # df['Age at enrollment'] = KBinsDiscretizer(n_bins=7, encode='ordinal', strategy='quantile').fit_transform(df[['Age at enrollment']])
-    # df['Application mode'] = KBinsDiscretizer(n_bins=7, encode='ordinal', strategy='kmeans').fit_transform(df[['Application mode']])
+    # store nbr
+    df = pd.merge(df, stores_df, on='store_nbr', how='left')
+    # dcoilwtico
+    oil_df['date'] = pd.to_datetime(oil_df['date'])
+    df = pd.merge(df, oil_df, on='date', how='left')
+    df['dcoilwtico'] = df['dcoilwtico'].fillna(int(imp_oil))
+    # transaction
+    transactions_df['date'] = pd.to_datetime(transactions_df['date'])
+    df = pd.merge(df, transactions_df, on=['date', 'store_nbr'], how='left')
+    df['transactions'] = df['transactions'].fillna(int(imp_transaction))
     return df
 
 
@@ -115,10 +135,17 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[564]:
+# In[35]:
+
+
+df.head()
+
+
+# In[36]:
 
 
 df = df.drop_duplicates()
+df['sales'] = np.log1p(df['sales'])
 df.to_csv("df.csv", index=False)
 
 def gen_eda():
@@ -133,86 +160,59 @@ def gen_eda():
 # gen_eda()
 
 
-# In[565]:
+# In[37]:
 
 
 # Define features and target
 def get_X_Y(df):
-    X = df.drop(
-        columns=[
-            "id",
-            "sales",
-        ]
-    )
+    X = df.drop(columns=["id","sales","date", "dcoilwtico", "transactions"])
     Y = df["sales"]
     return X, Y
-
 
 X, Y = get_X_Y(df)
 
 
-# In[566]:
+# In[38]:
 
 
 # Split data into train and test sets
 X_train, X_test, Y_train, Y_test = train_test_split(
     X, Y, test_size=0.20, random_state=5
 )
-
 print(X_train.shape)
 
 
-# In[567]:
-
-
-# Calculate the correlation matrix
-# correlation_matrix = df.corr()
-
-# # Save the correlation matrix to a CSV file
-# correlation_matrix.to_csv('correlation_matrix.csv', index=True)
-
-
-# In[568]:
+# In[39]:
 
 
 # Get the list of categorical column names
 numerical_features = X_train.columns
 categorical_feat_ord = [
+    # "dcoilwtico", "transactions"
 ]
 categorical_feat_nom = [
-    'store_nbr', 'family','month', 'year', 'date_dow'
+    'store_nbr', 'family', 
+    'month', 'year', 'date_dow', 
+    'city', 'state', 'type', 'cluster'
 ]
 cat = categorical_feat_ord + categorical_feat_nom
 numerical_features = [item for item in numerical_features if item not in cat]
 numerical_features = ['onpromotion']
-print(numerical_features)
 
 
-# In[569]:
-
-
-X_train.info()
-
-
-# In[570]:
-
-
-Y_train.info()
-
-
-# In[571]:
+# In[40]:
 
 
 # Separate transformers for categorical and numerical features
 
-trf = PowerTransformer()
-trf1 = FunctionTransformer(np.log1p, validate=True)
+trf = FunctionTransformer(np.log1p, validate=True)
+# Add Polynomial Features
+poly = PolynomialFeatures(degree=2, include_bias=False)
 
 numerical_transformer = Pipeline(
     steps=[
-        ("log", trf1),
-        # ("power", trf),
-        # ('pca',PCA(n_components=1)) 
+        ("poly", poly),
+        ("log", trf)
     ]
 )
 categorical_transformer_onehot = Pipeline(
@@ -227,7 +227,7 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[572]:
+# In[41]:
 
 
 preprocessor = ColumnTransformer(
@@ -244,7 +244,17 @@ pipeline = Pipeline([("preprocessor", preprocessor), ("model", model)])
 pipeline.fit(X_train, Y_train)
 
 
-# In[573]:
+# In[42]:
+
+
+# # Calculate the correlation matrix
+# correlation_matrix = df.corr()
+
+# # Save the correlation matrix to a CSV file
+# correlation_matrix.to_csv('correlation_matrix.csv', index=True)
+
+
+# In[43]:
 
 
 # Save the fitted pipeline as a .pkl file
@@ -253,7 +263,7 @@ pickle.dump(pipeline, open(filename_pkl, "wb"))
 print(f"Model saved as {filename_pkl}")
 
 
-# In[574]:
+# In[44]:
 
 
 # Evaluate the model
@@ -262,7 +272,7 @@ mse = mean_squared_error(Y_test, y_pred)
 print(f"Mean Squared Error: {mse}")
 
 
-# In[575]:
+# In[45]:
 
 
 # Define the columns expected by the model
@@ -282,6 +292,7 @@ def generate_submission(test_file):
     # Load the original test file to keep the PassengerId column
     original_df = pd.read_csv(test_file)
     original_df["sales"] = predictions
+    original_df['sales'] = np.expm1(original_df['sales'])
     # Save the results to a new CSV file
     submission_df = original_df[["id", "sales"]]
     submission_df.to_csv("submission.csv", index=False)
