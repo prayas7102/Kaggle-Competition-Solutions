@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[31]:
+# In[23]:
 
 
-'''combining col, including other csv, corr'''
+'''run ridge,lasso,tree regressors'''
 # Import necessary libraries
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -23,7 +23,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import warnings
 import pickle
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Lasso, LinearRegression
 from sklearn.metrics import mean_squared_error
 from imblearn.over_sampling import SMOTE
 
@@ -39,13 +39,16 @@ from sklearn.preprocessing import PolynomialFeatures
 
 import pandas as pd
 from pandas_profiling import ProfileReport
+from xgboost import XGBRegressor
 
 warnings.filterwarnings("ignore")
 
 model = LinearRegression()
+model = Lasso(alpha=0.1)
+model = XGBRegressor(objective='reg:squarederror', scale_pos_weight=1)  
 
 
-# In[32]:
+# In[24]:
 
 
 # Load data
@@ -64,7 +67,7 @@ imp_transaction = 0
 transactions_df['transactions'] = transactions_df['transactions'].fillna(imp_transaction)
 
 
-# In[33]:
+# In[25]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -97,7 +100,7 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[34]:
+# In[26]:
 
 
 # how to know no. of bins
@@ -135,13 +138,13 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[35]:
+# In[27]:
 
 
 df.head()
 
 
-# In[36]:
+# In[28]:
 
 
 df = df.drop_duplicates()
@@ -160,7 +163,7 @@ def gen_eda():
 # gen_eda()
 
 
-# In[37]:
+# In[29]:
 
 
 # Define features and target
@@ -172,7 +175,7 @@ def get_X_Y(df):
 X, Y = get_X_Y(df)
 
 
-# In[38]:
+# In[30]:
 
 
 # Split data into train and test sets
@@ -182,7 +185,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[39]:
+# In[31]:
 
 
 # Get the list of categorical column names
@@ -200,7 +203,7 @@ numerical_features = [item for item in numerical_features if item not in cat]
 numerical_features = ['onpromotion']
 
 
-# In[40]:
+# In[32]:
 
 
 # Separate transformers for categorical and numerical features
@@ -227,7 +230,7 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[41]:
+# In[33]:
 
 
 preprocessor = ColumnTransformer(
@@ -244,7 +247,7 @@ pipeline = Pipeline([("preprocessor", preprocessor), ("model", model)])
 pipeline.fit(X_train, Y_train)
 
 
-# In[42]:
+# In[34]:
 
 
 # # Calculate the correlation matrix
@@ -254,7 +257,7 @@ pipeline.fit(X_train, Y_train)
 # correlation_matrix.to_csv('correlation_matrix.csv', index=True)
 
 
-# In[43]:
+# In[35]:
 
 
 # Save the fitted pipeline as a .pkl file
@@ -263,7 +266,7 @@ pickle.dump(pipeline, open(filename_pkl, "wb"))
 print(f"Model saved as {filename_pkl}")
 
 
-# In[44]:
+# In[36]:
 
 
 # Evaluate the model
@@ -272,7 +275,7 @@ mse = mean_squared_error(Y_test, y_pred)
 print(f"Mean Squared Error: {mse}")
 
 
-# In[45]:
+# In[37]:
 
 
 # Define the columns expected by the model
