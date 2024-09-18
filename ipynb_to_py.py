@@ -14,7 +14,7 @@ def convert_ipynb_to_py(ipynb_file, py_file):
     with open(py_file, 'w', encoding='utf-8') as f:
         f.write(script)
 
-# Example usage
-ipynb_file = './store_sale_time_series/store_sale_time_series.ipynb'  # Replace with your .ipynb file path
-py_file = './store_sale_time_series\store_sale_time_series.py'          # Replace with your desired .py file path
+# Example usage 
+ipynb_file = './playground-series-s4e9/playground-series-s4e9.ipynb'  # Replace with your .ipynb file path
+py_file = './playground-series-s4e9/playground-series-s4e9.py'          # Replace with your desired .py file path
 convert_ipynb_to_py(ipynb_file, py_file)

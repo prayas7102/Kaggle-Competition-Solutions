@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[23]:
+# In[517]:
 
 
 '''run ridge,lasso,tree regressors'''
@@ -36,38 +36,30 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
 from sklearn.impute import KNNImputer
 from sklearn.preprocessing import PolynomialFeatures
+from sklearn.metrics import r2_score
 
 import pandas as pd
 from pandas_profiling import ProfileReport
+from sklearn.tree import DecisionTreeRegressor
 from xgboost import XGBRegressor
 
 warnings.filterwarnings("ignore")
 
-model = LinearRegression()
-model = Lasso(alpha=0.1)
+# model = LinearRegression()
+# model = Lasso(alpha=0.1)
 model = XGBRegressor(objective='reg:squarederror', scale_pos_weight=1)  
+# model = DecisionTreeRegressor(random_state=42)
 
 
-# In[24]:
+# In[518]:
 
 
 # Load data
 excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
-stores_df = pd.read_csv('stores.csv')
-# oil
-oil_df = pd.read_csv('oil.csv')
-imp_oil = int(oil_df['dcoilwtico'].mean())
-imp_oil = 0
-oil_df['dcoilwtico'] = oil_df['dcoilwtico'].fillna(imp_oil)
-# transactions
-transactions_df = pd.read_csv('transactions.csv')
-imp_transaction = int(transactions_df['transactions'].mean())
-imp_transaction = 0
-transactions_df['transactions'] = transactions_df['transactions'].fillna(imp_transaction)
 
 
-# In[25]:
+# In[519]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -100,7 +92,7 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[26]:
+# In[520]:
 
 
 # how to know no. of bins
@@ -108,29 +100,13 @@ outlier_dict = {
     "normal": [
     ],
     "skew": [
+        # "milage"
     ],
 }
 
 
 def pre_process(df):
-    df['date'] = pd.to_datetime(df['date'])
-    df['month'] = df['date'].dt.month
-    df['year'] = df['date'].dt.year
-    df['date_dow'] = df['date'].dt.dayofweek
-    df['date_is_weekend'] = np.where(df['date_dow'].isin([5,6]), 1,0)
-    # Convert the specified columns to object type
-    columns_to_convert = ['month', 'year', 'date_dow', 'date_is_weekend']
-    df[columns_to_convert] = df[columns_to_convert].astype('object')
-    # store nbr
-    df = pd.merge(df, stores_df, on='store_nbr', how='left')
-    # dcoilwtico
-    oil_df['date'] = pd.to_datetime(oil_df['date'])
-    df = pd.merge(df, oil_df, on='date', how='left')
-    df['dcoilwtico'] = df['dcoilwtico'].fillna(int(imp_oil))
-    # transaction
-    transactions_df['date'] = pd.to_datetime(transactions_df['date'])
-    df = pd.merge(df, transactions_df, on=['date', 'store_nbr'], how='left')
-    df['transactions'] = df['transactions'].fillna(int(imp_transaction))
+    
     return df
 
 
@@ -138,17 +114,24 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[27]:
+# In[521]:
 
 
 df.head()
 
 
-# In[28]:
+# In[522]:
+
+
+df.isnull().sum()
+
+
+# In[523]:
 
 
 df = df.drop_duplicates()
-df['sales'] = np.log1p(df['sales'])
+df['price'] = np.log1p(df['price'])
+
 df.to_csv("df.csv", index=False)
 
 def gen_eda():
@@ -163,21 +146,16 @@ def gen_eda():
 # gen_eda()
 
 
-# In[29]:
+# In[524]:
 
 
 # Define features and target
 def get_X_Y(df):
-    X = df.drop(columns=["id","sales","date", "dcoilwtico", "transactions"])
-    Y = df["sales"]
+    X = df.drop(columns=["id", "price", "clean_title"])
+    Y = df["price"]
     return X, Y
 
 X, Y = get_X_Y(df)
-
-
-# In[30]:
-
-
 # Split data into train and test sets
 X_train, X_test, Y_train, Y_test = train_test_split(
     X, Y, test_size=0.20, random_state=5
@@ -185,52 +163,73 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[31]:
+# In[525]:
+
+
+# Get unique elements for each column
+for x in list(df.columns):
+    print('feature: ', x)
+    print('value count', df[x].value_counts())
+    print('unique values',len(df[x].unique()))
+    print('\n')
+
+
+# In[526]:
 
 
 # Get the list of categorical column names
 numerical_features = X_train.columns
-categorical_feat_ord = [
-    # "dcoilwtico", "transactions"
-]
+# ordinal data
+# Define the categories in the order you want
+year = sorted(list(df['model_year'].unique()))
+title = ['No', 'Yes']
+categories_order = {
+    "accident": ['None reported', 'At least 1 accident or damage reported'],
+    "model_year": year,
+}
+categorical_feat_ord = list(categories_order.keys())
 categorical_feat_nom = [
-    'store_nbr', 'family', 
-    'month', 'year', 'date_dow', 
-    'city', 'state', 'type', 'cluster'
+    "ext_col", "int_col", "brand", "model", "fuel_type", "engine", "transmission"
 ]
 cat = categorical_feat_ord + categorical_feat_nom
 numerical_features = [item for item in numerical_features if item not in cat]
-numerical_features = ['onpromotion']
 
 
-# In[32]:
+# In[527]:
 
 
 # Separate transformers for categorical and numerical features
 
+from sklearn.impute import SimpleImputer
+
+
 trf = FunctionTransformer(np.log1p, validate=True)
 # Add Polynomial Features
-poly = PolynomialFeatures(degree=2, include_bias=False)
+# poly = PolynomialFeatures(degree=2, include_bias=False)
 
 numerical_transformer = Pipeline(
     steps=[
-        ("poly", poly),
+        # ("poly", poly),
         ("log", trf)
     ]
 )
 categorical_transformer_onehot = Pipeline(
     steps=[
+        ("imputer", SimpleImputer(strategy="most_frequent")),
         ("onehot", OneHotEncoder(handle_unknown="ignore")),
     ]
 )
+# Create the categorical transformer for ordinal features with an imputer
 categorical_transformer_ordinal = Pipeline(
     steps=[
-        ("ord", OrdinalEncoder(handle_unknown="use_encoded_value", unknown_value=-1)),
+        ("imputer", SimpleImputer(strategy="most_frequent")),  # Impute missing values with the most frequent value
+        ("ordinal", OrdinalEncoder(categories=[categories_order[col] for col in categorical_feat_ord],
+                                   handle_unknown="use_encoded_value", unknown_value=-1)),
     ]
 )
 
 
-# In[33]:
+# In[528]:
 
 
 preprocessor = ColumnTransformer(
@@ -247,7 +246,7 @@ pipeline = Pipeline([("preprocessor", preprocessor), ("model", model)])
 pipeline.fit(X_train, Y_train)
 
 
-# In[34]:
+# In[529]:
 
 
 # # Calculate the correlation matrix
@@ -257,30 +256,29 @@ pipeline.fit(X_train, Y_train)
 # correlation_matrix.to_csv('correlation_matrix.csv', index=True)
 
 
-# In[35]:
+# In[530]:
 
 
 # Save the fitted pipeline as a .pkl file
 filename_pkl = "model.pkl"
 pickle.dump(pipeline, open(filename_pkl, "wb"))
 print(f"Model saved as {filename_pkl}")
-
-
-# In[36]:
-
-
 # Evaluate the model
 y_pred = pipeline.predict(X_test)
 mse = mean_squared_error(Y_test, y_pred)
 print(f"Mean Squared Error: {mse}")
+r2 = r2_score(Y_test, y_pred)
+n = len(Y_test)
+p = 1
+adj_r2 = 1 - ((1 - r2) * (n - 1)) / (n - p - 1)
+print(f"Adjusted R² score: {adj_r2}")
 
 
-# In[37]:
+# In[531]:
 
 
 # Define the columns expected by the model
 column_names = X_train.columns
-
 
 def generate_submission(test_file):
     # Read the CSV file into a DataFrame
@@ -294,10 +292,10 @@ def generate_submission(test_file):
     predictions = pipeline.predict(filtered_df)
     # Load the original test file to keep the PassengerId column
     original_df = pd.read_csv(test_file)
-    original_df["sales"] = predictions
-    original_df['sales'] = np.expm1(original_df['sales'])
+    original_df["price"] = predictions
+    original_df['price'] = np.expm1(original_df['price'])
     # Save the results to a new CSV file
-    submission_df = original_df[["id", "sales"]]
+    submission_df = original_df[["id", "price"]]
     submission_df.to_csv("submission.csv", index=False)
     print("Submission file saved as 'submission.csv'")
 
