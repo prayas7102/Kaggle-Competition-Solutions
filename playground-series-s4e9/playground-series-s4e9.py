@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[517]:
+# In[107]:
 
 
-"""run ridge,lasso,tree regressors"""
 # Import necessary libraries
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -26,6 +25,7 @@ import pickle
 from sklearn.linear_model import Lasso, LinearRegression
 from sklearn.metrics import mean_squared_error
 from imblearn.over_sampling import SMOTE
+import dtale
 
 from scipy import stats
 from sklearn.mixture import GaussianMixture
@@ -51,7 +51,7 @@ model = XGBRegressor(objective="reg:squarederror", scale_pos_weight=1)
 # model = DecisionTreeRegressor(random_state=42)
 
 
-# In[518]:
+# In[108]:
 
 
 # Load data
@@ -59,7 +59,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 
 
-# In[519]:
+# In[109]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -92,19 +92,26 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[520]:
+# In[110]:
 
 
 # how to know no. of bins
 outlier_dict = {
     "normal": [],
-    "skew": [
-        # "milage"
-    ],
+    "skew": ["milage"],
 }
+
+def frequency_encoding(df, columns):
+    for col in columns:
+        freq_encoding = df[col].value_counts() / len(df)
+        name = col + "_freq"
+        df[name] = df[col].map(freq_encoding)
+    return df
 
 
 def pre_process(df):
+    df = frequency_encoding(df, ["brand", "model", "engine", "int_col", "ext_col"])
+    df['model_year_bin'] = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy='quantile').fit_transform(df[['model_year']])
     return df
 
 
@@ -112,23 +119,22 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[521]:
+# In[111]:
 
 
 df.head()
 
 
-# In[522]:
+# In[112]:
 
 
 df.isnull().sum()
 
 
-# In[523]:
+# In[113]:
 
 
 df = df.drop_duplicates()
-df["price"] = np.log1p(df["price"])
 
 df.to_csv("df.csv", index=False)
 
@@ -143,9 +149,10 @@ def gen_eda():
 
 
 # gen_eda()
+df["price"] = np.log1p(df["price"])
 
 
-# In[524]:
+# In[114]:
 
 
 # Define features and target
@@ -163,7 +170,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[525]:
+# In[115]:
 
 
 # Get unique elements for each column
@@ -174,7 +181,7 @@ for x in list(df.columns):
     print("\n")
 
 
-# In[526]:
+# In[116]:
 
 
 # Get the list of categorical column names
@@ -201,7 +208,7 @@ cat = categorical_feat_ord + categorical_feat_nom
 numerical_features = [item for item in numerical_features if item not in cat]
 
 
-# In[527]:
+# In[117]:
 
 
 # Separate transformers for categorical and numerical features
@@ -211,12 +218,12 @@ from sklearn.impute import SimpleImputer
 
 trf = FunctionTransformer(np.log1p, validate=True)
 # Add Polynomial Features
-# poly = PolynomialFeatures(degree=2, include_bias=False)
+poly = PolynomialFeatures(degree=2, include_bias=False)
 
 numerical_transformer = Pipeline(
     steps=[
-        # ("poly", poly),
-        ("log", trf)
+        ("poly", poly),
+        # ("log", trf)
     ]
 )
 categorical_transformer_onehot = Pipeline(
@@ -244,7 +251,7 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[528]:
+# In[118]:
 
 
 preprocessor = ColumnTransformer(
@@ -261,7 +268,7 @@ pipeline = Pipeline([("preprocessor", preprocessor), ("model", model)])
 pipeline.fit(X_train, Y_train)
 
 
-# In[529]:
+# In[119]:
 
 
 # # Calculate the correlation matrix
@@ -271,7 +278,7 @@ pipeline.fit(X_train, Y_train)
 # correlation_matrix.to_csv('correlation_matrix.csv', index=True)
 
 
-# In[530]:
+# In[120]:
 
 
 # Save the fitted pipeline as a .pkl file
@@ -289,12 +296,32 @@ adj_r2 = 1 - ((1 - r2) * (n - 1)) / (n - p - 1)
 print(f"Adjusted R² score: {adj_r2}")
 
 
-# In[531]:
+# In[121]:
 
 
 # Define the columns expected by the model
 column_names = X_train.columns
-
+def pre_process_test(df):
+    columns = ["brand", "model", "engine", "int_col", "ext_col"]
+    
+    # Calculate frequency encodings from X_train
+    freq_encodings = {}
+    for col in columns:
+        freq_encodings[col] = X_train[col].value_counts() / len(X_train)
+    
+    # Apply frequency encoding to df
+    for col in columns:
+        if col in df.columns:
+            df[col + '_freq'] = df[col].map(freq_encodings.get(col, {})).fillna(0)
+    
+    # Fit KBinsDiscretizer on 'model_year' column of X_train
+    bin_discretizer = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy='quantile')
+    bin_discretizer.fit(X_train[['model_year']])
+    
+    # Transform 'model_year' column in df
+    if 'model_year' in df.columns:
+        df['model_year_bin'] = bin_discretizer.transform(df[['model_year']])
+    return df
 
 def generate_submission(test_file):
     # Read the CSV file into a DataFrame
@@ -302,7 +329,8 @@ def generate_submission(test_file):
     df = pd.DataFrame(df)
     # Replace empty strings with NaN
     df.replace("", np.nan, inplace=True)
-    df = pre_process(df)
+    # df = pre_process(df)
+    df = pre_process_test(df)
     # Select the relevant columns
     filtered_df = df[column_names]
     predictions = pipeline.predict(filtered_df)
@@ -319,3 +347,4 @@ def generate_submission(test_file):
 # Generate the submission
 test_file = "test.csv"
 generate_submission(test_file)
+
