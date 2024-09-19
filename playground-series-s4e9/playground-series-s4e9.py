@@ -4,7 +4,7 @@
 # In[517]:
 
 
-'''run ridge,lasso,tree regressors'''
+"""run ridge,lasso,tree regressors"""
 # Import necessary libraries
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -47,7 +47,7 @@ warnings.filterwarnings("ignore")
 
 # model = LinearRegression()
 # model = Lasso(alpha=0.1)
-model = XGBRegressor(objective='reg:squarederror', scale_pos_weight=1)  
+model = XGBRegressor(objective="reg:squarederror", scale_pos_weight=1)
 # model = DecisionTreeRegressor(random_state=42)
 
 
@@ -97,8 +97,7 @@ def remove_outliers(df, outlier_dict):
 
 # how to know no. of bins
 outlier_dict = {
-    "normal": [
-    ],
+    "normal": [],
     "skew": [
         # "milage"
     ],
@@ -106,7 +105,6 @@ outlier_dict = {
 
 
 def pre_process(df):
-    
     return df
 
 
@@ -130,9 +128,10 @@ df.isnull().sum()
 
 
 df = df.drop_duplicates()
-df['price'] = np.log1p(df['price'])
+df["price"] = np.log1p(df["price"])
 
 df.to_csv("df.csv", index=False)
+
 
 def gen_eda():
     profile = ProfileReport(
@@ -155,6 +154,7 @@ def get_X_Y(df):
     Y = df["price"]
     return X, Y
 
+
 X, Y = get_X_Y(df)
 # Split data into train and test sets
 X_train, X_test, Y_train, Y_test = train_test_split(
@@ -168,10 +168,10 @@ print(X_train.shape)
 
 # Get unique elements for each column
 for x in list(df.columns):
-    print('feature: ', x)
-    print('value count', df[x].value_counts())
-    print('unique values',len(df[x].unique()))
-    print('\n')
+    print("feature: ", x)
+    print("value count", df[x].value_counts())
+    print("unique values", len(df[x].unique()))
+    print("\n")
 
 
 # In[526]:
@@ -181,15 +181,21 @@ for x in list(df.columns):
 numerical_features = X_train.columns
 # ordinal data
 # Define the categories in the order you want
-year = sorted(list(df['model_year'].unique()))
-title = ['No', 'Yes']
+year = sorted(list(df["model_year"].unique()))
+title = ["No", "Yes"]
 categories_order = {
-    "accident": ['None reported', 'At least 1 accident or damage reported'],
+    "accident": ["None reported", "At least 1 accident or damage reported"],
     "model_year": year,
 }
 categorical_feat_ord = list(categories_order.keys())
 categorical_feat_nom = [
-    "ext_col", "int_col", "brand", "model", "fuel_type", "engine", "transmission"
+    "ext_col",
+    "int_col",
+    "brand",
+    "model",
+    "fuel_type",
+    "engine",
+    "transmission",
 ]
 cat = categorical_feat_ord + categorical_feat_nom
 numerical_features = [item for item in numerical_features if item not in cat]
@@ -222,9 +228,18 @@ categorical_transformer_onehot = Pipeline(
 # Create the categorical transformer for ordinal features with an imputer
 categorical_transformer_ordinal = Pipeline(
     steps=[
-        ("imputer", SimpleImputer(strategy="most_frequent")),  # Impute missing values with the most frequent value
-        ("ordinal", OrdinalEncoder(categories=[categories_order[col] for col in categorical_feat_ord],
-                                   handle_unknown="use_encoded_value", unknown_value=-1)),
+        (
+            "imputer",
+            SimpleImputer(strategy="most_frequent"),
+        ),  # Impute missing values with the most frequent value
+        (
+            "ordinal",
+            OrdinalEncoder(
+                categories=[categories_order[col] for col in categorical_feat_ord],
+                handle_unknown="use_encoded_value",
+                unknown_value=-1,
+            ),
+        ),
     ]
 )
 
@@ -280,6 +295,7 @@ print(f"Adjusted R² score: {adj_r2}")
 # Define the columns expected by the model
 column_names = X_train.columns
 
+
 def generate_submission(test_file):
     # Read the CSV file into a DataFrame
     df = pd.read_csv(test_file)
@@ -293,7 +309,7 @@ def generate_submission(test_file):
     # Load the original test file to keep the PassengerId column
     original_df = pd.read_csv(test_file)
     original_df["price"] = predictions
-    original_df['price'] = np.expm1(original_df['price'])
+    original_df["price"] = np.expm1(original_df["price"])
     # Save the results to a new CSV file
     submission_df = original_df[["id", "price"]]
     submission_df.to_csv("submission.csv", index=False)
@@ -303,4 +319,3 @@ def generate_submission(test_file):
 # Generate the submission
 test_file = "test.csv"
 generate_submission(test_file)
-
