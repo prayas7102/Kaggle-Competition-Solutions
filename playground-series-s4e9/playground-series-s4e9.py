@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[107]:
+# In[87]:
 
 
 # Import necessary libraries
 import pandas as pd
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
@@ -25,7 +26,6 @@ import pickle
 from sklearn.linear_model import Lasso, LinearRegression
 from sklearn.metrics import mean_squared_error
 from imblearn.over_sampling import SMOTE
-import dtale
 
 from scipy import stats
 from sklearn.mixture import GaussianMixture
@@ -39,7 +39,7 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import r2_score
 
 import pandas as pd
-from pandas_profiling import ProfileReport
+from ydata_profiling import ProfileReport
 from sklearn.tree import DecisionTreeRegressor
 from xgboost import XGBRegressor
 
@@ -48,10 +48,11 @@ warnings.filterwarnings("ignore")
 # model = LinearRegression()
 # model = Lasso(alpha=0.1)
 model = XGBRegressor(objective="reg:squarederror", scale_pos_weight=1)
+# model = RandomForestRegressor(n_estimators=100, random_state=42)
 # model = DecisionTreeRegressor(random_state=42)
 
 
-# In[108]:
+# In[88]:
 
 
 # Load data
@@ -59,7 +60,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 
 
-# In[109]:
+# In[89]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -92,13 +93,13 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[110]:
+# In[90]:
 
 
 # how to know no. of bins
 outlier_dict = {
     "normal": [],
-    "skew": ["milage"],
+    "skew": ['milage'],
 }
 
 def frequency_encoding(df, columns):
@@ -119,23 +120,25 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[111]:
+# In[91]:
 
 
 df.head()
 
 
-# In[112]:
+# In[92]:
 
 
 df.isnull().sum()
 
 
-# In[113]:
+# In[93]:
 
 
 df = df.drop_duplicates()
-
+df["price"] = np.log1p(df["price"])
+df['accident'] = df['accident'].fillna("Unknown") 
+df['fuel_type'] = df['fuel_type'].fillna("UnknownFuel") 
 df.to_csv("df.csv", index=False)
 
 
@@ -149,10 +152,9 @@ def gen_eda():
 
 
 # gen_eda()
-df["price"] = np.log1p(df["price"])
 
 
-# In[114]:
+# In[94]:
 
 
 # Define features and target
@@ -170,18 +172,18 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[115]:
+# In[95]:
 
 
-# Get unique elements for each column
-for x in list(df.columns):
-    print("feature: ", x)
-    print("value count", df[x].value_counts())
-    print("unique values", len(df[x].unique()))
-    print("\n")
+# # Get unique elements for each column
+# for x in list(df.columns):
+#     print("feature: ", x)
+#     print("value count", df[x].value_counts())
+#     print("unique values", len(df[x].unique()))
+#     print("\n")
 
 
-# In[116]:
+# In[96]:
 
 
 # Get the list of categorical column names
@@ -208,7 +210,7 @@ cat = categorical_feat_ord + categorical_feat_nom
 numerical_features = [item for item in numerical_features if item not in cat]
 
 
-# In[117]:
+# In[97]:
 
 
 # Separate transformers for categorical and numerical features
@@ -216,7 +218,9 @@ numerical_features = [item for item in numerical_features if item not in cat]
 from sklearn.impute import SimpleImputer
 
 
-trf = FunctionTransformer(np.log1p, validate=True)
+# trf = FunctionTransformer(np.log1p, validate=True)
+# trf = PowerTransformer()
+# trf = FunctionTransformer(np.sin)
 # Add Polynomial Features
 poly = PolynomialFeatures(degree=2, include_bias=False)
 
@@ -235,10 +239,7 @@ categorical_transformer_onehot = Pipeline(
 # Create the categorical transformer for ordinal features with an imputer
 categorical_transformer_ordinal = Pipeline(
     steps=[
-        (
-            "imputer",
-            SimpleImputer(strategy="most_frequent"),
-        ),  # Impute missing values with the most frequent value
+        ("imputer", SimpleImputer(strategy="most_frequent")),  
         (
             "ordinal",
             OrdinalEncoder(
@@ -251,7 +252,7 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[118]:
+# In[98]:
 
 
 preprocessor = ColumnTransformer(
@@ -268,17 +269,7 @@ pipeline = Pipeline([("preprocessor", preprocessor), ("model", model)])
 pipeline.fit(X_train, Y_train)
 
 
-# In[119]:
-
-
-# # Calculate the correlation matrix
-# correlation_matrix = df.corr()
-
-# # Save the correlation matrix to a CSV file
-# correlation_matrix.to_csv('correlation_matrix.csv', index=True)
-
-
-# In[120]:
+# In[99]:
 
 
 # Save the fitted pipeline as a .pkl file
@@ -296,11 +287,12 @@ adj_r2 = 1 - ((1 - r2) * (n - 1)) / (n - p - 1)
 print(f"Adjusted R² score: {adj_r2}")
 
 
-# In[121]:
+# In[100]:
 
 
 # Define the columns expected by the model
 column_names = X_train.columns
+
 def pre_process_test(df):
     columns = ["brand", "model", "engine", "int_col", "ext_col"]
     
@@ -314,13 +306,12 @@ def pre_process_test(df):
         if col in df.columns:
             df[col + '_freq'] = df[col].map(freq_encodings.get(col, {})).fillna(0)
     
-    # Fit KBinsDiscretizer on 'model_year' column of X_train
-    bin_discretizer = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy='quantile')
-    bin_discretizer.fit(X_train[['model_year']])
-    
-    # Transform 'model_year' column in df
-    if 'model_year' in df.columns:
-        df['model_year_bin'] = bin_discretizer.transform(df[['model_year']])
+    # Map 'model_year_bin' from X_train to df using 'model_year'
+    if 'model_year' in df.columns and 'model_year_bin' in X_train.columns:
+        # Create a mapping of model_year to model_year_bin from X_train
+        model_year_bin_mapping = dict(zip(X_train['model_year'], X_train['model_year_bin']))
+        # Update df's model_year_bin using this mapping
+        df['model_year_bin'] = df['model_year'].map(model_year_bin_mapping).fillna(-1)
     return df
 
 def generate_submission(test_file):
