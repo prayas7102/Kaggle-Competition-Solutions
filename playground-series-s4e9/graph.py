@@ -41,8 +41,9 @@ def draw_graph(df, save_dir="plots-1"):
         # Close the figure to free up memory
         plt.close()
 
-# draw_graph(df)
+draw_graph(df)
 
+# categorical data analysiss
 # Create a directory if it doesn't exist
 output_dir = './plots-1'
 if not os.path.exists(output_dir):
@@ -64,6 +65,6 @@ def plot_histogram(df, feature, bins=30, save_path=None):
     plt.show()
 
 # Example: plot and save histogram for 'milage' feature
-plot_histogram(df, 'model_year', bins=30, save_path='model_year.png')
+# plot_histogram(df, 'model_year', bins=30, save_path='model_year.png')
 
-plot_histogram(df, 'model_year_bin', bins=30, save_path='model_year_bin.png')
+# plot_histogram(df, 'model_year_bin', bins=30, save_path='model_year_bin.png')
