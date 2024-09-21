@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[87]:
+# In[390]:
 
 
 # Import necessary libraries
@@ -23,7 +23,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import warnings
 import pickle
-from sklearn.linear_model import Lasso, LinearRegression
+from sklearn.linear_model import Lasso, LinearRegression, SGDRegressor
 from sklearn.metrics import mean_squared_error
 from imblearn.over_sampling import SMOTE
 
@@ -47,12 +47,13 @@ warnings.filterwarnings("ignore")
 
 # model = LinearRegression()
 # model = Lasso(alpha=0.1)
-model = XGBRegressor(objective="reg:squarederror", scale_pos_weight=1)
+# model = SGDRegressor(max_iter=1000, tol=1e-3, penalty='l2', random_state=42)
+model = XGBRegressor(learning_rate=0.22, n_estimators=500)
 # model = RandomForestRegressor(n_estimators=100, random_state=42)
 # model = DecisionTreeRegressor(random_state=42)
 
 
-# In[88]:
+# In[391]:
 
 
 # Load data
@@ -60,7 +61,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 
 
-# In[89]:
+# In[392]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -93,7 +94,7 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[90]:
+# In[393]:
 
 
 # how to know no. of bins
@@ -113,6 +114,7 @@ def frequency_encoding(df, columns):
 def pre_process(df):
     df = frequency_encoding(df, ["brand", "model", "engine", "int_col", "ext_col"])
     df['model_year_bin'] = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy='quantile').fit_transform(df[['model_year']])
+    df['model_age'] = 2024-df['model_year']
     return df
 
 
@@ -120,25 +122,15 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[91]:
+# In[394]:
 
 
-df.head()
-
-
-# In[92]:
-
-
-df.isnull().sum()
-
-
-# In[93]:
+from sklearn.calibration import LabelEncoder
 
 
 df = df.drop_duplicates()
 df["price"] = np.log1p(df["price"])
 df['accident'] = df['accident'].fillna("Unknown") 
-df['fuel_type'] = df['fuel_type'].fillna("UnknownFuel") 
 df.to_csv("df.csv", index=False)
 
 
@@ -154,12 +146,12 @@ def gen_eda():
 # gen_eda()
 
 
-# In[94]:
+# In[395]:
 
 
 # Define features and target
 def get_X_Y(df):
-    X = df.drop(columns=["id", "price", "clean_title"])
+    X = df.drop(columns=["id", "price", "clean_title", "fuel_type"])
     Y = df["price"]
     return X, Y
 
@@ -167,12 +159,12 @@ def get_X_Y(df):
 X, Y = get_X_Y(df)
 # Split data into train and test sets
 X_train, X_test, Y_train, Y_test = train_test_split(
-    X, Y, test_size=0.20, random_state=5
+    X, Y, test_size=0.10, random_state=5
 )
 print(X_train.shape)
 
 
-# In[95]:
+# In[396]:
 
 
 # # Get unique elements for each column
@@ -183,7 +175,7 @@ print(X_train.shape)
 #     print("\n")
 
 
-# In[96]:
+# In[397]:
 
 
 # Get the list of categorical column names
@@ -197,20 +189,12 @@ categories_order = {
     "model_year": year,
 }
 categorical_feat_ord = list(categories_order.keys())
-categorical_feat_nom = [
-    "ext_col",
-    "int_col",
-    "brand",
-    "model",
-    "fuel_type",
-    "engine",
-    "transmission",
-]
+categorical_feat_nom = [ "ext_col", "int_col", "brand", "model", "engine", "transmission"]
 cat = categorical_feat_ord + categorical_feat_nom
-numerical_features = [item for item in numerical_features if item not in cat]
+numerical_features = ["milage"]
 
 
-# In[97]:
+# In[398]:
 
 
 # Separate transformers for categorical and numerical features
@@ -220,14 +204,15 @@ from sklearn.impute import SimpleImputer
 
 # trf = FunctionTransformer(np.log1p, validate=True)
 # trf = PowerTransformer()
+trf = FunctionTransformer(np.sqrt, validate=True)
 # trf = FunctionTransformer(np.sin)
 # Add Polynomial Features
 poly = PolynomialFeatures(degree=2, include_bias=False)
 
 numerical_transformer = Pipeline(
     steps=[
-        ("poly", poly),
-        # ("log", trf)
+        ("log", trf),
+        # ("poly", poly),
     ]
 )
 categorical_transformer_onehot = Pipeline(
@@ -252,7 +237,7 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[98]:
+# In[399]:
 
 
 preprocessor = ColumnTransformer(
@@ -269,7 +254,7 @@ pipeline = Pipeline([("preprocessor", preprocessor), ("model", model)])
 pipeline.fit(X_train, Y_train)
 
 
-# In[99]:
+# In[400]:
 
 
 # Save the fitted pipeline as a .pkl file
@@ -287,7 +272,7 @@ adj_r2 = 1 - ((1 - r2) * (n - 1)) / (n - p - 1)
 print(f"Adjusted R² score: {adj_r2}")
 
 
-# In[100]:
+# In[401]:
 
 
 # Define the columns expected by the model
@@ -312,6 +297,8 @@ def pre_process_test(df):
         model_year_bin_mapping = dict(zip(X_train['model_year'], X_train['model_year_bin']))
         # Update df's model_year_bin using this mapping
         df['model_year_bin'] = df['model_year'].map(model_year_bin_mapping).fillna(-1)
+
+    df['model_age'] = 2024-df['model_year']
     return df
 
 def generate_submission(test_file):
