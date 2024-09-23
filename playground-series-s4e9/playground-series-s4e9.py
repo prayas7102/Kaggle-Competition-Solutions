@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[390]:
+# In[136]:
 
 
 # Import necessary libraries
@@ -45,15 +45,8 @@ from xgboost import XGBRegressor
 
 warnings.filterwarnings("ignore")
 
-# model = LinearRegression()
-# model = Lasso(alpha=0.1)
-# model = SGDRegressor(max_iter=1000, tol=1e-3, penalty='l2', random_state=42)
-model = XGBRegressor(learning_rate=0.22, n_estimators=500)
-# model = RandomForestRegressor(n_estimators=100, random_state=42)
-# model = DecisionTreeRegressor(random_state=42)
 
-
-# In[391]:
+# In[137]:
 
 
 # Load data
@@ -61,7 +54,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 
 
-# In[392]:
+# In[138]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -94,7 +87,7 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[393]:
+# In[139]:
 
 
 # how to know no. of bins
@@ -122,7 +115,7 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[394]:
+# In[140]:
 
 
 from sklearn.calibration import LabelEncoder
@@ -146,7 +139,7 @@ def gen_eda():
 # gen_eda()
 
 
-# In[395]:
+# In[141]:
 
 
 # Define features and target
@@ -164,7 +157,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[396]:
+# In[142]:
 
 
 # # Get unique elements for each column
@@ -175,7 +168,7 @@ print(X_train.shape)
 #     print("\n")
 
 
-# In[397]:
+# In[143]:
 
 
 # Get the list of categorical column names
@@ -194,7 +187,7 @@ cat = categorical_feat_ord + categorical_feat_nom
 numerical_features = ["milage"]
 
 
-# In[398]:
+# In[144]:
 
 
 # Separate transformers for categorical and numerical features
@@ -207,7 +200,7 @@ from sklearn.impute import SimpleImputer
 trf = FunctionTransformer(np.sqrt, validate=True)
 # trf = FunctionTransformer(np.sin)
 # Add Polynomial Features
-poly = PolynomialFeatures(degree=2, include_bias=False)
+poly=PolynomialFeatures(degree=2, interaction_only=True, include_bias=False)
 
 numerical_transformer = Pipeline(
     steps=[
@@ -237,7 +230,10 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[399]:
+# In[145]:
+
+
+from lightgbm import LGBMRegressor
 
 
 preprocessor = ColumnTransformer(
@@ -247,14 +243,24 @@ preprocessor = ColumnTransformer(
         ("num", numerical_transformer, numerical_features),
     ]
 )
+
+
+# model = LinearRegression()
+# model = Lasso(alpha=0.1)
+# model = SGDRegressor(max_iter=1000, tol=1e-3, penalty='l2', random_state=42)
+# model = XGBRegressor(learning_rate=0.22, n_estimators=500, subsample=1)
+model = LGBMRegressor( learning_rate=0.1, n_estimators=1000, max_depth=8, num_leaves=31, min_child_samples=20, subsample=0.8, colsample_bytree=0.8, reg_alpha=0.1, reg_lambda=0.1, random_state=42)
+# model = RandomForestRegressor(n_estimators=100, random_state=42)
+# model = DecisionTreeRegressor(random_state=42)
+
 # Define the pipeline
-pipeline = Pipeline([("preprocessor", preprocessor), ("model", model)])
+pipeline = Pipeline([("preprocessor", preprocessor),("model", model)])
 
 # Fit the pipeline on the training data
 pipeline.fit(X_train, Y_train)
 
 
-# In[400]:
+# In[146]:
 
 
 # Save the fitted pipeline as a .pkl file
@@ -272,7 +278,7 @@ adj_r2 = 1 - ((1 - r2) * (n - 1)) / (n - p - 1)
 print(f"Adjusted R² score: {adj_r2}")
 
 
-# In[401]:
+# In[147]:
 
 
 # Define the columns expected by the model
