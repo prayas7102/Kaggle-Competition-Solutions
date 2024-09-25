@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[136]:
+# In[305]:
 
 
 # Import necessary libraries
@@ -37,6 +37,7 @@ from sklearn.decomposition import PCA
 from sklearn.impute import KNNImputer
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import r2_score
+import re
 
 import pandas as pd
 from ydata_profiling import ProfileReport
@@ -46,7 +47,7 @@ from xgboost import XGBRegressor
 warnings.filterwarnings("ignore")
 
 
-# In[137]:
+# In[306]:
 
 
 # Load data
@@ -54,7 +55,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 
 
-# In[138]:
+# In[307]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -87,27 +88,80 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[139]:
+# In[308]:
 
 
-# how to know no. of bins
 outlier_dict = {
     "normal": [],
     "skew": ['milage'],
 }
 
-def frequency_encoding(df, columns):
-    for col in columns:
-        freq_encoding = df[col].value_counts() / len(df)
-        name = col + "_freq"
-        df[name] = df[col].map(freq_encoding)
+def reduce_engine(df: pd.DataFrame)->pd.DataFrame:
+    
+    def extract_capacity(x: str)->float:
+        '''Extracts the volume (mentioned at 3.14L, 3.14 Litres, 3 L, 3. L)'''
+        matchL = re.search( r'([.\d]+)\s*(?:L|Litres|litres|.Litres)', x)
+        if bool(matchL):
+            capacity = str(matchL.group(0))
+            return float(re.findall(r"[-+]?\d*\.*\d+", capacity)[0])
+        return np.nan
+    
+    def extract_horse_power(x: str)->float:        
+        '''Extracts the HorsePower (mentioned at 3.14HP, 3.14 HP, 3 HP, 3. HP)'''
+        matchHP = re.search( r'([.\d]+)\s*(?:HP| HP|  HP|.HP)', x)
+        if bool(matchHP):
+            horsePower = str(matchHP.group(0))
+            return float(re.findall(r"[-+]?\d*\.*\d+", horsePower)[0])
+        return np.nan
+    
+    def extract_cylinders(x: str)->float:        
+        '''Extracts the nom of Cylinders (mentioned at 3Cylinders)'''
+        matchCylinders = re.search( r'([.\d]+)\s*(?:Cylinder| Cylinder)', x)
+        if bool(matchCylinders):
+            cylinders = str(matchCylinders.group(0))
+            return float(re.findall(r"[-+]?\d*\.*\d+", cylinders)[0])
+        return 0.0
+
+    df['engine_volume'] = df['engine'].apply(extract_capacity)
+    df['engine_HP'] = df['engine'].apply(extract_horse_power)
+    df['cylinders'] = df['engine'].apply(extract_cylinders)
     return df
 
+def detect_starting_number(s: str) -> int:
+        """
+        Detects if string starts with positive integer and returns value otherwise returns 0
+        """
+        s = s.lstrip()  
+        if s and s[0].isdigit():
+            num = ''
+            for char in s:
+                if char.isdigit():
+                    num += char
+                else:
+                    break
+            return int(num) if int(num) >= 1 else 0
+        return 0
+
+def frequency_encoding(df, columns):
+        for col in columns:
+            freq_encoding = df[col].value_counts() / len(df)
+            name = col + "_freq"
+            df[name] = df[col].map(freq_encoding)
+        return df
+
+def encode_fuel(df: pd.DataFrame)->pd.DataFrame:
+        df['fuel_type'] = df['fuel_type'].map({'Gasoline': 1,'Diesel': 2,'Hybrid': 3,'Plug-In Hybrid': 3,}).fillna(0).astype(int)
+        return df
 
 def pre_process(df):
-    df = frequency_encoding(df, ["brand", "model", "engine", "int_col", "ext_col"])
+    # df = frequency_encoding(df, ["brand", "model", "engine", "int_col", "ext_col"])
     df['model_year_bin'] = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy='quantile').fit_transform(df[['model_year']])
     df['model_age'] = 2024-df['model_year']
+    df['transmission'] = df['transmission'].apply(lambda x: x.lower().replace("a/t", "automatic").replace("m/t", "manual"))
+    df['speed'] = df['transmission'].apply(detect_starting_number)
+    df['automatic'] = df['transmission'].apply(lambda x: 'automatic' in x).astype(int)
+    df = encode_fuel(df)
+    df = reduce_engine(df)
     return df
 
 
@@ -115,10 +169,7 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[140]:
-
-
-from sklearn.calibration import LabelEncoder
+# In[309]:
 
 
 df = df.drop_duplicates()
@@ -136,15 +187,15 @@ def gen_eda():
     profile.to_file("pandas_profiling_report.html")
 
 
-# gen_eda()
+gen_eda()
 
 
-# In[141]:
+# In[310]:
 
 
 # Define features and target
 def get_X_Y(df):
-    X = df.drop(columns=["id", "price", "clean_title", "fuel_type"])
+    X = df.drop(columns=["id", "price"])
     Y = df["price"]
     return X, Y
 
@@ -157,7 +208,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[142]:
+# In[311]:
 
 
 # # Get unique elements for each column
@@ -168,26 +219,29 @@ print(X_train.shape)
 #     print("\n")
 
 
-# In[143]:
+# In[312]:
 
 
 # Get the list of categorical column names
 numerical_features = X_train.columns
-# ordinal data
-# Define the categories in the order you want
-year = sorted(list(df["model_year"].unique()))
-title = ["No", "Yes"]
 categories_order = {
     "accident": ["None reported", "At least 1 accident or damage reported"],
-    "model_year": year,
+    "model_year": sorted(list(df["model_year"].unique())),
+    "clean_title": ["No", "Yes"],
+    "fuel_type": sorted(list(df["fuel_type"].unique())),
+    "model_year_bin":sorted(list(df["model_year_bin"].unique())),
+    "model_age":sorted(list(df["model_age"].unique())),
+    "speed":sorted(list(df["speed"].unique())),
+    "automatic":sorted(list(df["automatic"].unique())),
+    "cylinders": sorted(list(df["cylinders"].unique()))
 }
 categorical_feat_ord = list(categories_order.keys())
 categorical_feat_nom = [ "ext_col", "int_col", "brand", "model", "engine", "transmission"]
-cat = categorical_feat_ord + categorical_feat_nom
-numerical_features = ["milage"]
+numerical_features = ["milage", "engine_volume", "engine_HP"]
+# engine, transmission, ext_col, int_col, brand
 
 
-# In[144]:
+# In[313]:
 
 
 # Separate transformers for categorical and numerical features
@@ -204,6 +258,7 @@ poly=PolynomialFeatures(degree=2, interaction_only=True, include_bias=False)
 
 numerical_transformer = Pipeline(
     steps=[
+        ("imputer", SimpleImputer(strategy="mean")),
         ("log", trf),
         # ("poly", poly),
     ]
@@ -230,7 +285,7 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[145]:
+# In[314]:
 
 
 from lightgbm import LGBMRegressor
@@ -244,12 +299,11 @@ preprocessor = ColumnTransformer(
     ]
 )
 
-
 # model = LinearRegression()
 # model = Lasso(alpha=0.1)
 # model = SGDRegressor(max_iter=1000, tol=1e-3, penalty='l2', random_state=42)
 # model = XGBRegressor(learning_rate=0.22, n_estimators=500, subsample=1)
-model = LGBMRegressor( learning_rate=0.1, n_estimators=1000, max_depth=8, num_leaves=31, min_child_samples=20, subsample=0.8, colsample_bytree=0.8, reg_alpha=0.1, reg_lambda=0.1, random_state=42)
+model = LGBMRegressor( learning_rate=0.1, n_estimators=1000, max_depth=8, num_leaves=32, min_child_samples=20, verbose=-1, subsample=0.8, colsample_bytree=0.8, reg_alpha=0.1, reg_lambda=0.1, random_state=42)
 # model = RandomForestRegressor(n_estimators=100, random_state=42)
 # model = DecisionTreeRegressor(random_state=42)
 
@@ -260,7 +314,7 @@ pipeline = Pipeline([("preprocessor", preprocessor),("model", model)])
 pipeline.fit(X_train, Y_train)
 
 
-# In[146]:
+# In[315]:
 
 
 # Save the fitted pipeline as a .pkl file
@@ -278,33 +332,35 @@ adj_r2 = 1 - ((1 - r2) * (n - 1)) / (n - p - 1)
 print(f"Adjusted R² score: {adj_r2}")
 
 
-# In[147]:
+# In[316]:
 
 
 # Define the columns expected by the model
 column_names = X_train.columns
 
 def pre_process_test(df):
-    columns = ["brand", "model", "engine", "int_col", "ext_col"]
-    
-    # Calculate frequency encodings from X_train
-    freq_encodings = {}
-    for col in columns:
-        freq_encodings[col] = X_train[col].value_counts() / len(X_train)
-    
-    # Apply frequency encoding to df
-    for col in columns:
-        if col in df.columns:
-            df[col + '_freq'] = df[col].map(freq_encodings.get(col, {})).fillna(0)
+    # columns = ["brand", "model", "engine", "int_col", "ext_col"]
+    # # Calculate frequency encodings from X_train
+    # freq_encodings = {}
+    # for col in columns:
+    #     freq_encodings[col] = X_train[col].value_counts() / len(X_train)
+    # # Apply frequency encoding to df
+    # for col in columns:
+    #     if col in df.columns:
+    #         df[col + '_freq'] = df[col].map(freq_encodings.get(col, {})).fillna(0)
     
     # Map 'model_year_bin' from X_train to df using 'model_year'
-    if 'model_year' in df.columns and 'model_year_bin' in X_train.columns:
-        # Create a mapping of model_year to model_year_bin from X_train
-        model_year_bin_mapping = dict(zip(X_train['model_year'], X_train['model_year_bin']))
-        # Update df's model_year_bin using this mapping
-        df['model_year_bin'] = df['model_year'].map(model_year_bin_mapping).fillna(-1)
+    # Create a mapping of model_year to model_year_bin from X_train
+    model_year_bin_mapping = dict(zip(X_train['model_year'], X_train['model_year_bin']))
+    # Update df's model_year_bin using this mapping
+    df['model_year_bin'] = df['model_year'].map(model_year_bin_mapping).fillna(-1)
 
     df['model_age'] = 2024-df['model_year']
+    df['transmission'] = df['transmission'].apply(lambda x: x.lower().replace("a/t", "automatic").replace("m/t", "manual"))
+    df['speed'] = df['transmission'].apply(detect_starting_number)
+    df['automatic'] = df['transmission'].apply(lambda x: 'automatic' in x).astype(int)
+    df = encode_fuel(df)
+    df = reduce_engine(df)
     return df
 
 def generate_submission(test_file):
