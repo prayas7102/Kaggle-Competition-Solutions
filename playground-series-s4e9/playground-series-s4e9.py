@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[305]:
+# In[85]:
 
 
 # Import necessary libraries
@@ -47,7 +47,7 @@ from xgboost import XGBRegressor
 warnings.filterwarnings("ignore")
 
 
-# In[306]:
+# In[86]:
 
 
 # Load data
@@ -55,7 +55,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 
 
-# In[307]:
+# In[87]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -78,17 +78,17 @@ def remove_outliers(df, outlier_dict):
                 lower_limit = percentile25 - 1.5 * iqr
                 print(cat, upper_limit, lower_limit)
                 # capping
-                df[cat] = np.where(
-                    df[cat] > upper_limit,
-                    upper_limit,
-                    np.where(df[cat] < lower_limit, lower_limit, df[cat]),
-                )
+                # df[cat] = np.where(
+                #     df[cat] > upper_limit,
+                #     upper_limit,
+                #     np.where(df[cat] < lower_limit, lower_limit, df[cat]),
+                # )
                 # Trimming
-                # df = df[(df[cat] < upper_limit) & (df[cat] > lower_limit)]
+                df = df[(df[cat] < upper_limit) & (df[cat] > lower_limit)]
     return df
 
 
-# In[308]:
+# In[88]:
 
 
 outlier_dict = {
@@ -156,7 +156,6 @@ def encode_fuel(df: pd.DataFrame)->pd.DataFrame:
 def pre_process(df):
     # df = frequency_encoding(df, ["brand", "model", "engine", "int_col", "ext_col"])
     df['model_year_bin'] = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy='quantile').fit_transform(df[['model_year']])
-    df['model_age'] = 2024-df['model_year']
     df['transmission'] = df['transmission'].apply(lambda x: x.lower().replace("a/t", "automatic").replace("m/t", "manual"))
     df['speed'] = df['transmission'].apply(detect_starting_number)
     df['automatic'] = df['transmission'].apply(lambda x: 'automatic' in x).astype(int)
@@ -169,7 +168,7 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[309]:
+# In[89]:
 
 
 df = df.drop_duplicates()
@@ -187,10 +186,10 @@ def gen_eda():
     profile.to_file("pandas_profiling_report.html")
 
 
-gen_eda()
+# gen_eda()
 
 
-# In[310]:
+# In[90]:
 
 
 # Define features and target
@@ -208,7 +207,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[311]:
+# In[91]:
 
 
 # # Get unique elements for each column
@@ -219,7 +218,7 @@ print(X_train.shape)
 #     print("\n")
 
 
-# In[312]:
+# In[92]:
 
 
 # Get the list of categorical column names
@@ -230,7 +229,6 @@ categories_order = {
     "clean_title": ["No", "Yes"],
     "fuel_type": sorted(list(df["fuel_type"].unique())),
     "model_year_bin":sorted(list(df["model_year_bin"].unique())),
-    "model_age":sorted(list(df["model_age"].unique())),
     "speed":sorted(list(df["speed"].unique())),
     "automatic":sorted(list(df["automatic"].unique())),
     "cylinders": sorted(list(df["cylinders"].unique()))
@@ -241,7 +239,7 @@ numerical_features = ["milage", "engine_volume", "engine_HP"]
 # engine, transmission, ext_col, int_col, brand
 
 
-# In[313]:
+# In[93]:
 
 
 # Separate transformers for categorical and numerical features
@@ -285,7 +283,7 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[314]:
+# In[94]:
 
 
 from lightgbm import LGBMRegressor
@@ -314,7 +312,7 @@ pipeline = Pipeline([("preprocessor", preprocessor),("model", model)])
 pipeline.fit(X_train, Y_train)
 
 
-# In[315]:
+# In[95]:
 
 
 # Save the fitted pipeline as a .pkl file
@@ -332,7 +330,7 @@ adj_r2 = 1 - ((1 - r2) * (n - 1)) / (n - p - 1)
 print(f"Adjusted R² score: {adj_r2}")
 
 
-# In[316]:
+# In[96]:
 
 
 # Define the columns expected by the model
@@ -354,8 +352,6 @@ def pre_process_test(df):
     model_year_bin_mapping = dict(zip(X_train['model_year'], X_train['model_year_bin']))
     # Update df's model_year_bin using this mapping
     df['model_year_bin'] = df['model_year'].map(model_year_bin_mapping).fillna(-1)
-
-    df['model_age'] = 2024-df['model_year']
     df['transmission'] = df['transmission'].apply(lambda x: x.lower().replace("a/t", "automatic").replace("m/t", "manual"))
     df['speed'] = df['transmission'].apply(detect_starting_number)
     df['automatic'] = df['transmission'].apply(lambda x: 'automatic' in x).astype(int)
