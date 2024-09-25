@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[85]:
+# In[1]:
 
 
 # Import necessary libraries
@@ -47,7 +47,7 @@ from xgboost import XGBRegressor
 warnings.filterwarnings("ignore")
 
 
-# In[86]:
+# In[2]:
 
 
 # Load data
@@ -55,7 +55,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 
 
-# In[87]:
+# In[3]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -88,7 +88,7 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[88]:
+# In[4]:
 
 
 outlier_dict = {
@@ -153,6 +153,17 @@ def encode_fuel(df: pd.DataFrame)->pd.DataFrame:
         df['fuel_type'] = df['fuel_type'].map({'Gasoline': 1,'Diesel': 2,'Hybrid': 3,'Plug-In Hybrid': 3,}).fillna(0).astype(int)
         return df
 
+final_dict = {}
+def encode_brand(df: pd.DataFrame)->pd.DataFrame:
+    dick = dict(df.groupby('brand')['price'].mean())
+    sorted_dict = dict(sorted(dick.items(), key=lambda item: item[1]))
+    i=1
+    for x,y in sorted_dict.items():
+         final_dict[x]=i
+         i+=1
+    df['brand_val'] = df['brand'].map(final_dict).fillna(0).astype(int)
+    return df
+    
 def pre_process(df):
     # df = frequency_encoding(df, ["brand", "model", "engine", "int_col", "ext_col"])
     df['model_year_bin'] = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy='quantile').fit_transform(df[['model_year']])
@@ -161,6 +172,7 @@ def pre_process(df):
     df['automatic'] = df['transmission'].apply(lambda x: 'automatic' in x).astype(int)
     df = encode_fuel(df)
     df = reduce_engine(df)
+    df = encode_brand(df)
     return df
 
 
@@ -168,7 +180,7 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[89]:
+# In[5]:
 
 
 df = df.drop_duplicates()
@@ -189,7 +201,7 @@ def gen_eda():
 # gen_eda()
 
 
-# In[90]:
+# In[6]:
 
 
 # Define features and target
@@ -207,7 +219,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[91]:
+# In[7]:
 
 
 # # Get unique elements for each column
@@ -218,7 +230,7 @@ print(X_train.shape)
 #     print("\n")
 
 
-# In[92]:
+# In[8]:
 
 
 # Get the list of categorical column names
@@ -231,7 +243,8 @@ categories_order = {
     "model_year_bin":sorted(list(df["model_year_bin"].unique())),
     "speed":sorted(list(df["speed"].unique())),
     "automatic":sorted(list(df["automatic"].unique())),
-    "cylinders": sorted(list(df["cylinders"].unique()))
+    "cylinders": sorted(list(df["cylinders"].unique())),
+    "brand_val": sorted(list(df["brand_val"].unique())),
 }
 categorical_feat_ord = list(categories_order.keys())
 categorical_feat_nom = [ "ext_col", "int_col", "brand", "model", "engine", "transmission"]
@@ -239,7 +252,7 @@ numerical_features = ["milage", "engine_volume", "engine_HP"]
 # engine, transmission, ext_col, int_col, brand
 
 
-# In[93]:
+# In[9]:
 
 
 # Separate transformers for categorical and numerical features
@@ -283,7 +296,7 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[94]:
+# In[10]:
 
 
 from lightgbm import LGBMRegressor
@@ -312,7 +325,7 @@ pipeline = Pipeline([("preprocessor", preprocessor),("model", model)])
 pipeline.fit(X_train, Y_train)
 
 
-# In[95]:
+# In[11]:
 
 
 # Save the fitted pipeline as a .pkl file
@@ -330,7 +343,7 @@ adj_r2 = 1 - ((1 - r2) * (n - 1)) / (n - p - 1)
 print(f"Adjusted R² score: {adj_r2}")
 
 
-# In[96]:
+# In[12]:
 
 
 # Define the columns expected by the model
@@ -357,6 +370,7 @@ def pre_process_test(df):
     df['automatic'] = df['transmission'].apply(lambda x: 'automatic' in x).astype(int)
     df = encode_fuel(df)
     df = reduce_engine(df)
+    df['brand_val'] = df['brand'].map(final_dict)
     return df
 
 def generate_submission(test_file):

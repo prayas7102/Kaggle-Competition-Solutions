@@ -11,7 +11,7 @@ import dask.dataframe as dd
 warnings.filterwarnings("ignore")
 
 # Load data
-excel_file_path = "./df.csv"
+excel_file_path = "./train.csv"
 df = dd.read_csv(excel_file_path)
 df = df.compute()
 
@@ -41,7 +41,7 @@ def draw_graph(df, save_dir="plots-1"):
         # Close the figure to free up memory
         plt.close()
 
-draw_graph(df)
+# draw_graph(df)
 
 # categorical data analysiss
 # Create a directory if it doesn't exist
@@ -68,3 +68,6 @@ def plot_histogram(df, feature, bins=30, save_path=None):
 # plot_histogram(df, 'model_year', bins=30, save_path='model_year.png')
 
 # plot_histogram(df, 'model_year_bin', bins=30, save_path='model_year_bin.png')
+
+sns.barplot(x=df["price"], y=df["int_col"])
+plt.show()
