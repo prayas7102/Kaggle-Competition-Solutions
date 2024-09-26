@@ -11,19 +11,18 @@ import dask.dataframe as dd
 warnings.filterwarnings("ignore")
 
 # Load data
-excel_file_path = "./train.csv"
+excel_file_path = "./df.csv"
 df = dd.read_csv(excel_file_path)
 df = df.compute()
 
 df = df.drop_duplicates()
 # Assuming df is your DataFrame
 
-def draw_graph(df, save_dir="plots-1"):
+def draw_graph(df, colu, save_dir="plots-1"):
     # Create directory if it doesn't exist
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
-    colu = df.columns
-    colu = ["milage"]
+    df[colu] = np.log1p(df[colu])
     for col in colu:
         # print(df[col])
         plt.figure(figsize=(14, 4))
@@ -41,7 +40,7 @@ def draw_graph(df, save_dir="plots-1"):
         # Close the figure to free up memory
         plt.close()
 
-# draw_graph(df)
+draw_graph(df, ["engine_volume"])
 
 # categorical data analysiss
 # Create a directory if it doesn't exist
@@ -52,7 +51,7 @@ if not os.path.exists(output_dir):
 # Define a function to plot and save histogram of a specific feature
 def plot_histogram(df, feature, bins=30, save_path=None):
     plt.figure(figsize=(10, 6))
-    sns.histplot(df[feature], bins=bins, kde=False, color='blue')
+    sns.histplot(df[feature], bins=bins, kde=True, color='blue')
     plt.title(f'Distribution of {feature}', fontsize=15)
     plt.xlabel(feature, fontsize=12)
     plt.ylabel('Frequency', fontsize=12)
@@ -64,10 +63,9 @@ def plot_histogram(df, feature, bins=30, save_path=None):
         print(f'Histogram of {feature} saved at {save_path}')
     plt.show()
 
-# Example: plot and save histogram for 'milage' feature
 # plot_histogram(df, 'model_year', bins=30, save_path='model_year.png')
 
-# plot_histogram(df, 'model_year_bin', bins=30, save_path='model_year_bin.png')
+# plot_histogram(df, 'engine_HP', bins=30, save_path='engine_HP.png')
 
-sns.barplot(x=df["price"], y=df["int_col"])
-plt.show()
+# sns.barplot(x=df["price"], y=df["int_col"])
+# plt.show()

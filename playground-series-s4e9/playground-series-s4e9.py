@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[133]:
 
 
 # Import necessary libraries
@@ -47,7 +47,7 @@ from xgboost import XGBRegressor
 warnings.filterwarnings("ignore")
 
 
-# In[2]:
+# In[134]:
 
 
 # Load data
@@ -55,7 +55,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 
 
-# In[3]:
+# In[135]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -88,7 +88,7 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[4]:
+# In[136]:
 
 
 outlier_dict = {
@@ -163,7 +163,12 @@ def encode_brand(df: pd.DataFrame)->pd.DataFrame:
          i+=1
     df['brand_val'] = df['brand'].map(final_dict).fillna(0).astype(int)
     return df
-    
+
+def luxury_features(df):
+    luxury_brands =  ['Mercedes-Benz', 'BMW', 'Audi', 'Porsche', 'Land', 'Lexus', 'Jaguar', 'Bentley', 'Maserati', 'Lamborghini', 'Rolls-Royce', 'Ferrari', 'McLaren', 'Aston', 'Maybach']
+    df['Is_Luxury_Brand'] = df['brand'].apply(lambda x: 1 if x in luxury_brands else 0)
+    return df
+ 
 def pre_process(df):
     # df = frequency_encoding(df, ["brand", "model", "engine", "int_col", "ext_col"])
     df['model_year_bin'] = KBinsDiscretizer(n_bins=10, encode='ordinal', strategy='quantile').fit_transform(df[['model_year']])
@@ -173,6 +178,7 @@ def pre_process(df):
     df = encode_fuel(df)
     df = reduce_engine(df)
     df = encode_brand(df)
+    df = luxury_features(df)
     return df
 
 
@@ -180,12 +186,14 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[5]:
+# In[137]:
 
 
 df = df.drop_duplicates()
 df["price"] = np.log1p(df["price"])
 df['accident'] = df['accident'].fillna("Unknown") 
+# df['clean_title'] = df['clean_title'].fillna("UnknownTitle")
+
 df.to_csv("df.csv", index=False)
 
 
@@ -201,7 +209,7 @@ def gen_eda():
 # gen_eda()
 
 
-# In[6]:
+# In[138]:
 
 
 # Define features and target
@@ -219,7 +227,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[7]:
+# In[139]:
 
 
 # # Get unique elements for each column
@@ -230,7 +238,7 @@ print(X_train.shape)
 #     print("\n")
 
 
-# In[8]:
+# In[140]:
 
 
 # Get the list of categorical column names
@@ -240,19 +248,21 @@ categories_order = {
     "model_year": sorted(list(df["model_year"].unique())),
     "clean_title": ["No", "Yes"],
     "fuel_type": sorted(list(df["fuel_type"].unique())),
-    "model_year_bin":sorted(list(df["model_year_bin"].unique())),
-    "speed":sorted(list(df["speed"].unique())),
-    "automatic":sorted(list(df["automatic"].unique())),
+    "model_year_bin": sorted(list(df["model_year_bin"].unique())),
+    "speed": sorted(list(df["speed"].unique())),
+    "automatic": sorted(list(df["automatic"].unique())),
     "cylinders": sorted(list(df["cylinders"].unique())),
     "brand_val": sorted(list(df["brand_val"].unique())),
+    # "Is_Luxury_Brand": sorted(list(df["Is_Luxury_Brand"].unique())),
 }
 categorical_feat_ord = list(categories_order.keys())
-categorical_feat_nom = [ "ext_col", "int_col", "brand", "model", "engine", "transmission"]
-numerical_features = ["milage", "engine_volume", "engine_HP"]
+categorical_feat_nom = [ "ext_col", "int_col", "model", "engine", "transmission"]
+numerical_features_1 = ["milage"]
+numerical_features_2 = ["engine_volume", "engine_HP"]
 # engine, transmission, ext_col, int_col, brand
 
 
-# In[9]:
+# In[141]:
 
 
 # Separate transformers for categorical and numerical features
@@ -267,11 +277,17 @@ trf = FunctionTransformer(np.sqrt, validate=True)
 # Add Polynomial Features
 poly=PolynomialFeatures(degree=2, interaction_only=True, include_bias=False)
 
-numerical_transformer = Pipeline(
+numerical_transformer_1 = Pipeline(
     steps=[
         ("imputer", SimpleImputer(strategy="mean")),
         ("log", trf),
         # ("poly", poly),
+    ]
+)
+numerical_transformer_2 = Pipeline(
+    steps=[
+        ("imputer", SimpleImputer(strategy="mean")),
+        ("scaler", StandardScaler())
     ]
 )
 categorical_transformer_onehot = Pipeline(
@@ -296,7 +312,7 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[10]:
+# In[142]:
 
 
 from lightgbm import LGBMRegressor
@@ -306,17 +322,14 @@ preprocessor = ColumnTransformer(
     transformers=[
         ("cat", categorical_transformer_onehot, categorical_feat_nom),
         ("cat_1", categorical_transformer_ordinal, categorical_feat_ord),
-        ("num", numerical_transformer, numerical_features),
+        ("num", numerical_transformer_1, numerical_features_1),
+        ("num_1", numerical_transformer_2, numerical_features_2),
     ]
 )
 
-# model = LinearRegression()
-# model = Lasso(alpha=0.1)
-# model = SGDRegressor(max_iter=1000, tol=1e-3, penalty='l2', random_state=42)
 # model = XGBRegressor(learning_rate=0.22, n_estimators=500, subsample=1)
 model = LGBMRegressor( learning_rate=0.1, n_estimators=1000, max_depth=8, num_leaves=32, min_child_samples=20, verbose=-1, subsample=0.8, colsample_bytree=0.8, reg_alpha=0.1, reg_lambda=0.1, random_state=42)
-# model = RandomForestRegressor(n_estimators=100, random_state=42)
-# model = DecisionTreeRegressor(random_state=42)
+# model = LGBMRegressor(subsample= 0.95, reg_lambda= 0.005623413251903491, reg_alpha= 1.0, num_leaves= 570, n_estimators= 550, min_data_in_leaf= 135, min_child_weight= 0.02, max_depth= 13, learning_rate= 0.015, feature_fraction= 0.85, colsample_bytree= 0.9, cat_smooth= 50, bagging_freq= 9, bagging_fraction= 0.8500000000000001)
 
 # Define the pipeline
 pipeline = Pipeline([("preprocessor", preprocessor),("model", model)])
@@ -325,7 +338,7 @@ pipeline = Pipeline([("preprocessor", preprocessor),("model", model)])
 pipeline.fit(X_train, Y_train)
 
 
-# In[11]:
+# In[143]:
 
 
 # Save the fitted pipeline as a .pkl file
@@ -343,23 +356,13 @@ adj_r2 = 1 - ((1 - r2) * (n - 1)) / (n - p - 1)
 print(f"Adjusted R² score: {adj_r2}")
 
 
-# In[12]:
+# In[144]:
 
 
 # Define the columns expected by the model
 column_names = X_train.columns
 
 def pre_process_test(df):
-    # columns = ["brand", "model", "engine", "int_col", "ext_col"]
-    # # Calculate frequency encodings from X_train
-    # freq_encodings = {}
-    # for col in columns:
-    #     freq_encodings[col] = X_train[col].value_counts() / len(X_train)
-    # # Apply frequency encoding to df
-    # for col in columns:
-    #     if col in df.columns:
-    #         df[col + '_freq'] = df[col].map(freq_encodings.get(col, {})).fillna(0)
-    
     # Map 'model_year_bin' from X_train to df using 'model_year'
     # Create a mapping of model_year to model_year_bin from X_train
     model_year_bin_mapping = dict(zip(X_train['model_year'], X_train['model_year_bin']))
@@ -371,6 +374,7 @@ def pre_process_test(df):
     df = encode_fuel(df)
     df = reduce_engine(df)
     df['brand_val'] = df['brand'].map(final_dict)
+    df = luxury_features(df)
     return df
 
 def generate_submission(test_file):
