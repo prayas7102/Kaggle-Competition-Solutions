@@ -1,0 +1,324 @@
+id                                            0
+Name                                          0
+Gender                                        0
+Age                                           0
+City                                          0
+Working Professional or Student               0
+Profession                                36630
+Academic Pressure                        112803
+Work Pressure                             27918
+CGPA                                     112802
+Study Satisfaction                       112803
+Job Satisfaction                          27910
+Sleep Duration                                0
+Dietary Habits                                4
+Degree                                        2
+Have you ever had suicidal thoughts ?         0
+Work/Study Hours                              0
+Financial Stress                              4
+Family History of Mental Illness              0
+Depression                                    0
+dtype: int64
+
+
+feature:  Gender
+value count Gender
+Male      77464
+Female    63236
+Name: count, dtype: int64
+unique values 2
+
+
+feature:  Age
+value count Age
+56.0    5246
+49.0    5099
+38.0    4564
+53.0    4526
+57.0    4395
+47.0    4199
+46.0    4080
+54.0    3928
+51.0    3927
+18.0    3921
+43.0    3856
+59.0    3781
+48.0    3695
+45.0    3535
+20.0    3515
+50.0    3439
+42.0    3393
+24.0    3355
+28.0    3338
+39.0    3262
+44.0    3217
+41.0    3140
+33.0    3140
+29.0    3097
+40.0    3094
+58.0    2932
+25.0    2931
+23.0    2900
+55.0    2846
+35.0    2834
+21.0    2742
+37.0    2724
+36.0    2703
+19.0    2634
+27.0    2613
+52.0    2589
+34.0    2578
+31.0    2560
+60.0    2501
+26.0    2108
+22.0    2066
+30.0    1912
+32.0    1785
+Name: count, dtype: int64
+unique values 43
+
+
+feature:  City
+value count City
+Kalyan         6591
+Patna          5924
+Vasai-Virar    5765
+Kolkata        5689
+Ahmedabad      5613
+               ... 
+Shrey             1
+Ivaan             1
+Vaanya            1
+Gaurav            1
+Unirar            1
+Name: count, Length: 98, dtype: int64
+unique values 98
+
+
+feature:  Working Professional or Student
+value count Working Professional or Student
+Working Professional    112799
+Student                  27901
+Name: count, dtype: int64
+unique values 2
+
+
+feature:  Profession
+value count Profession
+Teacher           24906
+Content Writer     7814
+Architect          4370
+Consultant         4229
+HR Manager         4022
+                  ...  
+BBA                   1
+City Manager          1
+FamilyVirar           1
+B.Com                 1
+Yuvraj                1
+Name: count, Length: 64, dtype: int64
+unique values 65
+
+
+feature:  Academic Pressure
+value count Academic Pressure
+3.0    7463
+5.0    6296
+4.0    5158
+1.0    4801
+2.0    4179
+Name: count, dtype: int64
+unique values 6
+
+
+feature:  Work Pressure
+value count Work Pressure
+2.0    24373
+4.0    22512
+5.0    22436
+3.0    21899
+1.0    21562
+Name: count, dtype: int64
+unique values 6
+
+
+feature:  CGPA
+value count CGPA
+8.0400    822
+9.9600    425
+5.7400    410
+8.9500    371
+9.2100    343
+         ... 
+6.6400      1
+7.0625      1
+6.9800      1
+6.4400      1
+6.0900      1
+Name: count, Length: 331, dtype: int64
+unique values 332
+
+
+feature:  Study Satisfaction
+value count Study Satisfaction
+4.0    6360
+2.0    5840
+3.0    5823
+1.0    5451
+5.0    4423
+Name: count, dtype: int64
+unique values 6
+
+
+feature:  Job Satisfaction
+value count Job Satisfaction
+2.0    24783
+5.0    22812
+1.0    22324
+3.0    21951
+4.0    20920
+Name: count, dtype: int64
+unique values 6
+
+
+feature:  Sleep Duration
+value count Sleep Duration
+Less than 5 hours    38784
+7-8 hours            36969
+More than 8 hours    32726
+5-6 hours            32142
+3-4 hours               12
+6-7 hours                8
+4-5 hours                7
+2-3 hours                5
+4-6 hours                5
+6-8 hours                4
+1-6 hours                4
+No                       4
+9-11 hours               2
+10-11 hours              2
+Sleep_Duration           2
+Unhealthy                2
+45                       2
+8-9 hours                2
+10-6 hours               1
+9-5                      1
+45-48 hours              1
+3-6 hours                1
+Work_Study_Hours         1
+49 hours                 1
+than 5 hours             1
+Pune                     1
+9-6 hours                1
+8 hours                  1
+35-36 hours              1
+Indore                   1
+1-3 hours                1
+55-66 hours              1
+Moderate                 1
+40-45 hours              1
+1-2 hours                1
+9-5 hours                1
+Name: count, dtype: int64
+unique values 36
+
+
+feature:  Dietary Habits
+value count Dietary Habits
+Moderate             49705
+Unhealthy            46227
+Healthy              44741
+Yes                      2
+No                       2
+More Healthy             2
+No Healthy               1
+Class 12                 1
+Indoor                   1
+Male                     1
+Vegas                    1
+M.Tech                   1
+Less Healthy             1
+1.0                      1
+Electrician              1
+Hormonal                 1
+Mihir                    1
+Less than Healthy        1
+3                        1
+Gender                   1
+BSc                      1
+Pratham                  1
+2                        1
+Name: count, dtype: int64
+unique values 24
+
+
+feature:  Degree
+value count Degree
+Class 12    14729
+B.Ed        11691
+B.Arch       8742
+B.Com        8113
+B.Pharm      5856
+            ...  
+Vivaan          1
+MTech           1
+29              1
+LLCom           1
+Advait          1
+Name: count, Length: 115, dtype: int64
+unique values 116
+
+
+feature:  Have you ever had suicidal thoughts ?
+value count Have you ever had suicidal thoughts ?
+No     71138
+Yes    69562
+Name: count, dtype: int64
+unique values 2
+
+
+feature:  Work/Study Hours
+value count Work/Study Hours
+10.0    14199
+11.0    12832
+9.0     12711
+0.0     12066
+12.0    11409
+2.0     10595
+6.0     10432
+7.0      9872
+1.0      9802
+3.0      9474
+5.0      9337
+4.0      9065
+8.0      8906
+Name: count, dtype: int64
+unique values 13
+
+
+feature:  Financial Stress
+value count Financial Stress
+2.0    31451
+5.0    28279
+4.0    27765
+1.0    27211
+3.0    25990
+Name: count, dtype: int64
+unique values 6
+
+
+feature:  Family History of Mental Illness
+value count Family History of Mental Illness
+No     70758
+Yes    69942
+Name: count, dtype: int64
+unique values 2
+
+
+feature:  Depression
+value count Depression
+0    115133
+1     25567
+Name: count, dtype: int64
+unique values 2
+
