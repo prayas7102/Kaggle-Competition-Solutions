@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[137]:
+# In[171]:
 
 
-# pushing 1st time test, trf hata ke test, send whole py code to chatgpt for hyperparam
 # Import necessary libraries
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
@@ -46,7 +45,7 @@ from lightgbm import LGBMClassifier
 from sklearn.model_selection import RandomizedSearchCV, cross_val_score
 
 
-# In[138]:
+# In[172]:
 
 
 # Load data
@@ -54,7 +53,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 
 
-# In[139]:
+# In[173]:
 
 
 # # # Get unique elements for each column
@@ -67,7 +66,7 @@ df = pd.read_csv(excel_file_path, encoding="latin-1")
 #     print("\n")
 
 
-# In[140]:
+# In[174]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -100,7 +99,7 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[141]:
+# In[175]:
 
 
 outlier_dict = {
@@ -245,7 +244,7 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[142]:
+# In[176]:
 
 
 df = df.drop_duplicates()
@@ -264,7 +263,7 @@ def gen_eda():
 # gen_eda()
 
 
-# In[143]:
+# In[177]:
 
 
 # Define features and target
@@ -282,7 +281,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[144]:
+# In[178]:
 
 
 # Get the list of categorical column names
@@ -305,7 +304,7 @@ categorical_feat_nom = ["City", "Degree"]
 numerical_features_1 = ["CGPA"]
 
 
-# In[145]:
+# In[179]:
 
 
 # Separate transformers for categorical and numerical features
@@ -345,7 +344,10 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[146]:
+# In[ ]:
+
+
+from sklearn.model_selection import StratifiedKFold
 
 
 preprocessor = ColumnTransformer(
@@ -363,31 +365,41 @@ pipeline = Pipeline([("preprocessor", preprocessor),("model", model)])
 
 # pipeline.fit(X_train, Y_train)
 
-# Define hyperparameter grid for tuning
+from skopt.space import Integer, Real
+
 param_grid = {
-    "model__n_estimators": [50, 100, 200],
-    "model__max_depth": [3, 5, 10, None],
-    "model__learning_rate": [0.01, 0.05, 0.1, 0.2],
-    "model__num_leaves": [31, 50, 100],
-    "model__min_child_samples": [10, 20, 30]
+    "model__n_estimators": Integer(50, 300),
+    "model__max_depth": Integer(3, 10),
+    "model__learning_rate": Real(0.005, 0.2, prior='log-uniform'),
+    "model__num_leaves": Integer(15, 125),
+    "model__min_child_samples": Integer(5, 30),
+    "model__subsample": Real(0.6, 1.0, prior='uniform'),
+    "model__colsample_bytree": Real(0.6, 1.0, prior='uniform')
 }
 
-# Set up RandomizedSearchCV
-random_search = RandomizedSearchCV(
-    pipeline, param_distributions=param_grid, n_iter=20, cv=3,
-    scoring="accuracy", verbose=1, random_state=42, n_jobs=-1
+from skopt import BayesSearchCV
+
+bayes_search = BayesSearchCV(
+    pipeline,
+    param_grid,
+    n_iter=50,
+    cv=5,
+    scoring='roc_auc',
+    verbose=-1,
+    random_state=42,
+    n_jobs=-1
 )
 
 # Fit the model with hyperparameter tuning
-random_search.fit(X_train, Y_train)
+bayes_search.fit(X_train, Y_train)
 
 # Get the best parameters and model
-best_pipeline = random_search.best_estimator_
+best_pipeline = bayes_search.best_estimator_
 pipeline = best_pipeline
-print("Best hyperparameters:", random_search.best_params_)
+print("Best hyperparameters:", bayes_search.best_params_)
 
 
-# In[147]:
+# In[181]:
 
 
 # Evaluate the tuned model
@@ -397,7 +409,7 @@ print(f"Accuracy: {accuracy}")
 print("Cross-validation accuracy:", cross_val_score(pipeline, X_test, Y_test, cv=3, scoring="accuracy").mean())
 
 
-# In[148]:
+# In[182]:
 
 
 # Save the best model
