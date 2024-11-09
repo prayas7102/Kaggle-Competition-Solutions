@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[193]:
 
 
 # Import necessary libraries
@@ -47,7 +47,7 @@ from lightgbm import LGBMClassifier
 from sklearn.model_selection import RandomizedSearchCV, cross_val_score
 
 
-# In[172]:
+# In[194]:
 
 
 # Load data
@@ -55,7 +55,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 
 
-# In[173]:
+# In[195]:
 
 
 # # # Get unique elements for each column
@@ -68,7 +68,7 @@ df = pd.read_csv(excel_file_path, encoding="latin-1")
 #     print("\n")
 
 
-# In[174]:
+# In[196]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -101,7 +101,7 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[175]:
+# In[197]:
 
 
 outlier_dict = {
@@ -246,7 +246,7 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[176]:
+# In[198]:
 
 
 df = df.drop_duplicates()
@@ -265,7 +265,7 @@ def gen_eda():
 # gen_eda()
 
 
-# In[177]:
+# In[199]:
 
 
 # Define features and target
@@ -283,7 +283,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[178]:
+# In[200]:
 
 
 # Get the list of categorical column names
@@ -306,7 +306,7 @@ categorical_feat_nom = ["City", "Degree"]
 numerical_features_1 = ["CGPA"]
 
 
-# In[179]:
+# In[201]:
 
 
 # Separate transformers for categorical and numerical features
@@ -346,7 +346,7 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[ ]:
+# In[202]:
 
 
 from sklearn.model_selection import StratifiedKFold
@@ -380,9 +380,9 @@ bayes_search = BayesSearchCV(
     pipeline,
     param_grid,
     n_iter=50,
-    cv=5,
+    cv=StratifiedKFold(n_splits=5, shuffle=True, random_state=42),
     scoring='roc_auc',
-    verbose=-1,
+    verbose=0,
     random_state=42,
     n_jobs=-1
 )
@@ -395,7 +395,7 @@ pipeline = best_pipeline
 print("Best hyperparameters:", bayes_search.best_params_)
 
 
-# In[181]:
+# In[203]:
 
 
 # Evaluate the tuned model
@@ -405,7 +405,7 @@ print(f"Accuracy: {accuracy}")
 print("Cross-validation accuracy:", cross_val_score(pipeline, X_test, Y_test, cv=3, scoring="accuracy").mean())
 
 
-# In[182]:
+# In[204]:
 
 
 # Save the best model
