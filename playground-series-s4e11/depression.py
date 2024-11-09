@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[171]:
+# In[ ]:
 
 
 # Import necessary libraries
@@ -17,6 +17,8 @@ from sklearn.preprocessing import (
     OneHotEncoder,
     OrdinalEncoder,
 )
+from skopt import BayesSearchCV
+from skopt.space import Integer, Real
 from sklearn.ensemble import GradientBoostingClassifier
 from xgboost import XGBClassifier
 from sklearn.feature_selection import SelectKBest, chi2
@@ -365,8 +367,6 @@ pipeline = Pipeline([("preprocessor", preprocessor),("model", model)])
 
 # pipeline.fit(X_train, Y_train)
 
-from skopt.space import Integer, Real
-
 param_grid = {
     "model__n_estimators": Integer(50, 300),
     "model__max_depth": Integer(3, 10),
@@ -376,9 +376,6 @@ param_grid = {
     "model__subsample": Real(0.6, 1.0, prior='uniform'),
     "model__colsample_bytree": Real(0.6, 1.0, prior='uniform')
 }
-
-from skopt import BayesSearchCV
-
 bayes_search = BayesSearchCV(
     pipeline,
     param_grid,
@@ -389,7 +386,6 @@ bayes_search = BayesSearchCV(
     random_state=42,
     n_jobs=-1
 )
-
 # Fit the model with hyperparameter tuning
 bayes_search.fit(X_train, Y_train)
 
