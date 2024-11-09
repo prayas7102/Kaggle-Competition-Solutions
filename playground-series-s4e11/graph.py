@@ -41,7 +41,7 @@ def draw_graph(df, colu, save_dir="plots-1"):
         # Close the figure to free up memory
         plt.close()
 
-draw_graph(df, ["CGPA"])
+# draw_graph(df, ["CGPA"])
 
 # categorical data analysiss
 # Create a directory if it doesn't exist
@@ -50,18 +50,18 @@ output_dir = './plots-1'
 #     os.makedirs(output_dir)
 
 # Define a function to plot and save histogram of a specific feature
-# def plot_histogram(df, feature, bins=30, save_path=None):
-#     plt.figure(figsize=(10, 6))
-#     sns.histplot(df[feature], bins=bins, kde=True, color='blue')
-#     plt.title(f'Distribution of {feature}', fontsize=15)
-#     plt.xlabel(feature, fontsize=12)
-#     plt.ylabel('Frequency', fontsize=12)
+def plot_histogram(df, feature, bins=30, save_path=None):
+    plt.figure(figsize=(10, 6))
+    sns.histplot(df[feature], bins=bins, kde=True, color='blue')
+    plt.title(f'Distribution of {feature}', fontsize=15)
+    plt.xlabel(feature, fontsize=12)
+    plt.ylabel('Frequency', fontsize=12)
     
-#     # Save the plot
-#     if save_path:
-#         save_path = os.path.join(output_dir, save_path)
-#         plt.savefig(save_path)
-#         print(f'Histogram of {feature} saved at {save_path}')
-#     plt.show()
+    # Save the plot
+    if save_path:
+        save_path = os.path.join(output_dir, save_path)
+        plt.savefig(save_path)
+        print(f'Histogram of {feature} saved at {save_path}')
+    plt.show()
 
-# plot_histogram(df, 'CGPA', bins=30, save_path='CGPA.png')
+plot_histogram(df, 'Stress', bins=30, save_path='Stress')
