@@ -67,14 +67,13 @@ def plot_histogram(df, feature, bins=30, save_path=None):
 # plot_histogram(df, 'Stress', bins=30, save_path='Stress')
 
 def cat_graph(df, feat):
-    # Group by city and count suicides
-    city_suicide_count = df[df['Suicide'] == 1].groupby(feat)['Suicide'].count()
+    city_Depression_count = df[df['Depression'] == 1].groupby(feat)['Depression'].count()
     # Plot the data
-    city_suicide_count.sort_values(ascending=False).plot(kind='bar', color='skyblue', figsize=(10, 6))
+    city_Depression_count.sort_values(ascending=False).plot(kind='bar', color='skyblue', figsize=(10, 6))
     # Customize the plot
-    plt.title('Suicide Counts by City')
+    plt.title('Depression Counts by City')
     plt.xlabel(feat)
-    plt.ylabel('Number of Suicides')
+    plt.ylabel('Number of Depressions')
     plt.xticks(rotation=45)
     plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.tight_layout()
@@ -82,9 +81,9 @@ def cat_graph(df, feat):
     plt.savefig(save_path)
     # Show the plot
 
-# cat_graph(df, 'City')
-# cat_graph(df, 'Profession')
-# cat_graph(df, 'Degree')
+cat_graph(df, 'City')
+cat_graph(df, 'Profession')
+cat_graph(df, 'Degree')
 cat_graph(df, 'Dietary Habits')
 
 def num_graph(df, feat):
