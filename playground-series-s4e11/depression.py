@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[193]:
+# In[95]:
 
 
 # Import necessary libraries
@@ -47,7 +47,7 @@ from lightgbm import LGBMClassifier
 from sklearn.model_selection import RandomizedSearchCV, cross_val_score
 
 
-# In[194]:
+# In[96]:
 
 
 # Load data
@@ -55,7 +55,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 
 
-# In[195]:
+# In[97]:
 
 
 # # # Get unique elements for each column
@@ -68,7 +68,7 @@ df = pd.read_csv(excel_file_path, encoding="latin-1")
 #     print("\n")
 
 
-# In[196]:
+# In[98]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -101,7 +101,7 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[197]:
+# In[99]:
 
 
 outlier_dict = {
@@ -246,7 +246,7 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[198]:
+# In[100]:
 
 
 df = df.drop_duplicates()
@@ -265,7 +265,7 @@ def gen_eda():
 # gen_eda()
 
 
-# In[199]:
+# In[101]:
 
 
 # Define features and target
@@ -283,7 +283,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[200]:
+# In[ ]:
 
 
 # Get the list of categorical column names
@@ -306,7 +306,7 @@ categorical_feat_nom = ["City", "Degree"]
 numerical_features_1 = ["CGPA"]
 
 
-# In[201]:
+# In[103]:
 
 
 # Separate transformers for categorical and numerical features
@@ -346,7 +346,7 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[202]:
+# In[104]:
 
 
 from sklearn.model_selection import StratifiedKFold
@@ -368,24 +368,31 @@ pipeline = Pipeline([("preprocessor", preprocessor),("model", model)])
 # pipeline.fit(X_train, Y_train)
 
 param_grid = {
-    "model__n_estimators": Integer(50, 300),
-    "model__max_depth": Integer(3, 10),
-    "model__learning_rate": Real(0.005, 0.2, prior='log-uniform'),
-    "model__num_leaves": Integer(15, 125),
-    "model__min_child_samples": Integer(5, 30),
-    "model__subsample": Real(0.6, 1.0, prior='uniform'),
-    "model__colsample_bytree": Real(0.6, 1.0, prior='uniform')
+    "model__n_estimators": Integer(50, 500),
+    "model__max_depth": Integer(3, 15),
+    "model__learning_rate": Real(0.001, 0.3, prior='log-uniform'),
+    "model__num_leaves": Integer(15, 225),
+    "model__min_child_samples": Integer(5, 50),
+    "model__subsample": Real(0.5, 1.0, prior='uniform'),
+    "model__colsample_bytree": Real(0.6, 1.0, prior='uniform'),
+    "model__reg_alpha": Real(0.001, 10.0, prior='log-uniform'),
+    "model__reg_lambda": Real(0.001, 10.0, prior='log-uniform')
 }
+
 bayes_search = BayesSearchCV(
     pipeline,
     param_grid,
-    n_iter=50,
+    n_iter=100,
     cv=StratifiedKFold(n_splits=5, shuffle=True, random_state=42),
     scoring='roc_auc',
+    refit='roc_auc',
     verbose=0,
     random_state=42,
-    n_jobs=-1
+    n_jobs=-1,
+    n_points=3,
+    return_train_score=True
 )
+
 # Fit the model with hyperparameter tuning
 bayes_search.fit(X_train, Y_train)
 
@@ -395,7 +402,7 @@ pipeline = best_pipeline
 print("Best hyperparameters:", bayes_search.best_params_)
 
 
-# In[203]:
+# In[105]:
 
 
 # Evaluate the tuned model
@@ -405,7 +412,7 @@ print(f"Accuracy: {accuracy}")
 print("Cross-validation accuracy:", cross_val_score(pipeline, X_test, Y_test, cv=3, scoring="accuracy").mean())
 
 
-# In[204]:
+# In[106]:
 
 
 # Save the best model

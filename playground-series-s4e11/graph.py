@@ -64,4 +64,35 @@ def plot_histogram(df, feature, bins=30, save_path=None):
         print(f'Histogram of {feature} saved at {save_path}')
     plt.show()
 
-plot_histogram(df, 'Stress', bins=30, save_path='Stress')
+# plot_histogram(df, 'Stress', bins=30, save_path='Stress')
+
+def cat_graph(df, feat):
+    # Group by city and count suicides
+    city_suicide_count = df[df['Suicide'] == 1].groupby(feat)['Suicide'].count()
+    # Plot the data
+    city_suicide_count.sort_values(ascending=False).plot(kind='bar', color='skyblue', figsize=(10, 6))
+    # Customize the plot
+    plt.title('Suicide Counts by City')
+    plt.xlabel(feat)
+    plt.ylabel('Number of Suicides')
+    plt.xticks(rotation=45)
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    save_path = os.path.join(output_dir, feat)
+    plt.savefig(save_path)
+    # Show the plot
+
+# cat_graph(df, 'City')
+# cat_graph(df, 'Profession')
+# cat_graph(df, 'Degree')
+cat_graph(df, 'Dietary Habits')
+
+def num_graph(df, feat):
+    # Plotting
+    sns.histplot(data=df, x=feat, hue='Suicide', kde=True, stat="density", common_norm=False, bins=10, palette='Set2')
+    plt.title('CGPA vs. Suicide Prone Distribution')
+    plt.xlabel('CGPA')
+    plt.ylabel('Density')
+    plt.show()
+
+# num_graph(df, 'CGPA')
