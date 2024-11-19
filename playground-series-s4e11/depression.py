@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[95]:
+# In[49]:
 
 
 # Import necessary libraries
@@ -29,6 +29,8 @@ import warnings
 import pickle
 from sklearn.metrics import mean_squared_error
 from imblearn.over_sampling import SMOTE
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer
 
 from scipy import stats
 from sklearn.preprocessing import KBinsDiscretizer
@@ -47,7 +49,7 @@ from lightgbm import LGBMClassifier
 from sklearn.model_selection import RandomizedSearchCV, cross_val_score
 
 
-# In[96]:
+# In[50]:
 
 
 # Load data
@@ -55,7 +57,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 
 
-# In[97]:
+# In[51]:
 
 
 # # # Get unique elements for each column
@@ -68,7 +70,7 @@ df = pd.read_csv(excel_file_path, encoding="latin-1")
 #     print("\n")
 
 
-# In[98]:
+# In[52]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -101,7 +103,7 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[99]:
+# In[53]:
 
 
 outlier_dict = {
@@ -187,7 +189,7 @@ def fill_missing(df):
     df["Degree"] = df["Degree"].fillna("Unknown")
     df['Pressure'] = df['Work Pressure'].fillna(df['Academic Pressure'])
     df['Satisfaction'] = df['Job Satisfaction'].fillna(df['Study Satisfaction'])
-    df["CGPA"] = df["CGPA"].fillna(0)
+    # df["CGPA"] = df["CGPA"].fillna(0)
     return df
 
 def encode(df: pd.DataFrame)->pd.DataFrame:
@@ -246,7 +248,7 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[100]:
+# In[54]:
 
 
 df = df.drop_duplicates()
@@ -265,7 +267,7 @@ def gen_eda():
 # gen_eda()
 
 
-# In[101]:
+# In[55]:
 
 
 # Define features and target
@@ -283,7 +285,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[ ]:
+# In[56]:
 
 
 # Get the list of categorical column names
@@ -306,7 +308,7 @@ categorical_feat_nom = ["City", "Degree"]
 numerical_features_1 = ["CGPA"]
 
 
-# In[103]:
+# In[ ]:
 
 
 # Separate transformers for categorical and numerical features
@@ -314,13 +316,18 @@ numerical_features_1 = ["CGPA"]
 # trf = FunctionTransformer(np.log1p, validate=True)
 # trf = PowerTransformer()
 # trf = FunctionTransformer(np.sqrt, validate=True)
+
+from sklearn.preprocessing import RobustScaler
+
+
 trf = FunctionTransformer(np.sin)
 # trf = StandardScaler()
 # trf = MinMaxScaler()
 
 numerical_transformer_1 = Pipeline(
     steps=[
-        ("imputer", SimpleImputer(strategy="mean")),
+        # ("scaler", RobustScaler()),
+        ("imputer", IterativeImputer()),
         ("log", trf),
     ]
 )
@@ -346,7 +353,7 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[104]:
+# In[ ]:
 
 
 from sklearn.model_selection import StratifiedKFold
@@ -362,7 +369,7 @@ preprocessor = ColumnTransformer(
 
 model = LGBMClassifier(verbose=-1)
 
-# Define the pipeline
+# # Define the pipeline
 pipeline = Pipeline([("preprocessor", preprocessor),("model", model)])
 
 # pipeline.fit(X_train, Y_train)
@@ -402,7 +409,7 @@ pipeline = best_pipeline
 print("Best hyperparameters:", bayes_search.best_params_)
 
 
-# In[105]:
+# In[59]:
 
 
 # Evaluate the tuned model
@@ -412,7 +419,7 @@ print(f"Accuracy: {accuracy}")
 print("Cross-validation accuracy:", cross_val_score(pipeline, X_test, Y_test, cv=3, scoring="accuracy").mean())
 
 
-# In[106]:
+# In[60]:
 
 
 # Save the best model
