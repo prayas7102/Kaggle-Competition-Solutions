@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[95]:
+# In[23]:
 
 
 # Import necessary libraries
@@ -47,7 +47,7 @@ from lightgbm import LGBMClassifier
 from sklearn.model_selection import RandomizedSearchCV, cross_val_score
 
 
-# In[96]:
+# In[24]:
 
 
 # Load data
@@ -55,7 +55,7 @@ excel_file_path = "./train.csv"
 df = pd.read_csv(excel_file_path, encoding="latin-1")
 
 
-# In[97]:
+# In[25]:
 
 
 # # # Get unique elements for each column
@@ -68,7 +68,7 @@ df = pd.read_csv(excel_file_path, encoding="latin-1")
 #     print("\n")
 
 
-# In[98]:
+# In[26]:
 
 
 def remove_outliers(df, outlier_dict):
@@ -101,7 +101,7 @@ def remove_outliers(df, outlier_dict):
     return df
 
 
-# In[99]:
+# In[27]:
 
 
 outlier_dict = {
@@ -246,7 +246,7 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[100]:
+# In[28]:
 
 
 df = df.drop_duplicates()
@@ -265,7 +265,7 @@ def gen_eda():
 # gen_eda()
 
 
-# In[101]:
+# In[29]:
 
 
 # Define features and target
@@ -283,7 +283,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 print(X_train.shape)
 
 
-# In[ ]:
+# In[30]:
 
 
 # Get the list of categorical column names
@@ -306,7 +306,7 @@ categorical_feat_nom = ["City", "Degree"]
 numerical_features_1 = ["CGPA"]
 
 
-# In[103]:
+# In[31]:
 
 
 # Separate transformers for categorical and numerical features
@@ -346,7 +346,7 @@ categorical_transformer_ordinal = Pipeline(
 )
 
 
-# In[104]:
+# In[32]:
 
 
 from sklearn.model_selection import StratifiedKFold
@@ -402,7 +402,7 @@ pipeline = best_pipeline
 print("Best hyperparameters:", bayes_search.best_params_)
 
 
-# In[105]:
+# In[33]:
 
 
 # Evaluate the tuned model
@@ -412,7 +412,7 @@ print(f"Accuracy: {accuracy}")
 print("Cross-validation accuracy:", cross_val_score(pipeline, X_test, Y_test, cv=3, scoring="accuracy").mean())
 
 
-# In[106]:
+# In[34]:
 
 
 # Save the best model
