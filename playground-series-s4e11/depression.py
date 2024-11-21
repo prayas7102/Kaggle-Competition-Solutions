@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[23]:
+# In[ ]:
 
 
 # Import necessary libraries
@@ -42,7 +42,7 @@ from sklearn.metrics import r2_score
 import re
 from sklearn.impute import SimpleImputer
 import pandas as pd
-from ydata_profiling import ProfileReport
+# from ydata_profiling import ProfileReport
 from lightgbm import LGBMClassifier
 from sklearn.model_selection import RandomizedSearchCV, cross_val_score
 
@@ -246,20 +246,20 @@ df = pre_process(df)
 df = remove_outliers(df, outlier_dict)
 
 
-# In[28]:
+# In[ ]:
 
 
 df = df.drop_duplicates()
 
 df.to_csv("df.csv", index=False)
 
-def gen_eda():
-    profile = ProfileReport(
-        pd.concat([df], axis=1),
-        title="Pandas Profiling Report",
-        explorative=True,
-    )
-    profile.to_file("pandas_profiling_report.html")
+# def gen_eda():
+#     profile = ProfileReport(
+#         pd.concat([df], axis=1),
+#         title="Pandas Profiling Report",
+#         explorative=True,
+#     )
+#     profile.to_file("pandas_profiling_report.html")
 
 
 # gen_eda()
