@@ -18,6 +18,7 @@ excel_file_path = "./df.csv"
 df = dd.read_csv(excel_file_path)
 df = df.compute()
 
+
 def draw_graph(df, colu, save_dir="plots-1"):
     # Create directory if it doesn't exist
     if not os.path.exists(save_dir):
@@ -41,58 +42,78 @@ def draw_graph(df, colu, save_dir="plots-1"):
         # Close the figure to free up memory
         plt.close()
 
+
 # draw_graph(df, ["CGPA"])
 
 # categorical data analysiss
 # Create a directory if it doesn't exist
-output_dir = './plots-1'
+output_dir = "./plots-1"
 # if not os.path.exists(output_dir):
 #     os.makedirs(output_dir)
+
 
 # Define a function to plot and save histogram of a specific feature
 def plot_histogram(df, feature, bins=30, save_path=None):
     plt.figure(figsize=(10, 6))
-    sns.histplot(df[feature], bins=bins, kde=True, color='blue')
-    plt.title(f'Distribution of {feature}', fontsize=15)
+    sns.histplot(df[feature], bins=bins, kde=True, color="blue")
+    plt.title(f"Distribution of {feature}", fontsize=15)
     plt.xlabel(feature, fontsize=12)
-    plt.ylabel('Frequency', fontsize=12)
-    
+    plt.ylabel("Frequency", fontsize=12)
+
     # Save the plot
     if save_path:
         save_path = os.path.join(output_dir, save_path)
         plt.savefig(save_path)
-        print(f'Histogram of {feature} saved at {save_path}')
+        print(f"Histogram of {feature} saved at {save_path}")
     plt.show()
+
 
 # plot_histogram(df, 'Stress', bins=30, save_path='Stress')
 
+
 def cat_graph(df, feat):
     # Group by city and count Depressions
-    city_Depression_count = df[df['Depression'] == 1].groupby(feat)['Depression'].count()
+    city_Depression_count = (
+        df[df["Depression"] == 1].groupby(feat)["Depression"].count()
+    )
     # Plot the data
-    city_Depression_count.sort_values(ascending=False).plot(kind='bar', color='skyblue', figsize=(10, 6))
+    city_Depression_count.sort_values(ascending=False).plot(
+        kind="bar", color="skyblue", figsize=(10, 6)
+    )
     # Customize the plot
-    plt.title('Depression Counts by City')
+    plt.title("Depression Counts by City")
     plt.xlabel(feat)
-    plt.ylabel('Number of Depressions')
+    plt.ylabel("Number of Depressions")
     plt.xticks(rotation=45)
-    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.grid(axis="y", linestyle="--", alpha=0.7)
     plt.tight_layout()
     save_path = os.path.join(output_dir, feat)
     plt.savefig(save_path)
     # Show the plot
 
-cat_graph(df, 'City')
-cat_graph(df, 'Profession')
-cat_graph(df, 'Degree')
-cat_graph(df, 'Dietary Habits')
+
+cat_graph(df, "City")
+cat_graph(df, "Profession")
+cat_graph(df, "Degree")
+cat_graph(df, "Dietary Habits")
+
 
 def num_graph(df, feat):
     # Plotting
-    sns.histplot(data=df, x=feat, hue='Depression', kde=True, stat="density", common_norm=False, bins=10, palette='Set2')
-    plt.title('CGPA vs. Depression')
-    plt.xlabel('CGPA')
-    plt.ylabel('Density')
+    sns.histplot(
+        data=df,
+        x=feat,
+        hue="Depression",
+        kde=True,
+        stat="density",
+        common_norm=False,
+        bins=10,
+        palette="Set2",
+    )
+    plt.title("CGPA vs. Depression")
+    plt.xlabel("CGPA")
+    plt.ylabel("Density")
     plt.show()
 
-num_graph(df, 'CGPA')
+
+num_graph(df, "CGPA")

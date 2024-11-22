@@ -15,6 +15,6 @@ def convert_ipynb_to_py(ipynb_file, py_file):
         f.write(script)
 
 # Example usage 
-ipynb_file = './playground-series-s4e11/depression.ipynb'  # Replace with your .ipynb file path
-py_file = './playground-series-s4e11/depression.py'          # Replace with your desired .py file path
+ipynb_file = './playground-series-s4e11/94-344-lgbm-bayessearchcv-sin-transformer.ipynb'  # Replace with your .ipynb file path
+py_file = './playground-series-s4e11/94-344-lgbm-bayessearchcv-sin-transformer.py'          # Replace with your desired .py file path
 convert_ipynb_to_py(ipynb_file, py_file)
