@@ -254,17 +254,121 @@ unique values 24
 
 feature:  Degree
 value count Degree
-Class 12    14729
-B.Ed        11691
-B.Arch       8742
-B.Com        8113
-B.Pharm      5856
-            ...  
-Vivaan          1
-MTech           1
-29              1
-LLCom           1
-Advait          1
+(126630, 22)
+Class 12  :  14729
+B.Ed  :  11691
+B.Arch  :  8742
+B.Com  :  8113
+B.Pharm  :  5856
+BCA  :  5739
+M.Ed  :  5668
+MCA  :  5234
+BBA  :  5030
+BSc  :  5027
+MSc  :  4879
+LLM  :  4647
+M.Pharm  :  4537
+M.Tech  :  4475
+B.Tech  :  4425
+LLB  :  4348
+BHM  :  4305
+MBA  :  3818
+BA  :  3750
+ME  :  3632
+MD  :  3383
+MHM  :  3286
+BE  :  3105
+PhD  :  3103
+M.Com  :  3094
+MBBS  :  3082
+MA  :  2887
+M.Arch  :  5
+UX/UI Designer  :  4
+B.Sc  :  3
+Kalyan  :  3
+M  :  3
+BArch  :  2
+B  :  2
+BPharm  :  2
+P.Com  :  2
+MEd  :  2
+LLBA  :  2
+Degree  :  2
+Jhanvi  :  2
+Bhopal  :  2
+BEd  :  2
+Nalini  :  2
+LL B.Ed  :  2
+L.Ed  :  2
+5.88  :  1
+HCA  :  1
+Marsh  :  1
+S.Arch  :  1
+Pihu  :  1
+Lata  :  1
+LHM  :  1
+8.56  :  1
+Entrepreneur  :  1
+Aarav  :  1
+LLTech  :  1
+BB  :  1
+M_Tech  :  1
+B.Student  :  1
+E.Tech  :  1
+M.S  :  1
+Navya  :  1
+Mihir  :  1
+RCA  :  1
+B B.Com  :  1
+LCA  :  1
+N.Pharm  :  1
+Doctor  :  1
+CGPA  :  1
+LLEd  :  1
+LLS  :  1
+Esha  :  1
+Working Professional  :  1
+Mthanya  :  1
+B.3.79  :  1
+K.Ed  :  1
+Mahika  :  1
+24  :  1
+Vrinda  :  1
+Brithika  :  1
+Business Analyst  :  1
+HR Manager  :  1
+Unite  :  1
+P.Pharm  :  1
+MPharm  :  1
+Data Scientist  :  1
+LL.Com  :  1
+H_Pharm  :  1
+S.Pharm  :  1
+Class 11  :  1
+20  :  1
+S.Tech  :  1
+Veda  :  1
+BH  :  1
+MPA  :  1
+Badhya  :  1
+M. Business Analyst  :  1
+ACA  :  1
+Brit  :  1
+B.B.Arch  :  1
+7.06  :  1
+B BA  :  1
+5.56  :  1
+Ritik  :  1
+B.03  :  1
+5.61  :  1
+Bhavesh  :  1
+Plumber  :  1
+BPA  :  1
+Vivaan  :  1
+MTech  :  1
+LLCom  :  1
+0  :  1
+Advait  :  1
 Name: count, Length: 115, dtype: int64
 unique values 116
 
