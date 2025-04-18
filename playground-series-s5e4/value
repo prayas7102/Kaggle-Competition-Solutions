@@ -1,0 +1,197 @@
+Value counts for 'id':
+id
+0         1
+499993    1
+499995    1
+499996    1
+499997    1
+         ..
+250001    1
+250002    1
+250003    1
+250004    1
+749999    1
+Name: count, Length: 750000, dtype: int64
+
+Value counts for 'Podcast_Name':
+Podcast_Name
+Tech Talks             22847
+Sports Weekly          20053
+Funny Folks            19635
+Tech Trends            19549
+Fitness First          19488
+Business Insights      19480
+Style Guide            19364
+Game Day               19272
+Melody Mix             18889
+Criminal Minds         17735
+Finance Focus          17628
+Detective Diaries      17452
+Crime Chronicles       17374
+Athlete's Arena        17327
+Fashion Forward        17280
+Tune Time              17254
+Business Briefs        17012
+Lifestyle Lounge       16661
+True Crime Stories     16373
+Sports Central         16191
+Digital Digest         16171
+Humor Hub              16144
+Mystery Matters        16002
+Comedy Corner          15927
+Joke Junction          15074
+Wellness Wave          15009
+Sport Spot             14778
+Gadget Geek            14770
+Home & Living          14686
+Laugh Line             14673
+Life Lessons           14464
+World Watch            14043
+Sound Waves            13928
+Global News            13649
+Mind & Body            13639
+Daily Digest           13391
+Money Matters          13380
+Current Affairs        13138
+Market Masters         13092
+Study Sessions         13053
+Innovators             12913
+Music Matters          12652
+Learning Lab           12291
+Educational Nuggets    12245
+Healthy Living         12198
+Brain Boost            11543
+Health Hour            11114
+News Roundup            9169
+Name: count, dtype: int64
+
+Value counts for 'Episode_Title':
+Episode_Title
+Episode 71    10515
+Episode 62    10373
+Episode 31    10292
+Episode 61     9991
+Episode 69     9864
+              ...  
+Episode 2      5134
+Episode 25     5117
+Episode 41     4965
+Episode 37     4940
+Episode 95     4838
+Name: count, Length: 100, dtype: int64
+
+Value counts for 'Episode_Length_minutes':
+Episode_Length_minutes
+6.600000     925
+34.400000    617
+30.690000    576
+31.680000    533
+31.460000    491
+            ... 
+14.498053      1
+8.115479       1
+93.660301      1
+98.298620      1
+62.167294      1
+Name: count, Length: 12268, dtype: int64
+
+Value counts for 'Genre':
+Genre
+Sports        87606
+Technology    86256
+True Crime    85059
+Lifestyle     82461
+Comedy        81453
+Business      80521
+Health        71416
+News          63385
+Music         62743
+Education     49100
+Name: count, dtype: int64
+
+Value counts for 'Host_Popularity_percentage':
+Host_Popularity_percentage
+38.68000     560
+26.72000     523
+56.29000     490
+30.14000     445
+31.57000     439
+            ... 
+86.71356       1
+118.69000      1
+87.99900       1
+107.02000      1
+86.64906       1
+Name: count, Length: 8038, dtype: int64
+
+Value counts for 'Publication_Day':
+Publication_Day
+Sunday       115946
+Monday       111963
+Friday       108237
+Wednesday    107886
+Thursday     104360
+Saturday     103505
+Tuesday       98103
+Name: count, dtype: int64
+
+Value counts for 'Publication_Time':
+Publication_Time
+Night        196849
+Evening      195778
+Afternoon    179460
+Morning      177913
+Name: count, dtype: int64
+
+Value counts for 'Guest_Popularity_percentage':
+Guest_Popularity_percentage
+68.530     378
+29.700     339
+42.690     332
+54.590     300
+41.290     298
+          ... 
+90.485       1
+32.044       1
+110.140      1
+107.080      1
+105.440      1
+Name: count, Length: 10019, dtype: int64
+
+Value counts for 'Number_of_Ads':
+Number_of_Ads
+0.00      217592
+1.00      214069
+3.00      160173
+2.00      158156
+103.25         2
+53.37          1
+103.91         1
+103.00         1
+53.42          1
+103.75         1
+12.00          1
+103.88         1
+Name: count, dtype: int64
+
+Value counts for 'Episode_Sentiment':
+Episode_Sentiment
+Neutral     251291
+Negative    250116
+Positive    248593
+Name: count, dtype: int64
+
+Value counts for 'Listening_Time_minutes':
+Listening_Time_minutes
+0.00000     8551
+5.82000      124
+10.55000     108
+8.75000      108
+19.71000      98
+            ... 
+90.89242       3
+58.15856       3
+50.74736       2
+21.75737       2
+69.18963       2
+Name: count, Length: 42807, dtype: int64
